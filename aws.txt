@@ -1,0 +1,52 @@
+what is AMI? 
+what is EC2 instance , and what are the types?
+
+Different types of storage ? 
+EBS 16TB Instance stroage 
+File storage elastic file system and then AWS FSxWindows operating
+system.
+
+Object stories -S3, glacier
+
+
+how you exposing your application
+how you connect your application via dns or iphost
+
+what is bastion host or gateway servcies
+Multiple is it to instances in ASG is getting terminated and this is causing down time on the application easy to pricing quota all look good how would you debug 
+(disk space , memory, processer)
+
+why do we have 3 different of iam policy managed customer managed & inline policy?
+ingress and egress in aws
+
+reverse and froward proxy
+
+without peering how we are establish the connection
+
+VPN | direct connect | transit gateway | public facing endpoint
+
+high avaiblity
+
+load balances
+application load balancer
+network load balancer
+
+ASG
+
+ route 53 routing policies
+ simple
+ geolocation
+ failover
+ latnecy
+ weighted
+
+ what is CDN (cloudfront)
+
+ different types of databases 
+  structure database-RDBMS MYSQL , Oracle MSSQLPostgress mariaDB Arora. 
+  UnStructure database, AWS dynamo DB AWS document DB
+
+   elastic beanstalk?
+A - elastic beans, stock is the service for deploying and scaling web application and service. Upload your
+code and elastic bet will automatically handle the deployment from load balance into health monitoring.
+

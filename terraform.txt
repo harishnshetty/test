@@ -1,0 +1,17 @@
+ terraform module
+ how youre using terraform are you using forest or some module
+ where you store statefile
+
+ Suppose there is some resource you created from but someone deleted the resource from the console what will happen if you apply Tera form now
+
+  how to change a configuration file, which is already created using a terraformA- Terraform import
+
+  Q- have you know what is remote backend?
+A- remote back in is a place where we store all our TF state files which can be shared to other
+developers of infrastructure
+Q- What are terraform workspace?
+A- it is allows us to manage separate file for each workspace.
+
+
+
+

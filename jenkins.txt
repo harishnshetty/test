@@ -1,0 +1,3 @@
+Q- what are shared modules in Jenkins?
+A- shared modules in Jenkins refers to collection of reusable and resource that can be shared across
+multiple Jenkins jobs. 

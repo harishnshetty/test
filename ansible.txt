@@ -1,0 +1,33 @@
+give one use case where you can use ansible
+
+Q-What is Ansible and what is it used for?
+A-Ansible is an open-source automation tool used for configuration management, application
+deployment, task automation, and orchestration. It simplifies IT operations by automating repetitive
+tasks.
+Q-Explain the difference between Ansible and other configuration management tools like Chef or
+Puppet.
+A-Ansible uses an agentless architecture, relying on SSH and Python to execute tasks on remote servers.
+Chef and Puppet use an agent-based approach where agents need to be installed on managed nodes.
+Q-What are Ansible playbooks?
+A-Ansible playbooks are YAML files that define a set of tasks to be executed. They automate
+configurations, deployments, and orchestration of tasks across managed nodes.
+
+
+Q-What is an Ansible role?
+A-An Ansible role is a way to organize playbooks and other files in a reusable structure. It encapsulates
+tasks, variables, templates, and files into a directory structure.
+
+Q-What is an inventory file in Ansible?
+A-An inventory file in Ansible lists the IP addresses or hostnames of managed nodes (servers) that
+Ansible will work with. It defines the targets for Ansible playbooks and ad-hoc commands.
+
+-Explain the difference between Ansible ad-hoc commands and playbooks.
+A-Ad-hoc commands are run from the command-line to perform quick tasks on remote nodes (ansible
+command). Playbooks are YAML files that provide a more structured and reusable way to automate
+tasks.
+
+
+Q-What is the Ansible Galaxy?
+A-Ansible Galaxy is a website and command-line tool for finding, reusing, and sharing Ansible roles. It
+provides a repository of community-contributed roles that can be used to extend Ansible functionality.
+

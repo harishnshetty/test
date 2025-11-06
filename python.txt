@@ -1,0 +1,2 @@
+tuple and list in python
+how to define variable 

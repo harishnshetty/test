@@ -1,0 +1,26 @@
+docker artcthirure and exaplian
+differenec CMD and ENTRYPOINT
+what is multistage docker
+what is layering
+How to check the locks from the last 200 lines in a docker container
+(docker container logs --tail 200 <containername>)
+how to make small docker image
+( smaller image base (alpine image) )
+(multistage build)
+(remove the package binaries after installing)
+docker image vs layer
+compose
+without from layer is dockerfile will it build the image?
+
+how in docker run command using non-root user
+
+
+What is a container?
+A-A container is a lightweight, standalone, and executable package that includes everything needed to
+run a piece of software, including code, runtime, libraries, and dependencies.
+
+What are Docker networks and why are they used?
+A-Docker networks allow containers to communicate with each other and with other non-containerized
+devices on the same network. They are used to facilitate communication and isolation between
+containers
+

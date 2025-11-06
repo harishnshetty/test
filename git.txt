@@ -1,0 +1,17 @@
+What is Git and why is it used?
+A - Git is a tool for tracking changes in code. It helps developers work together and keep track of every
+change.
+
+merge [ preserve the full histroy of the both branch including a merge commit]
+rebase [ create a liner history by rewriting commit history ]
+cherry pick
+stash
+conflict
+diff
+git instaweb
+git commint --amend
+fork
+clone
+git reset --hard
+--soft
+pull request

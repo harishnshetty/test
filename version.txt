@@ -1,0 +1,3 @@
+aws eks 1.25
+helm 3.14
+terraform 1.3

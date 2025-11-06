@@ -1,0 +1,2 @@
+setup prometheus and grafana
+what is node exporter

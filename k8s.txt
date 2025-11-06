@@ -1,0 +1,54 @@
+what is k8s kops
+what is eksctl
+k8s artcthirure and exaplian
+what is ingress controller
+kubernets servcies list
+(ClusterIP, NodePort, LoadBalancer , Extrernal name , Ingress)
+deployment staegry
+(rolling update | canary | blue green | recreate )
+replication controller
+(rp controller is resposbile for running the speficed number of pod copies across the cluster)
+what is pv and pvc
+readwriteonce
+readonlymany
+readwritemany
+readwriteoncepod
+Eg: NFS allows readwritemany
+    EBS allows only readwriteonce
+
+sidecar container
+
+taint and toleration
+what is hpa and vpa
+
+network policy
+
+how will you approach the kubernets upgrade
+can pods have multiple container
+
+how will you get the deatils of all the conatiner running in the pod?
+how to check logs ? can you check application log without exec into the pod
+
+deployment
+statefulset
+daemonset
+
+secert and configmap
+configmap vs ENV variable
+
+how to use credential saved in aws secretmanager in aws eks
+
+how to store data in aws rds from the aws eks
+
+why we use helm and advantages
+
+
+What are Labels and Selectors in Kubernetes?
+A-Labels are key-value pairs attached to Kubernetes objects (e.g., Pods, Services) for identification and
+grouping. Selectors are used to filter and select objects based on labels.
+
+
+What is the difference between a StatefulSet and a Deployment in Kubernetes?
+A- A StatefulSet is used for stateful applications that require stable, unique network identifiers and
+persistent storage. It manages Pods that are not interchangeable, whereas a Deployment is used for
+stateless applications and manages interchangeable Pods.
