@@ -1,9 +1,22 @@
+cidr
+Classless Inter-Domain Routing. 
+It’s a method used to define IP address ranges efficiently.
+| CIDR  | Network bits | Host bits | Total IPs  | Usable IPs | Example Range               |
+| ----- | ------------ | --------- | ---------- | ---------- | --------------------------- |
+| `/8`  | 8            | 24        | 16,777,216 | 16,777,214 | 10.0.0.0 → 10.255.255.255   |
+| `/16` | 16           | 16        | 65,536     | 65,534     | 10.0.0.0 → 10.0.255.255     |
+| `/24` | 24           | 8         | 256        | 254        | 192.168.1.0 → 192.168.1.255 |
+| `/28` | 28           | 4         | 16         | 14         | 192.168.1.0 → 192.168.1.15  |
+| `/32` | 32           | 0         | 1          | 1          | Single host (e.g., a VM)    |
+
+
 what is AMI? 
 what is EC2 instance , and what are the types?
-
+lambda 
 Different types of storage ? 
-EBS 16TB Instance stroage 
-File storage elastic file system and then AWS FSxWindows operating
+EBS 16TB Instance stroage [ HDD --> SC,SCT,STANDARD] [ SSD --> GP2,GP3,IO1,IO2 ]
+EFS
+EFX File storage elastic file system and then AWS FSxWindows operating
 system.
 
 Object stories -S3, glacier

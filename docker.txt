@@ -2,7 +2,7 @@ docker artcthirure and exaplian
 differenec CMD and ENTRYPOINT
 what is multistage docker
 what is layering
-How to check the locks from the last 200 lines in a docker container
+How to check the logs from the last 200 lines in a docker container
 (docker container logs --tail 200 <containername>)
 how to make small docker image
 ( smaller image base (alpine image) )
