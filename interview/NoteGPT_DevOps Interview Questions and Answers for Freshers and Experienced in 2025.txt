@@ -1,0 +1,350 @@
+
+
+
+00:01:03
+just want to show you the different sections or topics that we will be covering in this particular video so we start with the self- related questions which are typically the questions that you get in the start of the interview for example what is your experience or what projects have you worked on so we will cover questions related to that in this section moving on we have Linux Linux is an important operating system that every devops engineer should know so we will cover some important Linux interview questions and answers next we
+
+
+00:01:29
+have networking networking is very very crucial and it can be complex so we cover some networking interview questions and answers in this section then we have G git is used as a version control system and every devops engineer should know how to use git and how to push your code so we will cover some important git questions in this section then we have cloud computing questions so a devops engineer needs to know cloud and we will have some important Cloud interview questions in this section here
+
+
+00:01:55
+next we have infrastructure as code where we cover some questions on anable and terraform I am just just to let you know I'm not going to go deep or I will not have multiple questions in it because it can make this video lenier if you want to have a separate video on let's say uh AWS interview questions or terraform interview questions or kubernetes interview question let me know in the comment section I have documents and I have questions so I can create a video or share the documents with you as well next after ISC we will
+
+
+00:02:23
+cover some containers question where we will have questions on Docker and some all kubernetes again I'm not adding more question questions about kubernetes in this because it can make this video lenier so if you want a separate video on kubernetes interview question let me know in the comment section after containers we have cicd very important topic and is also covered so important interview questions regarding cicd will be covered in this section lastly we have deployment questions uh which is
+
+
+00:02:51
+very very important so you will see different deployment strategies also uh problems that you might have faced these are very common questions regarding deployment which are covered in this section so now that you have an idea of what are we going to cover in this particular video let's start with actually going through it so now this is the notion document that I created and if you want me to share it with you let me know I can upload this as a PDF on LinkedIn or I can also share this on GitHub but if you don't want it you can
+
+
+00:03:18
+just follow through this video so let's start with the first section which is the self- related questions whenever you sit for the interview the interviewer is going to have your resume with them and they will go through your resume to ask your questions depending on the information you have and the first typical question is always tell me about yourself and the projects you have worked on so this is kind of a tricky question to know the knowledge of the candidate or also to see the confidence
+
+
+00:03:41
+regarding the role they are appearing for and this question the answer for this question can differ based on the candidate if the candidate is fresher the answer will be different if the candidate is experienced the answer will be different so I'm going to give you answers for both the cases if you are experienced person or if you are a fresher as well let's say you are experienced one you can say I am a devops engineer with 5 years of experience and I have worked on various projects including cicd setup with
+
+
+00:04:06
+genkins infrastructure proing with terraform configuration management with an and all the other stuff but remember whenever you name any of these tools you should be very confident or you should be have you should have knowledge on those tools because the followup questions would be regarding those tools if you don't have knowledge or if you're not confident do not mention that tool but let's say you are a flesher and you have no experience with devops you can answer this question something like this
+
+
+00:04:30
+I a fresher with very keen interest in devops and I've done projects on kubernetes on terraform if given a chance I can show you my skills and also learn from this job role this way you will tell the interviewer that you have interest in devops and you also have some good projects for your resume which will showcase that you are perfect fit for this role even though you are a fresher but whenever you apply for fresher make sure you have skills certifications and good projects if you don't have any projects you can check
+
+
+00:04:57
+out the projects in my channel and do those many of the subscribers have got jobs as a fresher doing the projects on my channel so make sure you check it out moving on the next question is do you know any programming or scripting language as a devops you will need to know some amount of programming or scripting to automate different devops task maybe like configuring an application or setting up databases replicating anything if you are not sure what could be some example you can check out this video and you can say that I am
+
+
+00:05:26
+a p for the answer you can say yes I am proficient with python and Bas scripting and I can create scripts to automate different devops task and also to create Lambda functions in AWS next what are your favorite tools and why in this you can tell all the demanding tools uh and also the tools that might be mentioned in the job description but you need to briefly explain why you like them so you can say I my favorite tools include terraform to provision infrastructure genkins to set up cicd anible for configuration
+
+
+00:05:55
+management Docker for containers and all those stuff but remember again if you are not sure or you have if you're not confident do not mention the tool because the next questions could be on those tools as well next is this is I think very common and typical question how do you stay up to date with the latest devops trends and Technologies in this you can Define that you read blogs you attend conferences and you also participate in online communities so you can answer this like I regularly follow
+
+
+00:06:20
+de's blogs and I read them on medium on ash node I attend conferences in my city and I also subscribe to different newsletters or take devops courses on online to stay up to date in the devops community next question could be how quickly can you learn new technologies and tools this is to check how fast can you understand the system or the project so you can mention I'm very fast learner and I can adapt to new tools and Technologies very fast within few weeks if given a chance I can show them to you
+
+
+00:06:49
+the next question is if asked Can you architect an application and how quickly can you do it so the answer should be always be yes and you also need to mention the timeline so you can answer this question as yes I can architect an applic and the time would depend on the complexity of the application if it is a simpler one I can do it in one day but if it is complex it can take me weeks to develop it moving on this is also a very typical and a question that I have received in probably in every interview so what are
+
+
+00:07:17
+some problems that you have faced while working on a project in this you need to share a problem and also need to explain what you learned from that specific problem so you can uh talk about different problems like underestimating infrastructure capacity or maybe cost management or maybe managing secrets and other stuff but you also need to emphasize the lesson you have learned from this particular experience or from this particular uh problems so you could answer this question something like this
+
+
+00:07:41
+we were deploying an application we underestimated infrastructure capacity which caused performance issues but then we learned the importance of uh capacity provisioning and load testing whenever deploying an application so here you have defined the problem also the lesson you have learned and this can be anything if you are not okay with any of the answers that I Shar feel free to use any AI tool chat GPT or anything to create your own answers depending on your own experience uh but you can follow these questions if you want
+
+
+00:08:08
+moving on the next section is Linux Linux as I said is an important operating system that every devops engineer should know because all devops tools are used are running on command so you need to know this the first question could be how many have you used any Linux flavors if yes which one so you can tell any flavors you have used maybe AR Linux pedora Debian or Amazon Linux or UB 2 cent you can mention ubben 2 cent or Amazon Linux because these are mostly the popular ones which are used in every company uh that you might be
+
+
+00:08:39
+working in moving on the next question is what is a command to change the ownership and permission of a file or a directory in lenux to change ownership we use the CH own command for changing permission we use CH mod command you can see the example here and to show you that in uh real way I'll open this terminal let so I'm going to create a directory first for uh this video so I'll say that devops questions and let's go in this directory in this I'm going to create a file let's say Touch file and if I show
+
+
+00:09:08
+you this file has uh owner as n and these are the permissions given to it so if I want to change the owner I can say CH own command I can say CH root and the name of the file which is this so when I'm doing this I said operation not permitted so I need to use pseudo which is gives the command pseudo use pseudo rights so when I do this it ask me for the password and now if you check it is the user owner is root now similarly if I want to change the permission I can give uh more permissions right now this
+
+
+00:09:38
+un this fight has R write for rer read write for a group and read for others so I can give execute access to this particular file just for user by using CH mod command so see sudo uh so now when I do LS hyphen La you can see the execute Provisions are given earlier it was not there so this is how you can give execute or you can this is how you can change Provisions or uh ownership using CH mod and CH own command next how do you manage and view running processes and leux so to RW running processes we
+
+
+00:10:09
+use PS command and we use top command to check the CPU and memory so if I open my terminal again I run PS you'll see this running processes I can show more things by running PS aux command which will give me uh more information on different processes running on it on can kill them by running kill command if you just want to know now let's see the top command as well so top command is used to check the CPU memory uh used by different processes here moving on the next question could be what is SS so SSH or secure shell is
+
+
+00:10:47
+a way to connect to remote Linux machine also to run commands on them uh the command for SSH is SSH hyphen I the key name and then user name at the rate host host can be the IP address of the machine that you want to connect to so this is the command ands is a secure way to connect to remote machines uh using a key pair or password authentication now how to check memory and CPU as the indux admin so we use three command to check memory and the top command for CPU we have already seen the top command let's see the three
+
+
+00:11:22
+command now so the three command is used to check the memory uh total memory and also how much is used so that you can get to know if you have enough memory for your application or not next is Cron job so this is something which I think is very important and used in and asked in every interview question what is a crown job so Crown job is nothing but a scheduled task in Unix like operating system that allows you to automate repetitive task by specifying when and how often they should run so to show you
+
+
+00:11:47
+this again I have a Cron job running in my machine and you can check that by running Crown tab iph L command this tells you that this is the CR job running and I am running this uh script R which is mongodb backup. sh to take backup for my database at this time if you don't understand what this is you can always uh copy and go to a particular website which is cab. Guru I guess so cron Tab and this is the website here you can specify and this is nothing but just the time on when should this script run so
+
+
+00:12:21
+uh this is this will run at this time if I show you this diagram here it says this is the day of the week month are minutes and you specify Cron job by using a command which is cron tab. e so when I run this command it will open up so I'll select Nano here let's go with Nano and then at the end of the slide you can specify your crown job that you want to run and also the time where it should be running so this is Cron job cron jobs are a schedule task that you specify to automate repetitive task and also time when you
+
+
+00:12:53
+want it to run now what is allias and Linux and allias in Linux is a custom Shand for longer commands and it helps save time and reduce typing errors so let's say you are a person who uses Linux all the time and you might be running big commands so if you want to shortcut it you can use allias allias can be used to uh make bigger commands shorter for example if I am running LS hyphen L A all the time uh I can just make it LL rather than something else I can do LS allias so how do you define an
+
+
+00:13:25
+allias allias can be defined using a command which is allias obviously and you will need to Define your last names I'll say LH I want to use LH rather than me defining uh LS hyen L all the times and say LS equals to single code ls- L and this once I do this rather than me refining L uh all the time L he in L I can just say l now and this gives me the same output if you want to check the existing allias I you can just say allias here and this will tell you that this is what it is you can also do it for kuet
+
+
+00:13:58
+commands so you can do this by saying kgp which will be analyz for cube CTL get Port so you can say Cube CTL get parts and then I don't have a cluster provision yet so I get an error maybe but uh you see this is the command which you can run rather than running this all the time so this is how you can set allias and this is what allias is it a short hand for ler commands next let's look at the networking questions now networking again is a very complex and most as uh interview most hours in the
+
+
+00:14:31
+interviews so the first question is what is DNS or domain name system and how does it work so DNS is a system that translate human rable domain names like example.com into IP addresses like this and that computers used to identify each other on network and this is true but there are more other records as well for example you can see there is a record C name record MX record txe record so DNS is a way for you to map a IP address with a domain name or maybe a domain name with a domain name or something
+
+
+00:14:59
+else so this is what DNS all domain name system is in AWS you have Route 53 but you have many other DNS softwares or DNS many other places where you can Define your DNS like GoDaddy or other domain providers now if one of the typical or most asked question for me is what is natat or network address translation and why is it used so if you look at this diagram you will understand that Nat is used to to same card the private servers and to expose a single IP address to the Internet so if you look at the
+
+
+00:15:32
+definition now a network address translation or that is a process of mapping IP addresses to another by changing the header of IPI packets while in transit WIA router this helps to improve security and decrease the number of IP addresses and organization needs if you were asked with an example you can say that the databases and private subnet are using natat to expose databases to the Internet so that no one from the internet can directly talk to the uh database but they have to talk to the natat first so this is how natat
+
+
+00:16:02
+will secure the servers or the databases in the private subnet now one important question again is the difference between TCP and UDP and when do you use it what is the difference so TCP is used whenever the information is very important and you don't want to lose any packets of information whereas UDP is used whenever you want to make sure uh that the information has to be transferred even though it is complete or not so TCP provides you with reliable connection oriented communication with error
+
+
+00:16:33
+checking and retransmission of lost data whereas UDP is connection less faster and use when some package lost is acceptable such as in realtime streaming so I have some use cases here tcps to use whenever you want file transfer or web browsing or emails whereas UDP is used whenever you have realtime video streaming or online gaming so you might see whenever you talk on video calls there might be some buffer but still the video call is in real time you don't uh get the previous previous information
+
+
+00:16:59
+same for online gaming so this is the diagram to help you understand more properly you can try to screenshot this and read about it as well now another important question is what are seven layers in OSI so these are different seven layers and I have this diagram here to explain you what each of these layers do uh I remember a question getting on this after I got this question was where does the application load balancer and network load balancer fall in this layers so the application load balancer is obviously
+
+
+00:17:25
+the seventh one which is the application layer but the network load balancer for s in this layer with transport layer which is the level four uh this is why Network load balanc is also called as layer four load balancer next we have firewall what is a firewall it is a network security device that monitors the traffic coming in and going out to make sure that there are no uh problems so if you look at this diagram this is your network and you have a firewall setup here so that the person who is not authorized should not
+
+
+00:17:53
+go in and access your server this is this can be done by security groups in AWS where you define that particular traffic should be allowed and others should not be allowed so it's a network security that monitors and controls incoming and outgoing traffic based on defined security rules and it act as a barrier between trusted internal Network and untrusted external network so you use firewalls to save your uh infrastructure or your network from Bad actors from hackers or also from other attacks like DS attacks or other
+
+
+00:18:23
+different attacks that we have next what is a ping command so ping command is used to test network connectivity by sending icmp Echo request to Target host and measuring the response time to show me you this in action let's open my command and try to Ping uh servers I'm going to Ping google.com here if the connection between me and the Google is available I should get icmp request back if not I should get errors so this is Ping command is usually test used to test the network or connection between
+
+
+00:18:51
+two different servers so my from local machine to the google.com wherever the server is so you can see I'm getting the response back which means there is a connection between them uh this is a server where the google.com is and I'm talking to it from my local machine using Piner so this is usually done to check the network connectivity between two different servers now what is if config or ip config command in Windows if config is used to display network uh information like IP address Mac address
+
+
+00:19:19
+and network configuration details again to show you I'm going to run the if config command in my machine if you're using Windows try to run this in your Powershell uh which is IP config command so you'll get all the information about your about your uh device which is Network information like mac address and IP addresses or in your in your teral moving on the next section is git git is a version control system and the first question is what is git and how do we use it in devops so git is a distributed
+
+
+00:19:48
+version control system used to track changes in source code during software development in devops git is used for version controls for collaboration and also to automate through cicd pipeline so we use get or get get repositories as a source for cicd pipelines and this is how you should answer the question whenever asked in the interview moving on uh it says explain me the workflow of how you push your code from a local machine and I have this diagram here to explain you how you push your code but
+
+
+00:20:15
+to make things more easy let me show you the demonstration here so I'm going to open my GitHub try to clone a code from my G repositories to my local machine and show you how you can push your code after you make a change so let's go to reposit here I'm going to clone one of the projects that I have done very previously and also have a video on if you haven't done the project make sure you check it out the project is the monitoring project on Ceres or which is thisa sorry so this has 64 Stars thank
+
+
+00:20:47
+you for everyone who has started let's go and clone it to clone the code you need to get this https URL I'm going to open my terminal and go to the folder that we created right now which is Dev questions okay to clone it you need to run the command get clone command cloning means getting the code from your loc machine from your AOS 3 to logo machine once I do this it's going to uh clone it okay let's open the let me show you the file that I have I'm going to go in this particular folder and if I do LS
+
+
+00:21:17
+you'll see there's app.py ECR and all this thing so let's try to edit the app.py here so if I do a n app.py if you see here the app.py is uh is saying a message High CP your memory detected scale up let's try to change this message you don't need to understand this properly because this is not a video regarding this if you want to understand and how this project runs make sure to check out the video which is cloud native modiin project video now I'm going to change this line here which
+
+
+00:21:47
+is uh message so I'll say scale up rather than scale up will show some respect and say please scale up so let's save this now when I run get status command it will tell me what ch I have made and what is not there so it says I have modified a m.p and if I want to go ahead and change this I need to first run this commands which is get add command get commit command get pull get push command so let's try to run it I'll say get add and the name of the file that I edited which is app.py so I'll run get add app.py once I
+
+
+00:22:20
+do that I'll say get commit with the message so get commit hyphen M with the message of what change have I made so I'll say message a message could be updated app. or update to app. because the get comment should always be in past tense uh so yeah update app. Pi now when I update it I need to run the command get push or get pull as well if I want to F changes but it's optional so I'll say get push origin and the name of the branch so Branch you can find the name here I'm pushing it to main branch which is not a
+
+
+00:22:53
+good practice if you're doing it with production you always push in the feature Branch so get push origin mean when I do this it will ask me for the username obviously and then it will ask me for my uh password so along with my username I'm going to put my password here once I put my password this change will requ from my local machine to the uh remote machine you can see a commit has been made and I can confirm that by going to my repo here so let's refresh the page once I refresh you will see the
+
+
+00:23:21
+commit has been made 3 minutes above let's see the commit you can check click on this commit ID here and check the change so the change was to add please here and this is how you can push your code from your local machine to your GitHub repository to know more in depth about hit Concepts make sure you check out the git video that I created which will help you understand git more properly so you see the now the new code has pleased it moving on let's go to the next question the next question is how
+
+
+00:23:48
+do you reward a commit that you made in your repository we usually reward a commit because uh we might have made a wrong comment or we don't want that change to be there so we use get rever command to do it for example it's I don't want to I don't want to have this please anymore and I want to rever the commit or undo the commit how do I do that I do that by using get rever command and adding the kit commit hash so let me show you this with a with an example again so I made this commit
+
+
+00:24:13
+which was to add a please I don't want it anymore how do I revert it or undo it so I will first run the command git log command this will give me the git commment hash which I need to copy and you need to copy the for the same one which you want to R so I made this change now and I want to reward this now so I'll copy and I'll then uh run the command let me it from this so get the word and the name or other comment hash here once I do this it will show me the thing that it is going to do so I will review it and exit
+
+
+00:24:44
+from here okay now if you check if you see it says reward has been done and if I I do cat app.py it will not have please anymore but this is here it's not the change has not been pushed here so I need to go ahead and push it again and to do that I do the same thing get uh push origin main it will ask me for my username again and my password which I have here so when I push this you will see the change has been made let me go ahead and refresh this page now so when I refresh this the please will be gone
+
+
+00:25:22
+because we have reverted the commit so this the commit has been reverted now it says there's a new commit rever commit uh this is how you can reort to commit and now I hope you understood it next question would be what is the branch in repository this is very important because as a devops engineer you should always push changes into your own Branch you should not be changing in the main branch that I did as I did right now it's not a good practice if you say that you're pushing in main branch you might
+
+
+00:25:48
+not be hired because companies are very strict about pushing in the feature Branch so branch is nothing but a separate line of development that allows multiple developers to work on different features or fix it simultaneously without affecting the main code base so if I try to explain you this let's say you are a devops engineer and working in a company you might be making a change in the code then you have to create your own branch and push it then the senior devop guys will check your change and
+
+
+00:26:15
+merge the code in the main branch or the master Branch only when the code is fine if it has been tested and everything works F so you need to explain this and never mention that you might be pushing in main branch moving on the next section is the cloud section where we discuss some questions interview questions on cloud so the first question could be what cloud are you familiar with or what cloud have you worked on in your previous company or in your previous projects so you can say whichever Cloud
+
+
+00:26:42
+you're familiar with let's say you will say I'm familiar with AWS a your and gcp then the question would be regarding uh the cloud would be what is VPC in cloud and I've seen this question a lot of times so this is a very typical question in the cloud domain so VPC or virtual private cloud is a virtual Network within a cloud providers infrastructure that you define and it allows you to isolate control and deploy your resources such as virtual servers and databases so VPC is where you can Define
+
+
+00:27:06
+the network which is the IP CER range and you will then deploy your resources like servers and databases or storage in this uh virtual or isolated Network so next question could be what is difference between public subnet and private subnet and what differentiates it so public subm is something which is connected to the internet whereas private is not connected to the internet so people can on the internet can talk to public subnet but not to the private subnet and if you read this here public subnet is accessible directly from the
+
+
+00:27:34
+internet while private subnet is not public Subs are typically used for resources that need Public Access like web servers while privates are used for resources that should not be directly exposed like databases and what differentiates is that public subnet is connected to the internet gateway whereas private subnets are connected to the N Gateway what is the difference between reserved instance and spot instance this is something I have been uh getting a lot because I've been working with clients who use AWS and they have
+
+
+00:28:03
+instances so if a company is using AWS and they have instances that they want to save cost on so you need to know this question which is reserved instance is used for long-term reservations of comp comput capacity which offers you with discount whereas sport instances are used for uh for instances that you want to run for short amount of time and can be okay if they are deleted because they are deleted on short notice so you you can try to read this description or go through my uh video where I explain you
+
+
+00:28:32
+all the different launch type including on demand reserved spot dedicated and everything so make sure to check it out to answer this question more properly next is what is cloud formation many uh many companies that use AWS usually use cloud formation to automate their infrastructure provisioning so cloud formation is nothing but just an infrastructure as code tool used to provision all the different resources in AWS so you can create stacks and templates to create resources like VPC ec2 S3 using cloud
+
+
+00:29:02
+formation so it's a service that allows you to Define AWS infrastructure as infrastructure as code and you can create update and delete using Json or yaml templates so moving on the next section is infrastructure as code where we look at tools like anible and terraform which are I think very very popular you might see some questions on Chef if a company is using it but I have not included this in this particular video so what the popular I tools that you have used you can mention all of them maybe terraform cloud
+
+
+00:29:30
+formation now one typical question is what is difference between terraform and anle and when do you use it so terraform is used for infrastructure provisioning anle is used for configuration management so you use terraform to create resources but you use anle to configure it and I've explained this very properly in this particular video which you can check out and you can read this description or the answer here so terraform is used for infrastructure provisioning and management while anle is used for configuration management and
+
+
+00:29:55
+automation tool terraform focuses on describing the design desired state of infrastructure while Anil defines how the how to configure servers and Anil uses Playbook terraform uses State file and configuration files to Define infrastructure so next question could be what is a Playbook and anible uh so Playbook is nothing but a file which defines what task or what configuration do you want to be done on different servers so Playbook and anible is yl file that defines a set of task and configurations to be executed on remote
+
+
+00:30:24
+service and you can see an example of a Playbook here to install a a web server on a on a Amazon Amazon lenux I guess because this is saying httpd next is what is a state file in terraform so remember State file is something which defines or records what changes have you done according to the configuration you have in your code so State file defines uh what what things have been created or deleted so it it is a file to keep track of resources that they for manages and it's used to store information about the current state of
+
+
+00:30:57
+infrastructure and help terraform plan and apply changes accurately so this is a state file usually companies uh they put the state file in remote State backend so you need to understand that as well so remote straight backend is a mechanism that allows terraform to store information in centralized location like Amazon S3 or Google Cloud Storage or Azure blob storage there are many other options you can store and this is how you do it by defining the backend block if you are not sure how to do it make
+
+
+00:31:24
+sure to check out the video that I created on how you can set up your terraform state date on remote back end moving on the next section is containers which is very very important if company is using Docker and kubernetes so first typical question that you get is what is the difference between virtualization and containerization so to understand this I have a diagram here if you look at this diagram virtualization means having a virtual machine which is a hypervisor to create different operating system on a
+
+
+00:31:52
+physical server whereas containerization is where you have a Docker engine or container engine which can be Docker or any other containerization tools and you have applications on containers which can be very lightweight and they don't separate operate they use the same operating system but they have different containers which have different operating system as well so virtualization means running multiple virtual machines on a single physical server each with its own operating system it's like having separate houses
+
+
+00:32:21
+with different families in single bding whereas containerization means running isolated containers on a shared operating system it's like having our apartments in single buildings where each apartment is self-contained but share common infrastructure so this might uh have help you understand the concept but if not feel free to use any other definations online on different blogs or using chat GPT or any AI tool but I think this diagram is perfect to help you understand how virtualization and calization are different here you
+
+
+00:32:51
+have VM machines here you have containers these are very lightweights and you can see they are not using all the resources where I here they are not as has lightweight and you have separate guest operating system now what problem does doer solve and why companies are using it so Docker solve different problems like isolation uh security environment management you might see problems like it runs on a machine and that is what Docker solves so Docker solves the problems of consistent portable and efficient
+
+
+00:33:18
+application deployment uh and also the dependencies into containers ensuring the Run reliably across different environments and systems while maintaining security and scalability this this answer can differ depending on the question but this is common answer for advantages of Docker next what is a Docker file and how do you why do you use it so Docker file is nothing but a document that defines how should be a Docker image created as an example here so you have different instructions on how you can
+
+
+00:33:44
+create a Docker file so this Docker file is used to create image out of it as you can see this is a Docker file I can build an image and this image then can be stored on Docker up or on ECR you can read the description here which says Docker file is a script that defines the steps to create Docker container image it is used to automate the containerization of an application making it reproducible and sharable after you upload it on ECR or Docker Hub now explain the process of a workflow of how a Docker container is created again
+
+
+00:34:14
+this is very important for devops engineers and asked in many interviews so that the interviewer can get to know that the candidate has idea of creating containers and managing them as well so the first step is to create Docker file then you build an image out of it and you run a container so so Docker file then build image run container and then container will be running your application in isolated environment another question could be on container orchestration so how do you manage multiple containers we manage it
+
+
+00:34:40
+using container Orest tool like kubernetes but there are other options like raner mesos Nomad do swarm as well and you can choose to answer them but I am not including more questions on kubernetes as I said if I include them this video can be very lengthy but I do have many kubernetes interview questions if you want me to create another video on kubernetes interview question let me know in the comment section moving on another very important topic is cicd and I explained cicd very well in this particular video if you haven't checked
+
+
+00:35:09
+it out make sure to check it out uh it's this will help you understand cicd completely and it also has a project in it to make sure you understand it through Hands-On as well so one typical question is what is CI and CD in cicd to help you understand that the candidate has knowledge on cicd and not just the definition so cicd is continuous integration which is a practice of automatically building and testing code changes frequently and CD is a way to continuously deliver and deploy uh your code on different environments so I try
+
+
+00:35:40
+to explain this very properly in this video I would recommend you checking it out if you don't know what is CI and CD in cicd now they might ask you what tools are you cicd tools are you experienced with so you can mention any of the tools that you are experienced with but make sure you have some knowledge or you have done some project on it now there can be a coding inter coding test or maybe a test to create a cicd pipeline so one test I remember was for an interview I was giving for for a
+
+
+00:36:08
+freelancing project on touring and they asked me to create a cicd pipeline so you can create a cicd pipeline using this steps which is first you need to have a git repository and use a tool uh with if you're using genkins you might need to use plugins but if you're using uh gitlab or giab actions you need to create a file cicd file and then you need to automate test build the package deploy the application if test passed then you can move it to production environment after you do the staging
+
+
+00:36:32
+environment so now let's look at some deployment questions in this section 9 which is the last section in our devops interview uh video I know this can be lendy but this is very important and will help you to get your job if you get a job uh practicing this video let me know in the comment section I would love to hear from you so the first typical question is what is explain staging production and testing environment this is very important and every devops engineer should know so I have an diagram here along with the
+
+
+00:37:01
+explanation so development is where you create or write the code and test it out so if I'm creating a pack application I will write the code in my vs code and I will check it out in my own local machine so my local machine is a development environment or a testing environment now if I want to upload this on cloud I will create a staging environment on cloud which will be very same to my production environment but first I will upload to my staging environment check if everything is working fine and if everything is
+
+
+00:37:25
+working fine I will make my application Live by deploying on production environment so this is should this should be the uh workflow first you test it in your development environment then you move it to the staling environment which is a pre-production environment and if everything is working fine all the tests are checked then you can go with the production environment next there can be questions on different deployment strategy one of them is blue green strategy there can be uh blue green active active active
+
+
+00:37:50
+passive Canary deployment and other ones this is something that I've got often and this is why I've included this in particular uh devops interview question video so what is a Blu green deployment it's nothing but you have two similar environment and you will first route your traffic to the to this environment but now you have deplo a new version so you want to change your traffic from here to here so this is how you can do it and you can also roll back if there are any issues with the new environment
+
+
+00:38:17
+you can just go back to the previous one so blue green deployment is a deployment strategy where you have two identical environments which are blue and green and you switch traffic between them when new versions this minimizes downtime and also allows you to rule back if any issue arises similar to uh this is can deployment so another question could be what is can deployment and we use this let's say whenever you have a new version you want the new version to be shown to only some amount of users and
+
+
+00:38:46
+if everything works fine then it can be done to all the users so we have a application which is 1.0 and now we have new version so I'm giving this access to only beta users or some users and then if everything works fine it can be uh it can be available for everyone so canate deployment is a strategy where a new version of an application is deployed to small subset of users or servers allowing for testing and validation if it performs well then it can be gradually rolled out to entire user base
+
+
+00:39:14
+so this is what kind of deployment is if you have any issues any doubts with any of these questions let me know in the comment section I can explain you this in very simpler manner as well so next very common question is what is the biggest issue you have faced during a deployment maybe a production deployment or maybe a project uh that you have done so you can explain something maybe with an answer like most significant challenge I faced was managing a sudden influx of traffic during a product
+
+
+00:39:40
+launch we had to quickly scale our application to handle the load which involved optimizing database queries and adding more server so here you have defined the issue and also how you solved it this way uh you you haven't left the answer incomplete you have also mentioned how you solve it this defines your troubleshooting knowledge and troubleshooting skills as well so this is how you should answer this particular question last question we have is how do you scale your application so this can
+
+
+00:40:05
+be if the question if the application is on AWS ec2 servers you can use Autos scaling groups if the application is on kuet you can use horizontal part scaling or you can make the changes in the uh you can scale up your deployments and also other options but this is what you can say depending on the application scaling now this is also one of of the important questions how do you roll back what is your Disaster Recovery strategy so you can roll back to previous version of the application by using container
+
+
+00:40:36
+orchestration tool so so in in kubernetes you have roll back strategies as well uh but if you are using if you're not using kuties you can have blue green deployment uh or you can also use Road balance load balances for it so I roll back by deploying previous version of the application or by using container oration tool to R to the last table state but I also ensure comprehensive Ing and alerts to Tex failure earlier using tools like Prometheus so whenever there an issue I should be alerted uh before anything
+
+
+00:41:06
+occurs now how do you automate your deployment we can automate deployment by using scripting languages like bash or python or using cicd so I automate deployments using scripts and cicd pipelines using tools like genkins or Travis or gitlab this includes building testing and deploying code automatically also continuous monitoring to make sure systems are up and properly working so this was all for our devops interview questions and answers I hope this video was informative if you found this video
+
+
+00:41:34
+useful and informative do let me know in the comment section please like this video as well because I've spent a lot of time creating this document uh if you want this document to be shared let me know in the comment section and I can share this one important tip that I would share with you after the interviewer has done asking your question and if he's asking you that do you have any questions for me or maybe for the company you should always ask questions that this explains that you have interest in the company and also
+
+
+00:42:01
+the project some questions could be you should ask what is the project that I'm going to work on what is the size of the team or maybe like what roles can I expect what task can I expect when I join the company this way interviewer can get to know that you have interest working in that company which might help you get the job so this is all I hope this video was informative like this video subscribe to my channel thank you bye
+

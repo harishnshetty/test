@@ -1,0 +1,93 @@
+
+
+00:00:37
+wants to publish their own digital websites and then there's a lot of volume of the customers or the clients who come onto these websites and do their digital surveys there are few of the actions they want to do right so what we have done is that we designed the website and then we try to use it publish it on the cloud of their choice we we put the scenario in between that what how much they can afford what's their budget based on that scenario we we design the cloud systems the architecture and then we put those uh
+
+
+00:01:13
+website using Docker and kubernetes using a cicd pipeline so this is my day-to-day life okay all right so I can see that you worked on Docker you worked on kubernetes now from the definition point of view can you define Docker file and its role so Docker file I would say is is a base uh a layer of files in which you put a base layer and then you add on to the layers or you can add on some functionalities on it so as a combine when you run the docker image so it's functioning is to run on top of
+
+
+00:01:46
+each a okay yeah uh now you also mentioned mentioned dockerhub as a part of your skill set so can you share a scenario where you encountered any challenge in this securely storing and distributing Docker images okay so I I can I can think of a a time when we were trying to push the docker images and using an encryption over there uh but there there was some issue with the encryption keys so we were not able to pursue that and how did it resolve that so we use a different encryption Keys uh which was Associated or which was
+
+
+00:02:26
+compatible with the docker okay can you tell me how would you secure a Docker image sorry uh I'm not sure about that I haven't learned that all right I've also seen that you have worked on cloud formation can you explain the role of cloud formation in automating the deployments yes so what I have learned is that cloud formation is an automated Tool uh designed by AWS where it's where it does everything automated by themsel it's it's like uh PA as platform as a service and you just uh give the code
+
+
+00:03:05
+and then it just deploy itself what you understand by cloud formation uh it's it's an automated deployment uh software or PAs platform as a service I I I I I got what you said but probably it's not what you mean anyway uh let's talk about something uh let's talk about the monitoring tools so can you tell me what's the purpose of Prometheus and grafana in a monitoring system yeah so Prometheus is to uh use to log make the logs and Metric where if if there's a ec2 instance or what of the
+
+
+00:03:43
+logs they are generating maybe networks maybe CPU utilization we monitor that to check if there's a load or if there's any instance which is terminated or it's restarted then then we just get the logs from there and for grafana we use it to make it as a dashboard so that all the logs are in a dashboard it's easier to monitor them and and we can make also analytics over there okay can you tell me the difference between metric and traces so metric is you can say there are the U numbers on a scale you can say
+
+
+00:04:17
+1 to 10 and traces is what we trace or like what we um I would say it's it's used for investigation where it happened and how it happened exactly so if if if something has gone wrong and we we can use cloud watch to trace where exactly it happened where exactly it went wrong and Metric is just is just a scale to measure uh the numbers or the performance and what are the components of a trace uh I'm I'm not sure about that okay what are the different types of metrics that you have
+
+
+00:04:54
+captured so CPU utilization workload storage these are these are the few metric I I work on all right now in terms of uh you you defined terraform and cloud formation both in your skills can you tell me about a scenario where you need to integrate these tools for infrastructure provision yes so uh there there was a scenario when we were trying to deploy this website onto the AWS and we use terraform uh to automate the deployment terraform is is quite handy I would say and it works with many Cloud providers
+
+
+00:05:36
+so in terraform is also easier you just uh Define the resources and and you can create it and you can destroy it and it's also so when what I was reading about is that uh it's like a blueprint so it does everything by ourself what what resource needs to be done before what needs to be created before terraform understand that very well you don't have to deploy that you just write the Define the code and it does the thing for you okay and what do you understand by state in terraform so state is like what we what
+
+
+00:06:12
+you have defined and what state is the current system is so if we have designed we want three instances and the terraform U sees that current instance state is two instances he want he would want to achieve that three instance State what you have designed what happens when you change a configuration man instead of terraform in a infrastructure so if if if there is a if there is a change in configuration either the terraform file can go corrupt or or or or it wants if it detects automatically it may want to achieve the
+
+
+00:06:45
+same uh configuration what you have configured in terraform okay can you tell me something about cloudfront and where have you used it so cloudfront is the uh CDN network uh we have used it to uh publish the website all over the world the main thing which I believe it's it's the best functionality is the caching of the uh resources or or the data all over the world and it reduces the lag so the only thing is that sometimes when you're pushing the new resource onto the CDN it takes time but once it's published the
+
+
+00:07:28
+latency is very less so it's used for Global content delivery Network that's what the CDN is okay and you said that you worked on a website uh so what are the security aspects that you considered while building your application so we wanted to make sure that uh the WF the um the firewall was configured properly and if if there is any uh DNS attack so we should we should mitigate that and also if if there is any uh series of uh you can say traffic increased so we want to mitigate that using the ALB or scaling scaling uh ASG
+
+
+00:08:09
+Auto scaling groups yeah and can you think of anything else that you implemented as as far of security uh the I I would say yeah so the so we we implemented one in in the GE configuration when we we did not want certain countries to access the websites so it's like a geofencing you you block certain countries from the uh CDN and it just from from the routing Route 53 and it just blocks it out okay can you tell me the importance of subnets and security groups sub security groups gives you uh
+
+
+00:08:50
+gives you the authorization I would say so not every resource can access every resource so only those authorized resources can access the data or the they can they can connect to each other sorry and what was the second thing uh security gr subet so because what I believe is that IP uh IP is limited the uh number of Ip so subnets are used to even mask the IP addresses or or give you more IP addresses under a network okay okay now tell me about some of the cost optimization strategies that you have
+
+
+00:09:33
+used okay so uh one was one was the uh thing that we were trying to uh so yeah so I I I remember this thing so we were getting a lot of requests on the website and because every request is paid so and we were getting a lot of uh bills and invoices on that so what we used is that we reduce the number of uh we reduce the number of request by cing the data in dynb or using the CDN so the request was just limited to CDN and it was not going to the DB or any other resources so this is how we reduce the
+
+
+00:10:15
+cost and it was it also increased the uh reduced the latency and the content was generated faster what are the different cost optimization strategies that that you can use uh I'm not sure about that sorry okay tell me have you worked on any serverless Technologies uh Lambda uh I'm I'm not good at Lambda but I have worked a few things on it can you tell me what is a serverless yeah so serverless is when you do not need to deploy any instances or any any server backend everything the AWS of the cloud does it for you and I
+
+
+00:10:56
+can give you one example so uh we had a we had to develop a functionality where it was a counter on the website whenever the PE whenever people are coming on your website it's a counter based so what I used is that we used to uh there was a JS script um and we we run the JS using a Lambda function so Lambda function would uh interrupt whenever a person used to come or a site was hit and then Lambda function used to generate uh you can say I forgot the name sorry so Lambda function used to reach out to Dynamo DB and used to
+
+
+00:11:32
+increment the counter and used to read this counter in the website again so that's how we use the serverless we do not did not need to create any uh server for that we just created the we just wrote the code in Lambda tested it deployed it it was working on the go so under what circumstances would you use Lambda and not use your functions in E2 so lamb Lambda has a limit of 15 minutes so if if it goes if if there is any code which is running for more than 15 minutes Lambda would go out it would say
+
+
+00:12:01
+it's a time out so I I would use function if the if the code requires more than 15 minutes okay I also see in your resume that you have done some sort of technical support MH U Can you tell me the definitions for SLI SL and SLA SLA I know is the service level agreement whatever the request is coming in there might be a certain time period we have to check it troubleshoot it and resolve bit that that's what I know about the SLA but I don't know about the other Tech terminologies okay so service
+
+
+00:12:35
+level indicators and SLO service level objectives uh no I've never heard about that sorry okay uh I see you have also worked in kubernetes can you tell me the components of coetus and a high level architecture I have not worked much on that I'm still under shadowing all right tell me about what do you stand by VPN so virtual private network is when when there's a company who wants to secure their Network and only gives access to the employeers or the people they want to so it's it's it's publicly
+
+
+00:13:13
+denied not everyone can access it you need certain credentials or authorization to access it so it's it's more of a secured Network you can say and uh if you have got multiple VPN how do you establish interconnectivity between them using a Gateway so it could be a star method or any other method so we use gateways end to end points so we can establish the connection between VPN okay and have you when when you need to establish between a VPN and your on premise what sort of gateways would you
+
+
+00:13:48
+use Transit gateways we can use or or I think there's another called DX I forgot the name but it's between on Prem system and between cloud system so we use that kind of gway okay now GitHub you worked on GitHub as well uh tell me what's a distributed system what do you understand I'm not sure I'm not sure about that I I know microarchitecture micros service architecture and monolithic so not sure about that okay have you have you done any sort of migration between monolithic
+
+
+00:14:26
+to microservices not at the moment not the migration I've worked individually on that all right Curren so I'm through with my questions uh what I'll do is I'll just pause this recording and then I'll give you my feedback thank you for joining
+

@@ -1,0 +1,188 @@
+### Metadata
+
+- Title:8 Years Exp DevOps Lead engineer | DevOps Real Scenario Based Interview | Bootcamp Announcement
+
+- URL:https://www.youtube.com/watch?v=fuVxr621p6Y
+
+
+
+### Notes
+
+- ([00:00](https://www.youtube.com/watch?v=fuVxr621p6Y&t=0s)) ### Summary of Video Content: DevOps Scenario-Based Interview Questions and Troubleshooting
+
+- **[00:00:00 → 00:01:06] Introduction and Format**
+  - Manishiari introduces the session with co-host Rinki, who has 8 years of DevOps experience and currently leads a DevOps team.
+  - The video is a demo session from their DevOps boot camp focusing on scenario-based questions.
+  - Aim: To demonstrate how questions are discussed, explained with practical examples, and sometimes in Hindi for better understanding.
+  - They will cover 3-4 questions per session.
+
+---
+
+- **[00:01:06 → 00:04:56] Question 1: Troubleshooting Connectivity Issues with a Public EC2-Hosted Application**
+
+  **Scenario:**  
+  An application hosted on a public EC2 instance is not accessible via the internet browser.
+
+  **Key Troubleshooting Steps:**
+
+  | Step               | Details                                                                                  |
+  |--------------------|------------------------------------------------------------------------------------------|
+  | 1. Verify Subnet   | Check if the EC2 is launched in a **public subnet** by confirming the associated **route table** has a route to the **Internet Gateway (IGW)** for `0.0.0.0/0`. |
+  | 2. Check Public IP | Ensure the EC2 instance has a **public IP address** assigned; necessary for internet access. |
+  | 3. Security Group  | Verify the **security group inbound rules** allow HTTP traffic on **port 80** from `0.0.0.0/0`. |
+  | 4. Network ACLs    | Check **Network ACLs** (NACLs) for any **deny rules** blocking traffic to the EC2 instance. |
+
+  **Conclusion:**  
+  **Connectivity issues generally arise due to subnet routing, missing public IP, restrictive security group rules, or Network ACL blocks.** These four points form the primary checklist for troubleshooting.
+
+---
+
+- **[00:04:56 → 00:12:23] Question 2: DaemonSet Pods Not Scheduling on All Kubernetes Nodes in an EKS Cluster**
+
+  **Scenario:**  
+  An EKS cluster with 10 nodes has a DaemonSet deployed for monitoring agents (e.g., Fluent Bit, Datadog). Pods are running on 7 nodes, but no pods are scheduled or created on 3 nodes.
+
+  **Key Concepts &amp; Troubleshooting:**
+
+  - **DaemonSet Default Behavior:**  
+    A DaemonSet ensures **one pod per node**. Ideally, all 10 nodes should have one pod each.
+
+  - **Issue Observed:**  
+    On 3 nodes, no pods are even created or scheduled; no errors are visible.
+
+  - **Root Cause Hypothesis:**  
+    Kubernetes scheduler **does not schedule pods on nodes with taints unless the pods have matching tolerations**.  
+    - The 3 nodes likely have **taints applied** to restrict pod scheduling.
+    - DaemonSets respect taints and won’t schedule pods on tainted nodes without tolerations.
+
+  - **Verification:**  
+    Use `kubectl describe node ` to inspect the **taints** on problematic nodes.
+
+  - **Solution:**  
+    Add corresponding **tolerations** in the DaemonSet manifest to allow pods to be scheduled on tainted nodes.
+
+  - **Real-World Analogy:**  
+    Taints and tolerations work like gated access to specific flats in a society based on financial criteria (budgets), allowing only qualified “tenants” (pods) to occupy “flats” (nodes).
+
+  **Summary:**  
+  - Check node taints when DaemonSet pods are missing on some nodes.
+  - Add appropriate tolerations in DaemonSet spec to schedule pods on tainted nodes.
+  - Verify node health and resource availability as prerequisite checks.
+
+---
+
+- **[00:12:23 → 00:17:38] Question 3: Terraform State File Locking Issues in Jenkins Jobs Deploying to Multiple AWS Regions**
+
+  **Scenario:**  
+  Two Jenkins jobs deploy infrastructure using the same Terraform codebase but target different AWS regions. Sometimes, the Terraform state file is locked, causing conflicts.
+
+  **Key Issues and Solutions:**
+
+  | Concept              | Explanation                                                                                                   |
+  |----------------------|---------------------------------------------------------------------------------------------------------------|
+  | Shared State File     | Both jobs are **sharing the same Terraform remote state file**, causing lock conflicts.                        |
+  | Proper State Segregation | Each job/region should have a **separate state file** to avoid conflicts.                                       |
+  | Backend Configuration | Use Terraform backend block with a **unique `key` parameter** for each region/environment/job (e.g., `eu-west.tfstate`, `ap-south.tfstate`). |
+  | Folder Structure      | Organize Terraform configurations in separate folders per region (e.g., `customer-name/ap-south/`, `customer-name/eu-west/`) to isolate state files. |
+  | State Locking         | Use **DynamoDB table for state lock management** to prevent simultaneous state updates by multiple jobs/users. |
+
+  **Summary:**  
+  - **Always maintain separate Terraform state files per region/environment/job.**  
+  - Use unique keys in the backend config to avoid collision.  
+  - Implement DynamoDB locking to handle concurrent runs gracefully.
+
+---
+
+- **[00:17:38 → 00:23:22] Question 4: Auto Scaling Group Launches EC2 Instances That Are Terminated Soon After**
+
+  **Scenario:**  
+  Auto Scaling Group (ASG) launches EC2 instances, but they get terminated shortly after.
+
+  **Key Causes &amp; Troubleshooting Steps:**
+
+  | Cause/Check                    | Details                                                                                                 |
+  |-------------------------------|---------------------------------------------------------------------------------------------------------|
+  | Health Check Configuration    | Verify the **load balancer health check path and port** are correctly configured (e.g., `/health` endpoint on port 80). |
+  | Application Startup Time       | Confirm the **application startup time** does not exceed the **health check grace period**. If app takes longer to start than grace period, health checks fail. |
+  | Security Group Rules           | Ensure **security groups allow inbound traffic from the load balancer** for health checks.              |
+  | User Data Script               | Check if **user data scripts execute properly** and start the application on EC2 instances. Failure here results in unhealthy instances. |
+
+  **Additional Notes:**
+
+  - If health checks fail continuously, ASG marks instances as unhealthy and terminates them, replacing with new ones.
+  - Adjust **health check grace period** to match application startup latency.
+  - Confirm health check endpoint returns HTTP 200 OK status.
+
+  **Summary:**  
+  - Misconfigured health checks, premature health check timings, restrictive security groups, or failed initialization scripts can cause instances to be terminated.  
+  - Proper alignment of these factors ensures stable instance lifecycle under ASG.
+
+---
+
+- **[00:23:22 → 00:26:51] Closing Remarks and Summary of Concepts Covered**
+
+  - Summary of the four questions and key concepts:  
+    1. **Public Subnet Accessibility:** Importance of subnet routing, public IP, and security group rules.  
+    2. **Kubernetes DaemonSet Scheduling:** One pod per node principle, taints, and tolerations.  
+    3. **Terraform State Management:** Separate state files per region/environment and DynamoDB locking.  
+    4. **Auto Scaling Group Health Checks:** Correct health check path, grace period, security groups, and user data.
+
+  - Encouragement for viewers preparing for DevOps interviews:  
+    - Understanding concepts deeply enables answering varied and complex questions.  
+    - Practice with scenario-based questions and mock interviews is essential.  
+    - Current job market has multiple openings and opportunities for DevOps professionals.  
+    - Secure an offer first and then negotiate for better packages.
+
+  - Invitation to join the boot camp for detailed concept discussions and interview preparation.
+
+---
+
+### Key Insights and Takeaways
+
+- **Subnet and IP configuration are fundamental to exposing EC2-hosted apps publicly.**
+- **Kubernetes DaemonSets respect node taints; tolerations are necessary to schedule pods on tainted nodes.**
+- **Terraform remote state files must be uniquely named per deployment context to avoid locking conflicts.**
+- **Auto Scaling Groups rely heavily on proper health checks and initialization scripts; misconfiguration leads to instance churn.**
+- **Scenario-based questions require breaking down problems into smaller, verifiable components.**
+- **Real-world analogies (e.g., flats and budgets for taints/tolerations) help grasp abstract concepts.**
+- **Infrastructure as Code best practices (e.g., isolated state files and locking) prevent deployment issues.**
+- **Interview preparation benefits from concept clarity, example-driven explanations, and repeated practice.**
+
+---
+
+### Glossary of Important Terms
+
+| Term              | Definition                                                                                     |
+|-------------------|------------------------------------------------------------------------------------------------|
+| **Public Subnet** | A subnet with a route to an Internet Gateway allowing public internet access.                   |
+| **Security Group**| Virtual firewall controlling inbound/outbound traffic for EC2 instances.                      |
+| **DaemonSet**     | Kubernetes controller that ensures one pod runs on each node in a cluster.                    |
+| **Taints**        | Node-level restrictions that repel pods unless tolerated.                                    |
+| **Tolerations**   | Pod-level declarations allowing pods to be scheduled on tainted nodes.                       |
+| **Terraform State File** | Metadata file storing infrastructure state, used to track resource deployments.           |
+| **DynamoDB Locking** | Mechanism to prevent concurrent Terraform state updates by locking state files in DynamoDB. |
+| **Auto Scaling Group (ASG)** | AWS service that automatically manages EC2 instance scaling based on demand and health. |
+| **Health Check**  | Periodic test by load balancers or ASG to verify instance/application health.                 |
+| **User Data**     | Initialization script run on EC2 instance launch to configure/start applications.             |
+
+---
+
+### Timeline of Key Concepts Discussed
+
+| Timestamp        | Topic/Question                                                   | Key Concepts Covered                                   |
+|------------------|-----------------------------------------------------------------|-------------------------------------------------------|
+| 00:01:06 - 00:04:56 | EC2 app inaccessible over internet                             | Public subnet, route tables, public IP, security groups, NACLs |
+| 00:04:56 - 00:12:23 | DaemonSet pods missing on some EKS nodes                        | DaemonSet scheduling, node taints, pod tolerations    |
+| 00:12:23 - 00:17:38 | Terraform state file locking with Jenkins jobs                  | State file separation, backend config keys, DynamoDB locking |
+| 00:17:38 - 00:23:22 | ASG launches EC2 instances that are terminated shortly          | Health check config, grace period, security groups, user data script |
+| 00:23:22 - 00:26:51 | Video wrap-up and interview preparation tips                    | Summary of questions, concept reinforcement, career advice |
+
+---
+
+This summary encapsulates the detailed scenario-based discussions from the video, focusing strictly on the source content and emphasizing the core technical insights and practical troubleshooting steps shared by the hosts.
+
+- Tags: Smart Summary
+
+
+
+-- With NoteGPT

@@ -1,0 +1,156 @@
+
+00:00:43
+from the last three years okay currently you're working for which project so I'm working for a it is a completely e-commerce project and we are following the microservices architect and previously it is monolithic and we completely converted that into the microservices okay so which Technologies are there in that project so we are using git as the source code management and genkins as a CSD and Docker for containerization and cuber netes and also [Music] an yeah I'm asking what Technology based
+
+
+00:01:24
+project it is so basically it is completely e-commerce project so yes no I'm asking about is it Java based or python or net what kind of Technology they used for that project so they are using Java Java yes okay good what are your roles and responsibilities in the current project so my roles and responsibilities is first of all we have to create the environments I mean we have to create the infrastructure for every environment like we have to create the environment I mean infrastructure for Dev environment testing and
+
+
+00:01:55
+production servers and after that we have to do the deployments basically developer will write the code code and we have to write the docker files for the entire codes and we have to deploy deploy that and we use to we use Docker hub for storing the images and also we are using the anle for downloading or for installing the multiple dependencies on the host machines at a time and we use cicd pipelines for automating the entire things okay what are the challenges you have faced in your current project
+
+
+00:02:30
+so basically while deploying we are facing some issues like sometimes the deployment may get failures so in that particular situation so we have to follow the branch strategies so uh in my scenario like the code is working on the developers end but it is not working on the production side so there we found the bug so developers will fix the bug but we have to provide the branching strategies to them what is branching strategy you are following in your current project so in my project first of all we have to write the code which
+
+
+00:03:01
+is used to fix the bug in production servers if the bug is cleared and the production server if the application is working fine we have to clone that or we have to use the PRS from production to staging and if the staging is also fixed and we have to give the pr to the main developers Branch main or Master Branch okay so production deployment will happen from which branch so it will happen from the main or Master Branch Main our Master yes which one you are using in the project so we are using main branch main branch yeah what is the
+
+
+00:03:38
+difference between main branch and master Branch so basically like whenever we create the repository in GitHub by default we have the main branch while we are selecting the rme file so if you are not selecting any rme or any text files so by default Master Branch will gets created in the GitHub So based on that we will push the code from Central to local MH sorry local to Central which one are you sure yes okay assume that I have git client in my system I forgot my password so I want to update the password in the git client
+
+
+00:04:15
+how do we do that so are you asking about local machine or in server local so in local if we forgot our password we can directly generate a token from the GitHub so it will generate the token so we can use that okay how can you rate yourself in Linux out of five so I can rate a four out of five four out of five okay which Linux version is used in your project so in my projects we are using Amazon Linux and UB okay what is the difference between them so basically Linux is the basic operating system for both but uh here
+
+
+00:05:00
+the flavor is different that means a basic commands will gets different so in Amazon Linux we are using M to install any package or to update but in Ubuntu we have to use apt and in Amazon Linux some default packages will get installed like Wate or curl these type of packages will will automatically get gets installed but in ub2 we have to install that manually okay what is the difference between WG and curl commands WG is used to download the links from the internet and curl will also downloads and it will
+
+
+00:05:35
+also checks the network connection whether it was a connection properly established or not what is awk command in Linux so awk is nothing but AO wayg Kenan so basically this command is used to text files it is used to search for this specific patterns in the input and the performance operating of the machine lines or matching lines mhm so here the command we simply use as awk and within the single column flower bracket we can use print and the dollar line name so suppose if you want to get the second word of the every line we can
+
+
+00:06:15
+use dollar two so it will prints the every second V in in the file in every line okay how do you check free space available in the Linux machion so we have multiple commands here we can either use DF space hyphen H or d space sh space hyph sh and the directory or path M what is your group in the Linux so basically group is used to add the multiple users at a time so that multiple users can access the files while while we are while we are adding the users into the group okay can we check which users are
+
+
+00:06:57
+belongs to particular group yes we can we can use get and command okay good yeah fine what is quality profile in the sonar so basically sonar cube is a popular platform that uh checking the code quality and a continuous inspection of the code quality here we can create our custom quality profiles by selecting the rules which we want to include either we can one of the predefined quality profiles that are available in the sonar CU When the project is analyzed I mean analysised so the rules defined in its quality profile are used
+
+
+00:07:36
+to evaluate the code and regenerate a report of the code quality okay by using this we can found the code such as bugs security vulnerabilities and small Cod smells suppose my code quality gate is failed then what you will do so first of all we have to check through the sonar Cube and if we found any bugs we have to report that if it is a developer side bug we will raise a ticket to the developers so that they can perform the actions according to the bug you told that you are using Jenkins cicd right yes yeah so what is master
+
+
+00:08:16
+and slave in the Jenkins so basically Master is the responsible for managing all the slave instances uh let us assume we have 100 bills in our Master server if we build all the 100 jobs in master server there might be a chances to get the performance issues for the instance right so that's we are using this slavery mode so that can be useful to build or run the jobs or any another tasks the main advantage of this Master Slave concept is genkins is to distribute the workload to the slaves so
+
+
+00:08:46
+the slaves can share the work from the master and master is going to assign the jobs to the slaves if Master node is failed then what will happen if the master node is failed like uh first of all we have to to check why it is getting failed we have to check whether the connection is perfect or not or any volume I mean volume is extended or not so first of all we have to check if the master is fail then uh it is not possible to build the jobs from the console MH yes to prevent that we have to take the
+
+
+00:09:24
+backups suppose assume that there are 10 jobs available in my genkins master suddenly master went down is there any possibility to run the jobs yes it is possible to run the jobs how sorry come again please how to run that Master is down Master is not responding then how we can run the jobs how jobs will execute so if the jobs are like we can still access the jobs in the server we have the default path in the Jenkins which is where Library Jenkins if you go to that we found the jobs we can take the backup uh from the existing
+
+
+00:10:02
+server I can take the volume so uh that volume I will give I mean I will associate that volume to the new instance so the new instance will have all the backup to the new instance so I will connect to the genkins I will set up the genkins in the new instance okay yeah can you share your screen and can you write Jenkins pipeline sure is that scripted or declarative yes I hope my screen is visible to you right yeah I can see thank you I am not following the any ination because this is yeah yeah that's
+
+
+00:10:58
+fine so this is the basic pipeline to right so what are the stages available in your project pipeline so in my St like in my project some stages are available that is first one is code which is to get the source code from the orbit bucket and the second one is we have to build that so the second step is build and third step is testing unit test will be done and the fourth step is Deploy on the pre-production servers and the fourth step is selenium which we use to like test the entire code and fifth
+
+
+00:11:46
+one is we can directly deploy the code into the production servers so these are the steps that are available in our my project okay can you write one more stage in the pipeline sure I think here I missed one more yes it's fine okay now suppose if I give same name for the two stages in the pipeline then what will happen will not accept are you sure yes what will happen when I do that suppose yes the build will gets failed so we will get an error the stage name is already exist or something I'm not
+
+
+00:12:41
+sure must the correct the error but the error will raise the build will gets failed yeah suppose if first stage is failed when I execute my job first stage got failed then what will happen to the second stage so it depends on the configuration that we are doing if you are using the post actions so in the post actions we have multiple options like success failure and success failure and always if you are using always even if the above steps which gets either success or failure automatically this will gets executed if
+
+
+00:13:16
+we use failure if the above job gets failure then only at that particular situation this job will gets executed so it depends upon the configuration of the pipeline suppose let's take a scenario even if the first stage IS F I don't want to stop my job I want to continue the remaining stages in the pipeline how do you configure that so we can use the postf actions by using always MH okay what are the plugins that you used in the genkins so we use a thin backup for taking the backups and also deploy
+
+
+00:13:54
+to container uh for deploying the application into the Tomcat web servers and and also uh authentication you for for uh like creating the users and giving them access so we are using the role based authentication plugins and uh for the storage I mean artifactory storages we use Nexus so we have to download that package as well MH yes and publish over SSH like these type of plugins we are using right I have two jobs when I trigger one job that job should trigger another job how do you configure that so
+
+
+00:14:31
+in this particular case we can use the there is an option which is in the genkins dashboard uh like a build after other projects are built so if we select that we will get the list one second I don't want to use that UI option I want to manage that completely from the one job to another job directly okay so can we use pipeline in this space yeah how do you write that configuration okay so here we have to use the yeah assume that stage one available in one pipeline stage two available in another pipeline okay these
+
+
+00:15:03
+are two different pipelines so assume that one is a CI job another one is CD job when the CI job execution completed I want to trigger CD job from the CI itself okay so I got the scenario but I think I'm not much sure about this things sorry okay yeah fine next one you told that you are using anible right can you write the anible Playbook answer yes I can yeah so any scenario any specific scenario yeah you can take anything just install one git client software in okay trible Hy so basically every Playbook
+
+
+00:15:40
+will starts with the trible hyph because it is we are using AML syntax and H posts here is the group name I will usually take de and user anible suppose if I want to install it here is the description here is the Playbook to install the git on service MH what is become yes become yes basically we are using here anible user so anible if you want to install git in root user we can directly use the command M install install G hyph way but if you are using the nonroot user suppose it may be either ec2 or anible
+
+
+00:16:50
+we have to provide pseudo right so without providing that sudo we can use become is so it will act as a root user okay in your project where you used anel can you explain your scenario yes basically like in the environments in Dev environments or Q environments we have multiple servers suppose if developers wants to clone the source code from the git they need git to install so without Git it is not possible to clone right so in that particular situation we have hundreds of servers it is not possible
+
+
+00:17:22
+to install git manually on that 100 servers so that we can uh we can configure the systems by writing the Playbook I I can write my playbook in my system and if I execute here automatically it will gets installed onto the host machines like Dev environments okay I want to copy files from one server to another server how do you do it so I can simply write a Playbook or I can use the inventories MH so if you want to write a Playbook it will starts from the dble Hy okay suppose if I want to copy by using
+
+
+00:18:07
+a Playbook will it copy directly or you need to do any setting for that uh no settings is not necessary we can directly copy the files really yes so we how one machine can access another machine directly now an assume that sensible is available in one machine and there is another uh machine is available from one machine I want to copy to another machine so you are using SSH connection okay yeah that that machine will have security with the key pairs right how do you do that so here we have to provide
+
+
+00:18:44
+some configurations which is in anible configuration file we have to make some changes first of all we have to provide the password to them and we need to generate a key in the master server and we need to copy that key from Master to any another slave so that it will automatically copies when we write the Playbook okay good can you explain about Docker Docker so basically Docker is an containerization tool which we us it to create the containers containers are nothing but a virtual machine so which
+
+
+00:19:33
+does not have any operating systems so Docker is user to create the applications run deploy the applications okay can you explain Docker file so yes Docker file basically it is a text file which contains some set of instructions which is used to build the images automatically and it contains some components which is from and run copy so these kind of components we have in the the docker file okay what is the difference between run and CMD in the docker so run is user to execute the commands while we build
+
+
+00:20:06
+the image and command is user to execute the commands while we run the image okay what is a pod pod a pod is nothing but a single instance in a cluster or simply we can say it as a pod is the smallest and simplest unit in the kubernetes object model it represents a single instance of a running processor in the cluster parts are basic builds of the running applications in the kubernetes cluster and they provide the convenient P to deploy and manage the containers and kubernetes automatically manage the life cycles of PODS and their
+
+
+00:20:42
+components okay can you write your pod manifest uh pod manifest I'm not much sure about the Pod manifest okay how do you create pods in the project so we can create the parts within the I mean uh within the cluster so so once we deploy the C I mean p into the cluster it will automatically available into the slave servers mhm yes it contains one or more containers and storage resources and also unique Network identities okay it will communicate with another Parts also what is State full set in the kubernetes
+
+
+00:21:18
+where do you use that yes uh State full uh sorry State full set sorry stateful set is used for the managing managing the deployments and scaling it for the state applications we already have deployment right then what is the purpose of going for State full set but when we compared it with the deployment the deployment is used to manage the deployments and scaling for the stateless application but if you want the stateful applications we have to use the state okay okay good let's move on to AWS
+
+
+00:21:53
+okay I lost the pem file of my ec2 can we connect to that yes we can so basically we have lot of options if we don't have any pem file it is not possible to connect with the terminal we can directly come we can directly connect to the Chrome and once we connected to that we can generate a key inside the in inside the instance which is using SS hyon G so it will generate the two files which is RSA Pub and ID RSA ID RSA public means it is the public key and idrs is nothing but the private key so we can get the private
+
+
+00:22:25
+key from that so that is the first method and we have multiple and the second way is we can either create the new pem file and we can connect the instance through that pem file okay what is the difference between L4 and L7 load balancers L7 load balancers provide the more advanced traffic management capabilities compared to The L4 load balancers they are not more complex and requir the processing power but they are also more flexible and can provide the better traffic management capabilities like we can use that e-commerce websites
+
+
+00:23:00
+or content delivery networks Al for load balancers are simplier and more effective making them good choices for applications and do not require the advanced traffic management capabilities provided by the L7 load balances okay what is net Gateway so n Gateway we can simply call it as like it is used for the vpcs which is used to provide the internet facilities to our VPC like if you want to access any application we need an internet right so n Gateway will provides that facilities internet gateway is there for that internet what
+
+
+00:23:40
+is the difference between internet gateway and N Gateway so basically this n Gateway is useful tool for the providing internet access to the instances in any private subnet while maintaining the network Securities and performance but internet gateways that provides the I mean instances to the public subes okay can we access one resource from one VPC to another resource in another VPC yes we can access so we are using the VPC pering connectors okay what is NL NL network access control list I think sorry I'm not sure about this
+
+
+00:24:26
+thing yeah we have security groups and we have NL what is the difference between them so basically security groups are used to provide the security to to our instance like what type of traffic comes stream and what type of traffic goes out so these can be defined by using the security groups n so NL basically it is a I mean VPC concept which we are using frequently used in this VPC MH and uh so which we use it uh basically I think it it is a security purpose we are using this for the Securities for our vpcs and it accs as
+
+
+00:25:15
+the firewalls to controlling the traffic okay one or more subes okay okay good Mustafa I'm done from my end do you have any questions for me yes uh thanks for asking me so is there anything else that I want to improve my side yeah you are good so you need to uh focus on that genkins pipeline stages how can we trigger because we do write cicd jobs separately so we should be able to trigger from one job to another job yes and the important thing is kubernetes Manifest files kubernetes is playing very important role in the
+
+
+00:25:52
+deployments nowadays okay yeah that you can focus yes definitely I will improve yeah good anything else um no nothing from my side I'm good good thanks for your time nice talking to you HR will get back to you on this yeah thank you have a great [Music] day
+

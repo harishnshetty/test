@@ -1,0 +1,747 @@
+00:00:34
+evolving from an idea to becoming the backbone of software development and so did the job market for devops it is demanded by over 24% of the recruiters worldwide and if you think it's not for beginners let me tell you that it was also enlisted in the top five entry-level Tech job positions by Forbes now if you're willing enough to pursue this field then welcome to this video on the top devops interview questions and answers by inter at the video covers the 30 most commonly asked devops interview
+
+
+00:01:04
+questions which will provide you with enough solid base to tackle your future devops interviews we'll cover everything you need to know from the cicd pipeline to building scalable and fall tolerant architectures so without any further Ado let's get started so now let's start with our questions with the basic questions module and we'll have our very first question which is what do you understand by devops now devops is a software development methodology that combines development and operations to enable
+
+
+00:01:35
+faster automated and more Reliable Software delivery I know half of you are already familiar with devops but it's very crucial to understand devops if you're appearing for a devops interview that's why I'm emphasizing on this point a lot so that we can have a very clear understanding in your head now what are the major components inside devops there's a cicd pipeline which automating the build test and deployment process there is the infrastructure as Cod point which manages infrastructure with code
+
+
+00:02:01
+instead of manual setup we'll understand cicd and infrastructure as a code in the upcoming questions but for now just understand that these are the very very core components of devops that you must know next you have monitoring and logging which tracks performance and detects issues in real time next we have collaboration in culture breaking down SOS between the teams those were the important terms that you must be familiar when you're working with devops moving on to our next question can you
+
+
+00:02:26
+describe the key benefits of implementing devops practices one of one of the very important questions is to you know what is devops why devops is this question now let's understand this as in as with real world examples also like how does this benefit work in the real world such as faster releases it automates development and deployment reducing time in the market now Amazon deploys updates every 11.7 seconds that's how quick CSD pipeline can work next improved collaboration development and operations team work
+
+
+00:03:00
+together together instead of blaming each other no more it works on my machine fights next fewer bugs and failures automated testing catches issues before they reach the customers Netflix avoids outrageous and rigorous automated testings they go through a rigorous automated testing so that when the final version is released when the final version reaches our computers there are no bugs in the system lastly we have more reliable deployments continuous integration and delivery makes updates faster because you
+
+
+00:03:27
+integrate you test you deploy so in such a case the reliability of the software also increases a lot Google releases new features with zero downtime even now right now when I opened my Chrome browser there was a new feature updated did my Chrome stop working because the new feature was updated no right that's all because of cicd pipeline moving on to our next question what are the core components of a cicd pipeline we already looked at uh the very essential components now let's look at them in a
+
+
+00:03:53
+broad overview now a cicd pipeline is an automated set of steps used in software development to build test and and deploy code efficiently it ensures that every code change is integrated validated and safely released to production without any manual intervention all automated using automated testing tools which tools am I talking about we'll discuss in the upcoming modules now the important components the first one source code and version management version management GitHub a repository GitHub gitlab where developers store and
+
+
+00:04:25
+track code changes next build automation automatically compiles and packages the soft software such as your Docker and kubernetes automated testing runs test to catch bug early so that your customers are not the ones who are like oh I discovered this bug in your website that should not happen you should be the one who's discovering the bugs or artifact management it stores the tested and approved bills for deployment uh this is how your blue green deployment Works which we'll discuss about in the
+
+
+00:04:51
+upcoming modules lastly monitoring and logging for this also you have automated tools which can visualize the data visualize your machines and show it on the screen screen so that you can track system performance and you can monitor the performance of your website even after you have deployed it now the most important terms in DD pipeline continuous integration and continuous deployment continuous integration merges and tests code automatically and continuous deployment deploy successfully build to production now
+
+
+00:05:20
+even in any company when a new feature is added it goes through the whole cicd pipeline such as it goes to the planning phase coding phase building phase continuous testing phase release deploy operate monitor another another interesting part about cicd pipeline is that this whole Loop never really stop as soon as a new update is added this whole Loop keeps on going forever and ever that is why it's an infinite Loop moving on to our next question which version control systems are you familiar
+
+
+00:05:49
+with now there are a lot of Version Control Systems out in the market which one are you familiar with so uh to start with what are there are actually two major different types of Version Control Systems let's understand them with the help of an example say there's a huge kitchen and there are multiple chefs working there Chef 1 2 3 4 and five now consider situation in which there's only one master recipe book now in such a case if one Chef wants to make certain changes into the recipe book then other
+
+
+00:06:15
+chefs will not be able to access the recipe book at the same time meaning only one Chef can access the book at the time if one Chef is making any changes in the recipe book others cannot touch it that is called as a centralized version control system now in case of distributed Version Control system our second type of Version Control System every single Chef will have their own individual recipe book meaning they will not be dependent on a centralized server it will be distributed different recipe
+
+
+00:06:41
+books or in technical terms cvcs or centralized Version Control System relies on a single Central server to store all code versions meaning if something goes wrong in the code if two people simultaneously update the code at the same time all of your data will be mixed up and it will all be lost all the original data will be lost but in case of dvcs or distri Ed Version Control System every developer will have a full copy of the repository including its version history um now there are tools like Perce and subversion Perce is big
+
+
+00:07:10
+in gaming used by epic games and your blizzard Etc subversion is it's a bit old but it's still used in Enterprise environments where centralized control is there are some applications in which still centralized control is preferred so they use sub verion lastly distributed Version Control obviously get the OG king of distributed Version Control System used by GitHub gitlab and bid bucket we also have Mercurial which is similar to git but it it's used by some Legacy projects moving on to our
+
+
+00:07:37
+next question what is infrastructure as a code so in case of infrastructure as a code you can actually code servers databases and networks you can write them down in form of code like I want to deploy This Server this is the region of the server you remember if you even if you try to configure an ec2 instance in in AWS they ask you for a couple of permissions about the key key value pair and other such permissions so you can actually type it down on your own into a Json or a yaml file and just upload it
+
+
+00:08:07
+on AW cloud formation and the AWS cloud formation will allocate the ec2 instance without you actually going there and typing on ec2 instance how cool is that that is iic now in technical terms infrastructure as code is the practice of managing and provisioning computer infrastructure like virtual machines ec2 networks and databases using machine readable configuration files instead of manually deploying them now you might ask why do we need infrastructure as a code we can just deploy it on on my own
+
+
+00:08:36
+why do I need to type all of this consider this example there's a bunch of Engineers who were trying to build a house and they just on a whim on an intuition level they just build a house now this house was really brilliant and everybody wanted to have the same kind of house but unfortunately because they buil the house based on their intuitions and guts all the other houses that they built were close enough to this house but still they were different it was not quite the first house they had made but
+
+
+00:09:02
+instead if they had followed a blueprint or if they had written down the configurations of the this particular first house all the other houses would have been the same that's why writing it down or documenting it helps because even if you set up one ec2 instance there's a very high chance that the second ac2 instance that you're setting up will have a different configurations because you will not remember what are the exact configurations you wrote in in an ec2 instance so that's how
+
+
+00:09:26
+infrastructure as a code works and that's why it's important now it also facilitates automation no more manual clicks it facilitates consistency avoids it works on my PC problem because it creates a template so it will work everywhere regardless of your system scalability you can easily spin up hundreds of servers using one single template next and lastly Version Control tracks infrastructure changes like a code moving on to our next question how does containerization differ from virtualization now virtualization is
+
+
+00:09:54
+when you have multiple virtual machines and every single of your virtual machine has an operating system of their own now in this example I'm taking Linux as the operating system and you can see that every single virtual machine has their own operating system that's called as virtualization but in case of containerization there are different virtual machines however they're all hosted on one single operating system that is in a container every single virtual machine has connected to one
+
+
+00:10:20
+single operating system now if you were to understand this with the help of an example it would be like say virtualization is like there are different shfs there are four different shfs and every single Chef having their own kitchen is called as virtualization they're not talking to each other they have their own they have their own kitchen they're cooking there they doing whatever they want to there and it's separate and it's isolated however in case of containerization there is one
+
+
+00:10:44
+big kitchen but every single Chef gets their own workstation as well they all get their isolated space but they're all together they're all bound together that's called as containerization or in technical terms virtualization creates multiple virtual machines on a single physical server and and each virtual machine has its own operating system and it runs independently containerization on the other hand it runs multiple containers on a shared operating system kernel and each container isolates an
+
+
+00:11:11
+application but doesn't need a full operating system making it lightweight and fast virtualization is considerably more expensive but it's secure containerization is less expensive because you only have one operating system for multiple virtual machines but it's less secure however it is more lightweight and fast as compared to virtualization moving on to our next question what is the purpose of configuration Management in devops now say you bought a new phone now if you have never had a phone before or maybe
+
+
+00:11:36
+your old phone got stolen or something in this case you will have to install all the applications manually however if you had an old phone you could just connect those both phones and all the data from your previous phone such as your preferences your data your settings everything will be copied from this old phone to your new phone that is called as configuration management copying something from the previous version to the newer version or in technical terms configuration Management in case of
+
+
+00:12:02
+devops is the process of automating standardizing and maintaining system configuration across infrastructures and applications you have one single core template you consistently maintain it across all the other applications as well now what is the purpose of doing this it automates provisioning no need for manual setup because imagine imagine if there are like three to four systems and in every phone application you're opening or installing the same application wouldn't it be difficult but
+
+
+00:12:27
+if you connect those four phones to this one single phone and installs all the dependen in on all the apps that you have installed and all the other systems how easy will that be for you how much time saving will that be for you next Insurance consistency now obviously if you manually try to install there will be some some changes because maybe in one phone you forgot to install one app but in case of this automated setting all servers will have the same setting all mobile phones will have the same
+
+
+00:12:52
+application reduces human errors less risk of misconfiguration speeds up deployments it quickly sets up new environments it can spin up environments within seconds lastly it enables roll backs that even if one system fails there are like multiple system with the same configuration so hence your website will again have minimal downtime and now there are configuration management tools such as anible Sol stack puppet these tools can help you with configuration management moving on to our next question can you name some
+
+
+00:13:19
+popular devops tools and their primary uses there are a bunch of devops tools for different applications starting with our Version Control tool since that's the most important one R OG git and GitHub git is the most popular distributed version control system and GitHub is a code hosting platform with collaboration and cicd support next we have cicd pipeline for cicd pipeline you can use genkins which is a most widely used open source automation server for building cicd pipelines you can use
+
+
+00:13:47
+gitlab cicd for for integrated pipelines then you can use GitHub actions it works well within GitHub workflows for configuration management you have anible puppet and sstack like we just discussed about agentless simple to use yaml based configuration declarative scalable and configuration management tools fast event driven infrastructure automation next for monitoring and logging your application after it gets launched for just making sure that everything is running smoothly you can use Prometheus
+
+
+00:14:16
+and grafana the alltime F favorite testing tools Prometheus is best for metric monitoring and grafana visualizes metrics from Prometheus and shows it in the form of in in your monitor you can visualize the whole data and see for yourself about how the CP utilization is happening how different how the performance of your websites are etc etc moving on we have infrastructure as a code for infrastructure as a code the famous cloud formation and terraform AWS native infrastructure if you're more
+
+
+00:14:45
+comfortable with AWS you can go with cloud formation if you're more comfortable with kubernetes and all you can go with terraform um next last and the most important containerization and orchestration Docker and kubernetes we cannot talk about devops with without talking about Docker and kubernetes Docker is the most popular containerization tool and kubernetes is orchestration and manages large scale container deployments moving on to our next question what is continuous testing and why is it important now say you're
+
+
+00:15:12
+baking a cake now instead of B waiting until the end to test if your cake was correct or not what do we do when we are making the cake itself we keep we keep on adding ingredients and we keep on testing it we keep on checking it is the Taste still fine if even if you're making chai say for example you check it if you add the sugar in it and then you check is it fine you add the chai putti and you still check is it fine is it fine enough is it too strong is it not there you keep on checking it that's
+
+
+00:15:40
+called as continuous testing why you do continuous testing is so that even if there is a bug even if there is a weird taste coming out of your food you can fix it early if you feel like the sugar is a little less you can just add it in the initial segments itself so that by the time you baked the cake it will still be nice and delicious it's not like you you're done baking the cake and that's when you oh there is less sugar then you cannot do anything because you done with the cake then you'll have to
+
+
+00:16:04
+start from the scratch but if you do it in the initial steps itself then by the time you reach the end product the cake you would have a very delicious soft and yummy cake so on in technical terms continuous testing is a practice of automating testing at every stage of software development pipeline to ensure quality security and functionality now as to why is it important it finds bugs early like we talked about the cake situation speeds up releases now you know if you detect the test at an ending
+
+
+00:16:30
+stage then obviously you have to start the whole software development cycle again that will take a lot of time but if if you were testing in the from the beginning itself then obviously it naturally speeds up your releasing process next it improves the software quality now because you have tested in every single stage your software will be much more stronger and reliable for the users next it reduces manual efforts because everything is automated manual efforts will be way more reduced lastly it boosts customer satisfaction now
+
+
+00:16:58
+because your system become so reliable naturally it is going to have a positive impact on the users who are using the application moving on to our last question of the basic module how do you handle environment specific configuration in your deployments what is environment specific configuration consider this example say two of your friends came to your house for having dinner you ask them for dinner and one of them wants really spicy food she's a fan of spicy food and one of them hates spicy food now the problem is you have
+
+
+00:17:28
+already cooked dinner how would you serve and your dinner is like it's it's normal it's mild how what do we do with this girl she needs spicy food so now instead of throwing away your dish and making a new dish what you do is you can just add a little bit of chili powder in her dish and mix it together so that she would like it as well and then you serve it to them that's how environment specific configuration Works handling environment specific configuration means managing different settings for different
+
+
+00:17:54
+environments without changing the core application code the different environments means your development stage testing stage State Stage production stage and when your application is going through this development stage testing stage and production stage you don't really go around and change the coding of you're not like oh I have to test the application can I have to change everything you don't do that you only make some minute changes so that it can adapt with the particular testing
+
+
+00:18:16
+environment or with the particular production environment to understand this better consider a e-commerce website now it will again go through development staging and production stage now look at the differences say if I'm making a payment module in the development stage I'll have a Sandbox which is a fake payment module in staging I'll again have sandbox with real testing payments and the production I'll actually open the live payment Gateway so that real customers can use it and pay money for whatever they're
+
+
+00:18:43
+buying and if I'm trying to test out my shipping module in the development phase I'll be using a mock API in the staging phase I'll use a test API and the production page I'll have to actually ship join with other companies such as FedEx and all so that I can provide real shipping to my customers that is how you handle environment specific configurations in your deployment now let's move on to our intermediate questions so now let's move on to the intermediate level of questions with our 11th question which
+
+
+00:19:13
+is describe the branching strategies you have used in Version Control now what are branching strategies to start with what exactly even is branching now branching is you must have if you must have used GitHub you must have seen that there's an option for adding branching is in GitHub so what that necessarily does is when you make a certain change to your existing code there's a very high chance that the rest of your code might like your entire code might stop functioning so instead what you can do
+
+
+00:19:42
+is create a new branch and create a replica of your code in that branch and then add the new feature and if and if anything goes wrong there's always your backup which you kept in the first Branch the primary Branch so that's called as branching and now in this question they're asking us about the branching strategy that you use so there are different branching strategies that you can Implement GitHub is one of the examples now let's look at them one by one starting with feature branching now
+
+
+00:20:08
+feature branching is when each new feature gets its own Branch such as say if you're adding a payment module to your already existing application or maybe you already had an application which had a two- Factor authentication for logging in now you want to add a multiactor authentication for logging in so in such a case you create a completely different branch for multiactor authentications is code and everything and once you feel like the multiactor authentication is working fine with the rest of your application
+
+
+00:20:34
+you can merge them together that is called as feature branching and this is mostly used by your small scale applications where the application is quite new and it's not like a very old application it's a very new application so in such a case there won't be a drastic change and that's why I took the example of MFA and uh this 2fa because if it's a really old application or if it's a it's an application that's been in the market for a long long years then obviously they'll have already
+
+
+00:21:00
+integrated MFA and 2fa at this point so the next one that we have is GF flow like we talked about before as well where we use separate branches for development releases and hot fix now what are development releases and hot fix development is when the particular feature now instead of a feature getting a completely different branch what it happens is they segregate it into the form of development release and hot fix now say there's a payment module that they are adding now this is usually used
+
+
+00:21:27
+for the large Enterprise app app such as your Google Microsoft and companies as such so these companies what they do is when they have to integrate a new feature into their existing application what they do is they put it into a development phase where the particular software or the particular feature is developed then they release it to a maybe a small bunch of audience to see if it's fine or not and if the release and everything is correct then it's obviously released into the main Market
+
+
+00:21:52
+but if the release fails or if some buggy or issue some unexpected bug pops up at the last minute what they do is they take it to hot fix and in hot fix that's why it's called as a hot fix like you have to quickly fix it because they've already released it so you don't have time to now go through the whole software testing life cycle you have to quickly rapidly fix it that is why it's called as a hot fix that is another branching strategy known as gitf flow next one that we have is trunk based
+
+
+00:22:18
+development in which developers work in a single main branch with shortlived feature branches now to understand this you can think of it like a newspaper example say if a newspaper is being published published everybody in the office is working on the if I'm writing the newspaper for tomorrow so everybody will be working on that particular thing everybody will be working in the same Branch it's not like I'll be writing for like maybe next month's Edition right now itself because it's news next month
+
+
+00:22:43
+the news will be completely different as compared to today's news everybody will be working on today's article which will be released tomorrow that is called as trunk based development lastly we have a release branching now a branch is created for a specific release version to ensure stability now in this case what you do is you must have seen games like GTA and all when a new uh version is released they usually do this blue green deployment which we will cover in the upcoming modules what you need to
+
+
+00:23:13
+understand right now it's it's usually used for applications which require stability like it's not like if you release a GTA version and there are a lot of bugs that obviously you won't be able to play right so they need a more stable version they don't have time to put it into the market and then check if oh let's see if there are some uh test there are some errors popping up they don't have time for this so they need a stabilized version in such a case you use release brunck moving on to the next
+
+
+00:23:38
+question what is the role of a reverse proxy in a web application architecture now before understanding what exactly a reverse proxy is let's understand why we need it and what happens in the absence of a reverse proxy consider this eCommerce website which is again hosted on a single web server now there are multiple users trying to act access this website they're constantly sending request to the server and as a result the server overloads and it breaks causing a fine or two internal server
+
+
+00:24:07
+error now what reverse proxy does or how reverse proxy solves this issue is instead of every request being sent directly to the server like in the last case all these requests will be sent into a reverse proxy and now this reverse proxy based on the traffic and the load and the health of the servers it sends the request to the desired server as in in this case there's only one server but in reality what happens is that there will be multiple servers connected to the reverse proxy and depending on the load and obviously the
+
+
+00:24:38
+health of the servers the reverse proxy distributes the traffic in such a case even regardless of the load your website will have maximum uptime with minimal downtime so now we we look at what exactly is the role of reverse proxy the proxy distributes traffic among multiple backend servers like we saw if one backend server fails like in in case this server fails the traffic is rerouted to the other servers the proxy redirects traffic to healthy servers then SSL decryption happens at the proxy reducing backet CPU
+
+
+00:25:10
+load now since all of the load is getting distributed evenly on different different servers hence the CPU load is also minimal meaning the speed with which a user is able to access the website will also be really high which in turn also increases the user satisfaction lastly it frequently requested pages are cached reducing load times meaning if a user is accessing the website a lot then that particular website will be cached using the reverse proxy and in such a case if you go into that if you visit that website again the
+
+
+00:25:42
+first time say if it took 5 seconds for the website to load this time it will only take 1 second which means it will be even faster I believe that was enough now moving on to the next question how do you Monitor and ensure the security of your cicd pipelines creating cicd pipelines is one thing and making sure that it's safe and secure is another thing now in this question it's asking about the safety how do you ensure in devops it's very important that you know how to create a cicd pipeline but it's
+
+
+00:26:10
+also equally important that you know how to how to safely keep that cicd pipeline how to provide safety on that cicd pipeline now there are a lot of things that you can do such as limit who can change pipeline configurations scan all code and dependencies for vulnerabilities store secret securely log every action in the pipeline use anomaly detection tools how do I do that and what are these let's look at them one by one starting with limit who can change pipeline configuration that means that you can prevent unauthorized access
+
+
+00:26:40
+by limiting user permissions this we've talked before also that if there is a particular website then you can provide role based access such as if you have an AWS architecture not everybody will get the same permissions like some people can go in there and modify your AWS architecture and some people they don't really need to modify y the whole structure some people only need a view access and others need an edit access so you can assign these roles that okay this many people will get a view access
+
+
+00:27:07
+this many people will get an edit access so that people will be more accountable for whatever they making modifications n to we don't want such a scenario in which anybody did um some changes and then nobody knows what happened and now the system is not working and everybody's pointing fingers at each other that should not happen providing role based access eradicates this issue now how can you implement it can implement using GitHub and gitlab which is which use protected branches and require approvals to access a particular
+
+
+00:27:34
+Branch then there is Jenkins which uses plugins like Matrix authorization strategy again to protect the branches next we have scan all code dependencies for vulnerabilities means that you identify security risk before deployment because obviously after you deploy your architecture in the market uh if you scan all the dependencies before itself you're going to prevent the zero day attack it is such an attack in which you yourself are not aware of the bug but once you release it into the market the
+
+
+00:28:05
+people or the customers who use it they detect a bug and the hackers exploit that bug now in such a case you don't have a cure you don't have a fix to that particular attack or to the particular bug because you yourself are discovering it for the first time now to avoid such a situation you have to scan all code dependencies for vulnerabilities now don't do it manually there are automated testing tools which can do this for you such as static analysis which scans code for security flaws there is dependency
+
+
+00:28:31
+scanning which finds vulnerabilities in third party libraries what when you're coding there are especially in your Python and all you integrate a lot of third party libraries so dependency scanning can scan all those dependencies for you making sure that there are no bugs coming from the external libraries then there is container scanning which detects issues in the docker images that is if you're using containerization obviously you will use containerization in cicd pipeline so in such a case for
+
+
+00:28:56
+scanning that container you can use container scanning tools next you have store secret securely now storing secret securely means protecting your security credential such as your API keys and your database passwords now obviously these things you cannot just when you're coding normally like when you're making a mongodb connection or something in your server for the first time you must have seen that how you write the your username and password inside the code itself but that if you publish that into
+
+
+00:29:24
+GitHub or anybody can access your mongodb server now if it's a very small scale app if you yourself are doing it for fun then it doesn't matter but if it's a large scale software then some other person can very easily just take those credentials and hack into your servers and steal user data which might cause data breaches and might later cause your company to shut down completely hence you need to protect them securely now there are again tools which can do these for you such as Walt
+
+
+00:29:50
+which is Hashi called and it stores and encrypt Secrets then there is aw secret manager which manages aw credential securely then there is sealed Secrets by kubernetes which encrypts kubernetes Secrets such as kubernetes is or secret credentials next we have log every action in the pipeline now this is again for accountability so that who changed what when and why is logged in some place secure so that the accountability issue does not happen for this also you can use AWS cloud trail which logs all
+
+
+00:30:19
+AWS API calls data dog or Splunk which monitors pipeline logs for anomalies then there is git audit logs which tracks repository access and changes lastly we can use anomaly detection tools now these tools alert when something suspicious happens such as if say a particular group of hackers is trying to take is trying to attack your service they're trying to cause a DDOS attack now in such a case if you have an anomaly detection tool installed it will detect it on automatically that there is
+
+
+00:30:50
+this 10,000 amount of request coming from this one server this one API we need to block this API and it would immediately block that API making sure that your server stays healthy for the rest of the users so in such a case you can use a a lot of a bunch of tools such as Falco by kubernetes which detects security threats in the cicd Clusters then there is crowd strike or Sentinel one which is an AI based security monitoring then there is the elk stack which is elastic search plus kibana now this logs and visualizer security
+
+
+00:31:19
+incidents you get to see in a monitor so you get all the axis much like your Prometheus and grafana you get to see it in a centralized Monitor and it's shown in a visualized format for humans it's much easier to detect or interact with the screens in such a way so now moving on to our next question can you explain the concept of immutable infrastructure you must have heard of mutable and immutable in your very early stages of coding immutable was when we could not change the value and mutable was when we
+
+
+00:31:50
+could change the value similarly we can apply this concept to Cloud infrastructures when we can change the infrastructure that's called a a mutable infrastructure and when we if we cannot change the infrastructure it is called as an immutable infrastructure simple now immutable infrastructure is an approach to managing and deploying infrastructure when components such as servers containers and virtual machines are never changed once they're deployed meaning the I deployed an architecture
+
+
+00:32:18
+with a bunch of ec2 instances S3 buckets now nobody can change it it's immutable I've kept it I've built it in such a way that it's immutable so if you have to build a new architecture you can use it as a reference but you will have to tear down the existing architecture to build a new one because the old one is not you cannot change it because it's immutable secondly instead of making live updates this just I talked about this instead of making live updates a new version is
+
+
+00:32:42
+built and deployed while the old one is discarded because the old one is immutable this ensures consistency reliability and security so similarly in uh in a corporate environment also if a company is launching a particular infrastructure they can actually create templates you must have heard of cloud formation in case of cloud formation what it does is it creates templates for you now you can make these templates immutable as well that is what this particular question is asking you to do similarly companies can also create
+
+
+00:33:11
+immutable infrastructure in which they can deploy different instances different virtual machines different servers which in if you want to build a newer version of this if you want to deploy a newer version you can create a image of this first architecture create an image create a replica of it and then build the new architecture referencing the first one and now how to implement such an immutable infrastructure to implement it the first thing that you can use is you can use infrastructure as a code such as I took
+
+
+00:33:40
+the example of AWS cloud formation and that also you write down the infrastructure in form of code that is infrastructure as code then you can build immutable machine images like I talked about the creating an image of the immutable architecture that's called as building immutable machine images then you can use containers Dockers and kubernetes which can be replicated then you can use automate deployment with blue green deployment which we will cover in the upcoming slides so moving on to our next question what strategies
+
+
+00:34:05
+do you use for database schema migration in a cicd process now what is a database schema migration a database schema migration are control changes to a database structure that are applied incrementally and Version Control to ensure consistency between development staging and production environment what does this mean now this means that what the question is asking you to do is when you uh say you were using a particular SQL database now I want to migrate the database to Cloud I want to use AWS Aurora now obviously that is called a
+
+
+00:34:35
+database migration I was using SQL now I'm migrating it to um Cloud so how do you ensure that all the data that you had in the SQL Server is consistently being replicated into the Cloud's infrastructure how do you make sure of that that's what we'll be covering in this question so when you're replicating data there are three most important things you need to be sure of minimal downtime that is when you're shifting data it should not be like okay now the website is not functioning at all
+
+
+00:35:01
+because we're making some changes that should not happen users should not experience service disruption second data loss should not happen changes should not accidentally delete or corrupt data that is when you're shifting shifting all your stuff nothing should be lost third avoid conflict such as developers working on the database should not overwrite each other's data such as if I made an update and some other person is also making an update then it should not cause issues in the data in the actual data such an issue
+
+
+00:35:27
+should not arise now talking about the strategies that you can use the first strategy is you can use database migration tools instead of doing it manually because it is prone to human errors and there is a very high chance that humans will make errors so use automation tools instead of running SQL scripts manually use automated migration tools that keep track of schema changes migration tools that you can use are liquibase which runs on Java and spring boot fly away which uses Java postgress SQL and MySQL almic which uses python
+
+
+00:35:55
+flask and Jango lastly we have Prisma which uses node.js and typescript second what you can do is the expand and the contract pattern now what this means is consider this table in which we have four columns ID first name last name and email now instead of putting first name and last name separately what I'm going to do in this table is I'm going to combine them together and keep them as full name now in such a case I don't need the first name and the last name column I want to remove them but I want
+
+
+00:36:19
+to make sure that that when I am removing them the data is still consistent and no other silly mistake happens during this how do I make sure that I expand the table that is while both the first name and last name are there I add the full name column too I expand the table then when I make sure that full name is completely correct all the data and the full name is correct it's matching the first name and the last name I remove that column from there and I contract the table that is called as the expand and the contract
+
+
+00:36:47
+pattern it expands adds new structures updates the application code then it contracts removes the old structure later next you can use the feature Flags feature Flags is just like a light but except for code now what you do is that instead of directly writing code into your SQL structure you hide it behind a flag that if flag. use new schema then execute this query so in such a case the best part about this is that you're deploying a new database change behind a feature PL flag so you're gradually
+
+
+00:37:15
+rolling out updates without affecting all the existing code at once next if something breaks this is the interesting part if anything goes back all you need to do is just remove the if if block completely and everything is back back to normal so if anything goes wrong such as in case of this feature flag what you need to do is just remove that if if statement and everything is back to normal now the last one backup the database backup the database before applying migrations to prevent data loss
+
+
+00:37:42
+in the event of a roll back failure yes very very important in case you you are very confident your automation tools will work okay okay fine fine but what if you never know what what's going to happen what if some roll back issue happened and all of your data is just gone so to avoid such a case instead of directly being so confident about your database do one thing don't directly roll out the updates in this way keep a backup no matter what keep a backup so that even if anything goes wrong you'll
+
+
+00:38:09
+always have a backup to rely on moving on to our next question how do you manage secrets and sensitive data in your deployment process so managing secrets in deployment means storing accessing and rotating sensitive data in a secure automated way to prevent leaks unauthorized access and security breaches we already talked about protecting your um secrets and secrets were your credentials such as your API keys and your database passwords and other such important items now even if you're managing even if you're
+
+
+00:38:38
+protecting those Secrets how do you manage it how do you make sure that you have given your protection you have protected them how do you make sure that it that other the third parties are still not able to access it how do you make sure that it's still kept safe how do you ensure the safety so first thing you can do never store secrets in the code like we talked about before like even when you're creating a very basic server in mongodb just write down your mongodb's password and everything there
+
+
+00:39:05
+but in case of large Enterprises use environment variables or a secret manager tool if you can't do it yourself don't worry there are automation tools out there which can do the work for you they can store your secrets for you and they can keep it safe for you um in such a way say the constant DB password super secret 1 2 3 don't do this don't write your code inside don't write your password inside your code anybody can access it this is like giving invitation hack my system don't do that
+
+
+00:39:32
+so next thing secret management tool like I talked about there are automation tools which can do this for you so instead of storing secrets in a code or an environment files use dedicated secret Management Systems you don't have to worry about it just set up automation testings testing systems and they'll do the rest for you now there are a number of automation tools that can help you with the same such as aws's secret manager is there Hashi cops' wal is there az's key wal is there and then
+
+
+00:39:58
+there is Google secret manager as well these can all help you keep your secrets your secret credentials safe and secure next what you can do is use environment variables but keep in mind that if you're putting environment variables in a git file use the command git ignore just to make sure that these passwords don't get committed to your main branch it should be kept safe and separate if you're using environment variables then make sure that they are not committed to the main branch and that they're kept
+
+
+00:40:25
+separate and different use G ignore to separate them next what you can do is encrypt Secrets the best thing to do because even if you the other people the hackers even if they get hold of your credentials if you have encrypted them then it will take time for them to decode it and by the time they decode it you will detect that oh your systems will detect that there has been a data breach and by the time they decrypt it you will already have fixed the issue you would have detected the issue and you would have fixed the issue which
+
+
+00:40:53
+will save you a lot of time and money so encrypt your secret again always encrypt Secrets because before storing or transmitting them while transmitting them encrypting is like a must have now again there are a lot of tools which can help you do the same such as awss Key Management servic is there gcp say cloud Key Management Service is there aour is keyboard again and then open SSL for if you're doing local encryption like in case of git if you're using your local variables you can go with open SS SSL for a local
+
+
+00:41:22
+encryption lastly you can you'll have to rotate these secrets that is do not keep the it's like if even if you have a Google account Google also suggests you to change your password every after a certain time period say after a year or after 6 months now this makes sure that even if your password gets leaked somehow after that even if some data breach was happening you didn't you weren't aware about it but some data breach was happening if you change your password it will again get blogged for
+
+
+00:41:47
+them and by the time they'll again detect it and come back to you you would have changed your password again so make sure that you're rotating your secrets safely every time Secrets must not be kept static forever they should be rotated periodically there are again tools for this like such as aw secret manager is there which can help you do this moving on to our next question what is Blu green deployment and what are its benefits Blu grain deployment is a very common and a very famous deployment when
+
+
+00:42:10
+it comes to devops and this is an interesting concept as well now blue green deployment these two are your different versions of your application blue is the old version or the current version of your application and green is the updated version we talked about branching strategies in that I told you about say if I had a application with 2 FAA and I'm integrating MFA into that so say blue area is the one which has 2 fa in it two Factor authentication and green one is the one in which I have
+
+
+00:42:36
+integrated MFA also cre this is like two different branches of the same application now what happens blue is the current live version which is currently live in the market what I do not uh publicly what I do I'll take a couple of dummy users to test this green side of my application or this 1.0 version of my application now everything is working fine right now I checked with the dummy users everything is working fine green is working fine properly for me now I put up an elastic load balancer to take
+
+
+00:43:04
+the users from version one and shift them to version two right now what happens is that something goes wrong some unexpected bug comes in and the application go Application starts having bugs in it so what I do just as easily I can take the users back from version 1.0 and put them in version one and I will put this version 1.0 into hot fix remember we talked about hot hot fix like when there is a immediate bug you have to fix it I'll put 1.0 into hot fix and as soon and whatever time it will
+
+
+00:43:34
+take to fix this by the time it will be fixed your website will still have an up time it's not like the version went down so your website also went down that situation can be avoided using blue green deployment talking about the benefits of blue green deployment it maximizes up time like we talked about safer roll backs like you're just taking your users uh you took the users from here and put them there so in such a case the data loss and data breaches these kind of situations are less likely
+
+
+00:43:59
+to happen next improved reliability because your website will have maximum up time and minimal downtime increased reliability naturally better user experience moving on to our next question how do you handle logging and monitoring in a distributed system what is a distributed system a distributed system is where there are multiple modules say if there's an e-commerce website a shopping e-commerce website there'll be a module for account management product management search and navigation shopping and cart order and
+
+
+00:44:26
+checkout shipping and delivery how do you make sure that all of these if they have any issues if they have any logs all of the issues that's prompting up in the logs and how do you make sure that all of them are monitored that is called as logging and monitoring in a distributed system how do you do that so the first thing logging capturing and storing structured information about syst systems's events errors and transaction in a centralized location what this means is that there are there'll be multiple modules like when
+
+
+00:44:53
+payment is happening successfully items are getting added to cart transaction is failing now all of these modules are interl with each other so if one module is giving some error it will obviously be connected to another module as well now how do you make sure how do you analyze this particular log because we just talked about a couple of modules that a website will have but in reality there are a lot of modules that a website will have now it's not like you'll go around and check each and
+
+
+00:45:17
+every modules is each and every modules is logs to make sure what went wrong what you can do is you can use automated tools like elastic search log stash kibana or the elk stack to make sure that you can see all of this in a centralized location you can use uh tools like Prometheus and grafana as well these also put everything in a centralized location and in a visual way so that you can see if something is going wrong it will actually highlight that okay this particular server something is wrong with this something
+
+
+00:45:43
+is fishy with this and then you can go there and check it and fix the error immediately next how do you make sure that you're monitoring it now logging is one thing monitoring is different monitoring is continuously measuring the systems's health performance and resource utilization now for this again I've talked about Prometheus grafana and there's data dog as well this also you can so that you can if if a system says utilization is a too much if a CPU is utilizing too much of resources there is a very high chance
+
+
+00:46:09
+that that CPU is under attack that particular server is under attack so these tools promethus grafana and data dog they're actually going to monitor your tools 24/7 just to make sure that if anything fishy happens that is uh highlighted to you will get instant alerts at that time so that you can go there and fix it moving on to our next question can you discuss the time when you implemented a disaster recovery plan now this again should be according to whatever you did if you have done it in
+
+
+00:46:32
+the past if you haven't then let me take you through this example so that you will have a better idea of how to uh how to frame your answer now say there were two databases I was doing a database migration that is I was having a SQL database I wanted to migrate it to AWS aora so I started migrating my original database to the other database to aw s everything was going over smoothly suddenly some error happened in my original sequence file and this connection just stopped abruptly because there was some something wrong so the
+
+
+00:47:02
+connection they lost their connection and all of my data which was in the transmission phase it got lost now that is a disaster recovery what was your plan then very first step detect and contain which means monitoring logs such as your data dog and Ur Relic which we talked about they immediately flag High error rates that there is some error happening the connection got disrupted some error happened we don't know what the error is at this point we're just trying to contain the error just to make
+
+
+00:47:29
+sure we we're first checking how many files did we lose what files did we use what was the priority of the files that we lost how can we recover it that's detect and contained secondly will contain it froze all new deployments to prevent any further corruption such as all the servers which were transmitting we stop it immediately we'll seize all connections just to make sure that any unnecessary read write errors will not happen next we'll assess damage and activate recovery now that everything is
+
+
+00:47:53
+stopped we have contained it we'll check for backups for hourly database St shop shorts now there is there are certain application even in Word document where if you will be writing something in the document it it has a periodic time period in which it saves your data so that even if maybe there was a power outrage and your computer just shut down abruptly in even in such a case you can recover some parts of your data maybe some of it will be lost but some parts will still be there so uh in such
+
+
+00:48:20
+a way we can check for snapshots which is Snapshot is again a current in time uh like the the current status of your machine it can take a picture of it and store it there that's called as a snapshot whatever your systems settings are it can take a current uh not a picture current uh it can keep track of all of that configurations in one centralized location and if you try to recover that image you can get the previous version of this particular application of yours next after locating the exact failure window when you
+
+
+00:48:48
+detected okay this is the time this is the last snapshot we had after that the error happened found their last healthy Snapshot from 2 hours ago next Reg store and valid it now that we know okay we have this we have this we try to implement the Second Step was an idea okay we have the backup we have the snapshot now it's time to restore the data so we used AWS RDS which is a database relational database to automatically automated backups to restore the database to the last clean State before the errors happened what
+
+
+00:49:17
+was the last clean State we had we backed up to that we rolled up to that next Replay transaction logs to recover as much of the lost data as possible next step now that we have have some amount of we did lose some data but we also have some data we recovered some data now we can resume operations and monitor so after switching to the live database we monitored for anomalies using realtime logging and alerts we used realtime automated testing tools which were testing the database to check what went
+
+
+00:49:45
+wrong so from there we found out that send updates we also send updates to the customers explaining that there'll be a temporary data roll back that some of your data will be lost number five we did postmortem and prevention we identified the root cause which was a misconfigured SCH schema migration script what we did we improved the DRP quality accordingly next time DRP is the data your Disaster Recovery plan so so that this kind of error will not happen the next time we updated the configurations of the existing DRP that
+
+
+00:50:18
+was how you recovered moving on to our next question or our last question of intermediate module what is the shift left approach in testing now the shift left approach moves testing earlier in the software development life cycle what usually used to happen in the beginning like in case of your waterfall model the testing was usually the last phase so if anything went wrong in any of the particular step of the development process you would have to wait till the testing happens to make and then you
+
+
+00:50:45
+realize oh this was wrong we we never saw this now it's wrong now now is the time we detecting it now it's too late for it so what shift left does is instead of waiting till the last stage to actually test your application you test in the initial stages itself you continuously integrate your software continuously test it that is again your CD pipeline you integrate you test you deploy integrate test deploy so that's your again your CSD pipeline but shift left approach basically moves your
+
+
+00:51:10
+testing from the right to the left that's called a shift left now shift left integrates unit testing developer level test automated testing your CD pipeline like I talk about static code analysis catch issues before execution and your security testing that is uh making sure that it's matching the def SEC Ops principles all of these testing instead of waiting till the end are shifted to the left and while the development process itself the testing also happens simultaneously that's called a shift
+
+
+00:51:39
+left approach now let's move on to the advanced questions module with our 21st question which is how do you design a scalable and fall tolerant architecture in Cloud now what this means let's understand it with the help of an example say you have a website an e-commerce website a shopping website and during Diwali the sales of this website suddenly goes very high during normal days obviously a shopping website it isn't a very large scale website so it didn't used to get a lot of traffic but
+
+
+00:52:10
+due to Diwali now obviously in Diwali everybody wants to buy new clothes so because of that reason a lot of users started visiting the website and this one website unfortunately was hosted on a single server it was completely dependent on a single server now because tens and thousands of users started to visit the website at the same time not that the server actually got a fire but because of all of this load the server became unresponsive causing your famous 52 server internal server error and all
+
+
+00:52:40
+of these users were denied access to your website and your website was experiencing a downtime now due to which your sales also went down and all of your profit turned into losses now you could have avoided this whole situation how if you were not relying completely on a single server and instead if you had say multiple servers then in such a case even with the heavy load your servers would have been able to take on that heavy load and your website would be functioning hence your users would have been easily a and easily and
+
+
+00:53:10
+efficiently be able to access your website however there's a problem to this as well now that you have installed so many servers once the Diwali season goes or the festival season goes what will you do with all of these servers they'll just stay there static without nobody using it that is also a problem now this phenomena of increasing the servers and decreasing the servers according to your convenience is called as scalability or in technical terms scalability is a systems's ability to
+
+
+00:53:38
+handle increased load by adding resources dynamically either by scaling up that is vertical scaling or by scaling out that is horizontal scaling now there are two types of scaling like like this definition is telling us one of them is horizontal scaling and one of them is vertical scaling so now let's start with vertical scaling now we did know about the single server that we had here as well not here huh in this particular instance we had a single server which later got on fire and we had to add more servers now in such a
+
+
+00:54:04
+case what we could have also done additionally was that we could have added more CPU more RAM more storage and made that single server stronger that is called as vertical scaling that is when you make the limited resources that you have when you keep on adding even more resources to that one single server that is called as your vertical scaling you can even think of this as when you have a say a damaged laptop or something which is almost about to die but instead of letting it die you will keep on
+
+
+00:54:29
+adding giving it more CPU you will keep on upgrading it CPU you'll keep on upgrading its Ram so that it can function better that is called as vertical scaling so horizontal scaling is when you add more servers to take on the load instead of putting all the load on one single server you distribute the load so that every single server is taking on equal amounts of load now the other thing that we have in our question other than scalability is fall tolerance what is fall tolerance fall tolerance is
+
+
+00:54:55
+the systems's capability to continue functioning properly even when some components fail usually achieved through redundancy fail over mechanism and distributed architectures now increasing the number of servers so that our Diwali website was still on board basically by doing that we increased the systems as fall tolerance we made sure that our system will um will actually tolerate even all those heavy burden which was being thrown at it that is called as fall tolerance but we still haven't
+
+
+00:55:21
+solved the main question how to build such an architecture how to build a scalable and fall tolerance architecture now you know what scalability is automatically adding and decreasing resources fall tolerance is how you have designed your system so that it can handle the load can your system handle the load does if more users are visiting will your website just go down will it just stop functioning if that is happening you don't have a good fall tolerance system if your website can take any number of load that is a good
+
+
+00:55:47
+fall tolerance system so how to build an architecture how to build such an architecture first and foremost important thing add autoscaling autoscaling uh you know what scaling is right adding more servers decreasing more servers now I told you the reason in the beginning also that if you keep on adding more servers then what if there's a time when the sales go down then you have a lot of servers there which you're not even going to use but you have to pay for it so that is again not a good architecture hence you need
+
+
+00:56:14
+to implement autoscaling so that you can add more number of servers as well as you can reduce these number of servers depending on the traffic you're getting on your website that's Auto scaling next thing is load load balancer an elastic load balancer what an elastic load balancer does is basically it reroutes the traffic among the websites uh sometimes it is possible that certain servers are getting more traffic as compared to the other servers so a load balancer will make sure that every single server is getting traffic
+
+
+00:56:44
+evenly additionally load balances also make sure that if one of the servers is Health goes down that is one of the server is not functioning properly then load balancer will make sure that no traffic is going in this particular particular direction where the server is not functioning next thing that you can add in your architecture is multi make it multi- region so that even if something were to happen in one particular region your data or your website will still have minimal downtime because it will be available in the
+
+
+00:57:13
+other regions say if I want to connect to a website and the website has servers in both Karnataka and Kerala so say if I'm sitting in Karnataka right now and Karnataka as a server fails I can connect to Kerala as a server and I can still access that website that is the benefit of having servers in multiple regions next this also has another benefit that is this can also help save your data you can also back up your data with this that is if all of my data was in Karnataka a server and it went down
+
+
+00:57:39
+something happened and the server is not functioning anymore then all of my data is gone because my main server was in Karnataka but if I had kept a backup of the server but if I had multi- region then obviously the kerala's server will also have that data right so in such a case when Karnataka a server goes down I can fetch the data from K servers that is another benefit of multi- region and with that you would have a very nice scalable and fall tolerance system designed moving on to our next question
+
+
+00:58:05
+can you explain the cap theorem and its implications in distributed system what is Cap theorem though so now cap theorem consists of consistency availability and partition tolerance let's look at one by one about what these are and then we'll look at how it can affect distributed systems starting with consistency according to consistency every read receives the most recent right ensuring all the nodes have the same data that is if a user makes a particular read request in the main server every other
+
+
+00:58:36
+server will get the read request no matter what that is consistency maybe there was a network lag in this server but we're not considering that according to consistency every single server will get that read at the same time that is consistency next is availability availability means the system responds to request even if some nodes fail that is even in your uh even when you have a distributed architecture such as this where you have multiple servers connected to one single server in such a
+
+
+00:59:05
+case even if one of the nodes is not working like this node it is not working but still a request sent by the major server will be responded by all the other nodes that is called as availability next uh you have partition tolerance partition tolerance means the system continues functioning even if Network partition or the communication between the server is fail that if if you have a distributed server and some of the servers are not able to communicate with each other even in such a case your network and your
+
+
+00:59:35
+architecture will be fully stable and functional that is partition tolerance now what the cap theorem says is that in any distributed data store you can only guarantee two out of consistency availability and partition tolerance at any given time meaning that out of consistency availability and partition tolerance only two of them together are possible the other third one will always fail now there's a possibility of it happening with consistency and partition tolerance in such a case you are
+
+
+01:00:04
+prioritizing the correctness of the data over the availability of the data then there is availability and partition tolerance which means that you are prioritizing the up time of your website over strict correctness now to understand this let me take an example you use WhatsApp right so although most of the systems like WhatsApp and even there's Instagram there's Twitter all of them prefer AP that is availability and partition tolerance CP is preferred by your uh bank system and everything I'll
+
+
+01:00:30
+tell you what according to consistency and partition tolerance every single message that is coming to your mobile will all be in the correct order sometimes it's possible that when you're in a group chat and there are so many people some the messages is the order gets changed like in your phone the order will be changed for a couple of seconds but still the order changes and in other another person's phone it's another order now if you use consistency and partition tolerance that will not
+
+
+01:00:54
+happen although the messages will take time to deliver in everybody's phone but the order of the messages will always be the same that is prioritizing consistency over uh this availability and partition tolerance now if you have joined availability and partition tolerance what happens is that even if you get messages at the uh like even if the syncing or the order of the messages is wrong you all will get messages at the same time only like maybe my up my friend is getting high how are you first
+
+
+01:01:20
+and then High I am getting high first and how are you later it will get synced after a couple of seconds are probably minutes but I will get the message that is availability and partition tolerance now the reason why availability and partition tolerance is used a lot by WhatsApp and your Twitter is there Instagram is there Facebook is there because you want to see the website you don't want to just sit there and wait you you're going there for entertainment why would you wait if you're waiting you
+
+
+01:01:44
+will just get bored and then you will just get annoyed but in systems and secure systems like backing applications the availability of the website is important but the consistency of your data it's not like you're sending multiple requests and the bank starts showing your credentials to random people that should not happen hence consistency is very crucial when it comes to secure systems like your banking applications the last combination availability and consistency is not possible that is only possible in
+
+
+01:02:09
+theory because uh the commun in a distributed system because there are so many servers there is a there's always there's like a 99.9% chance that one of the servers will fail so a case of availability and consistency is not possible in practical moving on to our next question what are the challenges of implementing microservices and how do you address them now say there's a singer now she's the drummer she's the lead guitarist she's the singer she's the bass guitarist she's the trumpeteer
+
+
+01:02:38
+everything is enclosed by her itself she's her own band a one women Army that is called as a monolithic architecture where one particular service is managing every single thing like this particular person being the singer drummer Trumpeter lead guitarist bass guitarist everything is her so that is a monolithic architecture however it is not efficient because managing so many things at once might take a toll on her as well and it might not be as efficient as you think it is now instead if we had designated roles
+
+
+01:03:08
+for every single person such as we would have a drummer a bass guitarist a singer a lead guitarist trumpeteer would have distributed everything according to their specializations or according to their professions in such a case the load on one single server or one single person decreases significantly now such an architecture where the load is distributed is called as a microservice architecture however obviously all of these people are Professionals in their own areas but bringing them together and
+
+
+01:03:39
+creating that sync among them so that the music sounds pleasant is also equally important because fine he's a good drummer he's a good bass guitarist she's a good singer he's a good lead guitarist he's a good trumpeteer but what if when you put their music together it doesn't sound good what if that happens then obviously there's no point of putting them together because the music is going to sound awful so in such a case we need something or someone to manage this microservice architecture
+
+
+01:04:04
+and that is where the challenges comes in now let's look at what are the challenges that might arise starting with service communication complexity now in case of Monolithic architecture since everything is at one place since there's only one person she doesn't have to talk to anybody else she can just talk to herself and or maybe just plan things and then do things on her own but if there are multiple people involved or if there are multiple servers involved then they have to communicate with with
+
+
+01:04:26
+each other using apis and that might cause your what if there's a delay in the message reaching and somebody else uh somebody else's message re reaches first then there are updating issues and this kind of issues which happens with databases also that kind of issues are very prone to happening in microservice architecture communicates over the network leading to latency failures and increasing complexities how you can solve this you can use API Gateway such as AWS API Gateway then you can
+
+
+01:04:53
+Implement asynchronous messaging so that that nobody has to wait for any other person's message happening next you have distributed data management again now each microservice has its own database so ensuring data consistency across every single database will be a nightmare now how you can solve this is you can use cqrs to separate read and write operations effectively so that if one person is reading an operation nobody's writing and updating it at the same time so everybody gets their own
+
+
+01:05:22
+time hence the consistency we can ensure it in such a way next we have deployment and orchestration the classic issue ensuring 50 plus microservices are being deployed scaled and restarted imagine you doing it manually you're making sure that 50 plus microservices are getting deployed they are always having their up time they're all live they're all getting deployed they're getting restarted they're running without any errors you managing them on your own is basically impossible so in such a case
+
+
+01:05:50
+we can use orchestration containerization and orchestration tools such as Docker and kubernetes or Dockers form for container orchestration or you can even set up cicd pipelines using GitHub so in such a way everything will be automated and hence the load on you to work as an individual will be reduced a lot lastly we have observability and debugging there are 50 plus surve now you never know which one will throw an error so imagine you have to go around and check for everybody's everything you
+
+
+01:06:17
+take up everything's logs and you you're reading through 50 plus logs I mean it will be more than 50 logs because 50 services are going to produce what, 10,000 logs now imagine reading through all those logs to find out what the error is that is not possible so in such a case what you can do is you can use this debugging tools Prometheus and grafana are there very famous you can just log everything in a central Hub so that if any server goes long you can see it in the central place using this
+
+
+01:06:44
+Prometheus and grafana they're very amazing tools which you can use for debuging moving on to our next question how do you handle stateful applications in a containerized environment what is with the stateful applications being managed in a containerized environment now stateful applications such as databases session based applications and message cues require permanent storage and the problem with containerized applications is that they are ephemeral meaning they can be stopped deleted or rescheduled at any time saful
+
+
+01:07:15
+applications require data to be permanent and containers have this ability to not be permanent and that causes a friction between them so how can you handle it let's understand this with the help of an example say you have a food truck it's a traveling food truck so you don't have to worry about keeping anything whoever comes to your store you can just make food give it to them immediately and that's the end of your story you can get your Revenue move on to the next city don't have to worry
+
+
+01:07:38
+about anything but if in such a case as well what if you had to make a record of customer orders what if you had to make a record of transaction history payment records your food truck doesn't do any of it it just distributes food and moves away that shouldn't happen that is a problem with stateful applications being managed by in a containerized environment now that you know the problem the solution how do you handle it use persistent volumes you can use awss EBS and volumes as such say if you
+
+
+01:08:07
+have a laptop instead of relying completely on the laptop you can plug in a pen drive keep your data safe in the pen drive in such a way that even if your laptop's data goes away or something happens to your laptop your pen drive will still be secure now don't say somebody will destroy the pen drive then what we're not considering that possibility let it be that's basic Al aw CBS using persistent volumes that is for storing databases logs and important app data next we have use stateful sets now
+
+
+01:08:35
+this is when pods need stable Network identities you can go with stateful sets next you have deploy stateful databases you can set up entire databases for this with replication and automated backups so that not just one copy is there multiple copies are there so that even if one copy goes down you have other copies next Implement load balancer we have talked about load balancer already load balancers are usually used if there is a user session going on and you want to make sure that that user session is
+
+
+01:09:03
+preserved then you can use a load balancer lastly you can monitor and backup data like we already talked you can use Val for kubernetes and database snapshots database even in EBS you can use snapshots that's database snapshots moving on to our next question can you explain the concept of chaos engineering and its significance this is a very interesting concept I believe now consider the situation you're working as a fireman uh now um instead of just sitting there and waiting for a fire to
+
+
+01:09:31
+happen what you do is you go around and set fire to a house not like any random house it's a dummy house for this purpose only so you set fire to that house and then you send your people over there um and you see them in action as in how is is everything that I train them for am I actually getting some value out of it are all the people working as I have trained them is that happening is the are my people actually able to put out the fire are my people actually able to save other people is it
+
+
+01:09:57
+happening that is called as chaos engineering now chaos engineering is a practice of deliberately injecting failures to test how a system can handle disruptions or in technical terms or if you consider a tech scenario you will deliberately kill the servers you will deliberately simulate Network outrages and you will slow down Services just to see if your architecture we also talked about building a scalable and auto and fall tolerant architecture right so you can actually you'll actually have to kill
+
+
+01:10:29
+the servers you'll actually have to simulate Network changes so so that to see that is my architecture that I build is it able to uh withstand such an outrage that is chaos engineering now why is it important it's very important because It prepares you for a real world failure it helps you catch unexpected bugs as well it reduces downtime and outages and it improves Auto scaling and fault owns but the most important thing is obviously to check if your system can withstand and it also helps in Catching
+
+
+01:10:58
+unexpected bugs which you might have taken it through a testing round but you might not detect it at that point but later on when you do chaos engineering you realize oh this bug popped in it actually saves you a lot of time moving on to our next question what is the difference between synchronous and asynchronous communication in microservices now say you have a particular restaurant now you're going to a particular Cafe now synchronous communication is when you go into this restaurant you order coffee and uh the
+
+
+01:11:27
+Barista is like okay and then you just stand there you do nothing you just stand there you stare at the Barista and the Barista is looking at you and he's preparing the coffee that is called a synchronous you don't do anything you you order one thing you wait there that is synchronous now asynchronous on the other hand is that you order coffee and the Barista is like okay and you just just stand there staring at the Barista you instead leave and you go around about your day and as soon as the coffee
+
+
+01:11:50
+is prepared you either get a notification or maybe the Barista calls out to you or something and then you go back back and take the coffee with you that is you don't wait for the things to happen you can it happens in the background while you perform other actions or in technical terms in case of synchronous the client sends a request and waits for a response before proceeding that is it blocks everything else and it just stands there that is synchronous such as a rest call between microservices air synchronous on the
+
+
+01:12:17
+other hand the client sends a request and continues doing other work the response comes back later like they even driven Mage messaging with CFA rabbit time and web sockets you must have noticed that when you are say restarting your phone you cannot do anything with your phone after while it's restarting that's synchronous when you install an application from Play store or App Store when the application is getting installed you are free to go and use your phone it's not like if the application is getting installed you
+
+
+01:12:45
+cannot use your phone at all people arear like my I'm installing a new application so I can't use my phone Nobody Does that the application will get installed but it's in the background it doesn't doesn't disturb you with you using your harm maybe it will cause a little bit of network latency but other than that it shouldn't affect your normal phone so that's asynchronous now when should you use synchronous when should you use asynchronous synchronous should be used when immediate response
+
+
+01:13:12
+is needed that is you don't really have time and uh you cannot wait you because the whatever request you made it's blocking the rest of the threads so you need the response so that this particular blocking thread can move and other processes can also Al happen asynchronous and it's a long running process like an app installing moving on to our next question how do you ensure compliance and governance in your devops processes now ensuring compliance and government is similar to how in a bank
+
+
+01:13:40
+you have a system where only authorized staff can access the money it's not like any random stranger will be passing it like look at the money you won't do that so only authorized staff can look at the money can take in charge can they they they are the ones who have access to the walls and there are CCTV camases security cameras track every single transactions and every single person automated alarms detect suspicious activities and Regulatory inspectors ensure that everything inside the bank is meeting
+
+
+01:14:10
+the legal requirements now this is how compliance and governance is ensured in case of banks but how is it ensured in case of deop devop systems ensuring compliance and governance in devops means implementing security auditing and policy enforcements throughout the software development life cycle to meet legal Regulatory and business requirements now how to do that you can use policy as a code where you automate compliant enforcements using open policy agent and Hashi cop Sentinel next you have security and compliance checks
+
+
+01:14:45
+where you can integrate tools like sonar Cube sync or AWS config in the cicd pipeline next you can enforce least privilege access that is role based access an IM am policy so that you can make sure that even when you provide like you know this is an interesting concept like when there's a or just say you're editing a movie script right so certain people are allowed to you give the script to somebody else you in a in your Google dogs you don't give complete edit access to that person you would
+
+
+01:15:15
+only give a view access or probably a comment access so that they can put their changes but you don't give edit access to every single person n to your script will be completely changed right so that is called as giving role based access that based on your role and your Authority you will be given access to a particular architecture or software next enable log audit logging and monitoring very very crucial keeping logs of everything track all changes with yeah there is Elk stack cloud trail
+
+
+01:15:41
+or prom elk stack we already discussed about Prometheus we discussed about cloud trail is there they all keep track of what the services are doing at the time so that even if something goes wrong prome with promes and everything you can because promas and tools like promes and grafana they all do centralized logging so in such a way debugging becomes a lot more easier for you then conduct regular compliance audits just to make sure that everything is uh getting up to the mark you can schedule internal and external audits
+
+
+01:16:09
+moving on to the next question can you describe a situation where you optimize a cicd pipeline for performance now consider uh like obviously for this question you need to provide your own answer but I'll give you a generalized answer so that you can at least understand how your supposed to proceed with such a question say you're working in a particular company where they had a cicd pipeline but was it was not exactly automated now let's look at the problems that were arising the first
+
+
+01:16:37
+problem was that it took over 45 minutes to complete a deployment imagine a deployment you're deploying an application and it's taking 45 minutes to deploy then ran test for Every code change even though only one single service was getting modified you were running test for the entire modules for the every every single module was there payment module login module even even though you made a change in login module you're also testing the payment module so frequently failed due to Flack repeat
+
+
+01:17:07
+frequently failed due to flaky test causing unnecessary back sometimes it possible that some test cases fails for no particular reason it just fails because due to System error or something so because of this reason they thought that um there was something wrong and they had to do a complete Ro roll back and then they had to restart it which again took another 45 minutes and then had inefficient artifact storage leading to repeated and redundant bills that is even if one single thing was changed the
+
+
+01:17:35
+entire code would start building from the scratch that if it's like uh you changed one single part of the code but instead of this happens in react if you must have worked in react it has a virtual dorm it doesn't really build the the website every single time it compares the virtual dor with the actual website and checks what whatever has changed and only updates the part which has been changed instead of reloading the entire web page so this particular company wasn't doing that so one of the
+
+
+01:18:04
+things that you can do to solve this issue is parallel execution that is say if you're building a car now instead of building one piece at a time that is assembling the doors at the time building the engine one at a time you can split up this in into teams so that one team can install the tires and one team can go around and install the engines in such a way the build time can go up from 15 minutes to just 5 minutes next you can do only necessary tests that is say if in a building there's an
+
+
+01:18:34
+issue on the fifth floor you don't have to go around and scan through every single floor you go on knocking in the first floor second floor third floor till you reach the fifth floor you don't have to do that you can just go and check on the fifth floor where the issue arised in such a case testing time was reduced by 60 seconds next do layer caching you can try what happens is that um you know if you have a website or even you must have seen in Google also if like there is a cash available then
+
+
+01:19:01
+when the website loads if uh the cash is being stored in the server closest to you then it doesn't take a lot of time because it doesn't have to build everything from the scratch half of the things will already be stored in the cash hence the build time dropped from 10 minutes to 2 minutes next what you can do is reduce unnecessary failures you must have heard about the boy who cried wolf for no reason at all and like people came to help him and when they actually cried nobody came up that
+
+
+01:19:28
+happens we talked about this earlier also that sometimes some errors happen in a test case for no reason at all so you can avoid that kind of test cases and UN in such a way you can avoid unnecessary roll back and focus on test cases which actually need your attention moving on the last one we have smarter artifact storage that is consider scenario you have Netflix movie streaming website in that what if whenever you had to watch a movie like all the movies are downloaded in the servers closest to you they are cached
+
+
+01:19:57
+there so that you don't have to wait for a lot of time so that the movie is getting loaded in the cash first then it will get loaded on your PC it'll take a lot of time so to avoid that the movie is already loaded in the server closest to you it is already cached there so that you fetching the server closest to you hence it decreases the deployment Time by almost 80% so these are the five things that you can Implement to optimize your cicd pipeline for performance moving on second last question what are service
+
+
+01:20:27
+measures and when would you use them now say you have a restaurant it was a mini startup restaurant you just started it everything was going smoothly and then everything started going too smoothly and more and more people started coming into your restaurant and your restaurant started to grow and then you had to hire more waiters more chefs more Cooks however this also caused a problem this also started causing friction among each others among each other employees because there was not a problem proper
+
+
+01:20:55
+manager however then you hired a manager for this restaurant and all of these conflicts were reduced because the work was uh pipelined or it was streamlined and hence nobody was having extra pressure and everybody was on the same page and hence the workf flow was also reduced and the conflict was also minimized now this manager in this case is a service mesh or in technical terms a service mesh is a dedicated infrastructure layer which is used for managing service to service Communication in a microservice
+
+
+01:21:27
+architecture now it is used to control a lot of things such as traffic control security observability and resilience traffic control such as it does load balancing rate rise and it also manages rate limiting that is again a cyber security concept rate limiting where um when vots try to attack your website so that they can cause that denial of service attack rate limiting helps prevent it so service measures can also prevent that security again we just talked about it Mutual TLS it can uh it can actually put authentication and
+
+
+01:22:01
+encryption as well then observability it can monitor log and track like your promitheas and tools such as that that is called service measure as well then resilience it can prevents circuit breaking it increases the fall tolerance it configures auto retries etc etc then when should you use them and when shouldn't you use them as per the question you should use them when there are many microservices like in case of our restaurant like when our restaurant was really tiny we didn't really need a
+
+
+01:22:28
+service M because there were only a few employees but as our restaurant grew and there were more number of employees there were more number of chefs more number of cooks you needed somebody to manage them that is when service mesh jumps in when security and encryption are required obviously if you're making a banking application or any application any website in um question they all give you access to building your profiles so in such a case authorization authentication becomes crucial then
+
+
+01:22:54
+observability and monitoring obviously one particular module if the payment module is not working you need to go check the logs as in what is not working why is it not working maybe it's connected to some other module so if you have a centralized logging place you can see every changes in a centralized location hence it can save you a lot of time now let's talk about why you shouldn't use them you shouldn't use them if it's a simple architecture like we talked about how there are only a few
+
+
+01:23:17
+employees and you don't really need it because it complicates stuff then if you have configured say AWS API Gateway and it's managing enough services for you you don't really need to add a service mesh because again it can complicate stuff for you and if the added complexity isn't worth the overhead moving on to our last question how do you approach monitoring and alerting for a serverless application now say you're in a restaurant now you have employees working for you these are your delivery
+
+
+01:23:46
+men your delivery boys they're working for you now how do you make sure that every delivery is happening at the right place and say it's a pizza restaurant and every Pizza that's getting delivered is the exact one that the customer ordered and every pza is getting delivered at the correct address that the customer provided how do you make sure of it because there are a lot of delivery boys anybody can get assigned to any delivery anybody can go to anybody's house and deliver the pizza
+
+
+01:24:09
+how do you make sure everything is logged and centralized so that you can manage it similarly in case of serverless applications now you know what the problem with serverless applications is if you have your dedicated servers then you know which server is which but in case of serverless applic it's all happening in the cloud so you don't know which server is getting alloted to you right and it can change like this time I'm opening I'm getting one server next time I'm logging in I'm getting some other server
+
+
+01:24:36
+that is possible then how can I manage if I'm getting allotted a different server every single time that is what we'll discuss in this question now monitoring surve AS application means tracking the execution performance failures and resource consumption of functions now again you don't know which server will be getting allotted to you hence managing that server can be a bit difficult next now in case of our restaurant coming back to our restaurant example how to track these delivery boys
+
+
+01:25:02
+you can put a live GPS tracking so that you know which delivery boy is available at which location where this particular delivery boy is going so that you can track them next you can put alerts when a delivery is late not only will the customer get the alert but you as a manager will also get the alert that this delivery is not happened at this right time now if a wrong pizza delivery happens the customer can provide reviews and feed feedbacks as in this is not what I ordered and this was not supposed
+
+
+01:25:27
+to happen and they can provide the review it can be a good review as well now this infrastructure can save your restaurant but how do you use this for devops for live tracking you can put realtime monitoring tools such as your Prometheus and grafner for this getting alerts you can again put error detection and performance alerts you can use aws's guard Duty that's a very nice tool it will also give you real time alerts next for customer reviews you can use log analysis and perform performance
+
+
+01:25:55
+insights which you will have to monitor on your own and based on that you can configure the service for better performance and with that we reach the end of this module and the end of this video if you stay till this point thank you so much and I'll see you guys next time [Music]
+

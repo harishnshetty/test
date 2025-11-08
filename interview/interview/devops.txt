@@ -1,0 +1,60 @@
+### Metadata
+
+- Title:DevOps Interview For Experience : First Round Selected
+
+- URL:https://www.youtube.com/watch?v=aAxtUJrpMWQ
+
+
+
+### Notes
+
+- ([00:00](https://www.youtube.com/watch?v=aAxtUJrpMWQ&t=0s)) ### Summary of Video Interview with Mustafa (DevOps Engineer)
+
+---
+
+#### [00:00:00 → 00:03:38] **Introduction, Background, and Current Project**
+
+- Mustafa is a DevOps engineer with **3 years of experience**, currently working at **TCS**.
+- He graduated in 2019 with a degree in **Electronics and Communication Engineering (ECE)** from Chap Institute of Technology.
+- **Current project:** An **e-commerce platform** that was migrated from a **monolithic architecture to microservices**.
+- Technologies used in the project:
+  - **Java** as the programming language.
+  - **Git** for source code management.
+  - **Jenkins** for CI/CD.
+  - **Docker** for containerization.
+  - **Kubernetes** for orchestration.
+  - **Ansible** for configuration management.
+- Mustafa’s responsibilities:
+  - Creating infrastructure for various environments (Dev, Testing, Production).
+  - Writing Dockerfiles for applications and managing container images in Docker Hub.
+  - Deploying applications using CI/CD pipelines.
+  - Using Ansible for installing dependencies and automating setup on multiple hosts.
+
+- **Key challenge:** Handling deployment failures where code works in development but not in production. Mustafa manages this by enforcing **branching strategies**.
+
+---
+
+#### [00:03:38 → 00:06:57] **Branching Strategy, Git, and Linux Skills**
+
+- Project uses **main branch** for production deployments (not master).
+  - Difference between **main** and **master** branch: 
+    - GitHub creates main branch by default if a README is added; otherwise master is default.
+- Password reset for Git client (local machine): Generate a **GitHub token** to replace password authentication.
+- Mustafa rates his **Linux skills 4/5**.
+- Linux distributions used: **Amazon Linux** and **Ubuntu**.
+  - Key difference: Package managers differ (Amazon Linux uses **yum**, Ubuntu uses **apt**).
+  - Amazon Linux has some default utilities pre-installed (wget, curl).
+- Difference between **wget** and **curl**:
+  - `wget`: Downloads files from internet.
+  - `curl`: Downloads files and also tests network connectivity.
+- Explanation of Linux command **awk**:
+  - Used for pattern scanning and processing text files.
+  - Example: `awk '{print $2}'` prints the second word of every line.
+
+- Checking free disk space: Commands like `df -h` or `du -sh 
+
+- Tags: Smart Summary
+
+
+
+-- With NoteGPT

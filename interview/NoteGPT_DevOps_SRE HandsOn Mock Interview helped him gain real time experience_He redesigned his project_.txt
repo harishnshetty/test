@@ -1,0 +1,244 @@
+
+00:00:36
+look at you frequently so you don't worry about that u start with the interview so why don't you introduce yourself uh with some basic things like your background um and what are your current roles and responsibilities uh I wanted to know like what automations you have worked on right and uh also I wanted to know if you have achieved any awards rewards certifications have you completed anything and finally tell me some things which are not there in your resume go ahead so first of all I have four years
+
+
+00:01:09
+of uh experience on to devops uh with persistent systems and in my day-to-day activities first of all like uh the project I'm working on it's an email marketing application so it has capability to send out bulk out like millions millions of emails like Zomemetto does every morning to us. So it has capabilities like that. So there I'm working I'm managing the complete infrastructure using Terraform. It's a micros service based uh Java application again which is deployed over EC2
+
+
+00:01:36
+instances a fleet of EC2 instances. So uh there I have to maintain the complete infra a well structured CI/CD pipeline. Apart from that, I'm responsible for managing the complete uh like if there is any application vulnerabilities, it's part of my day-to-day activities to find and remediate that. A few I have done in uh my past activities. Uh apart from that, managing the complete uh monitoring solutions over Prometheus and Graphana and Cloudatch. Uh apart from AWS EC2 deployments, I have experience
+
+
+00:02:07
+over Kubernetes deployment as well. uh the CI/CD pipelines we use are include of Jenkins and GitLab CI which I have used in my past. Uh apart from that if you talk about my achievements uh we were our team was the first runner up in the global hackathon which was organized by client. Apart from that I was 5x GCP certified also. So I have a good background over GCP. Uh but my recent projects in are mostly on AWS only. And yep that's a lot about me. Okay. So I asked you two more questions. Tell me
+
+
+00:02:39
+about your team and uh about your uh some things which are not there in your resume. Okay. About the team uh the team consist uh more of the support teams and the developer guys. So I am the bridge between every one of them. So I uh so there is a DSM where we used to like we maintain the Jira boards. So we take updates from the whole team. If any requirements come from the developers or support team, we have to like work with the cloud engineering team to complete that requirement and uh also at times we
+
+
+00:03:10
+have to go on root cause analysis with the support team or any on call support we have to provide. Uh and uh something which is not in my resume uh my hobbies are there like I have to go for long drives and uh music are a bit of my passion like I love playing guitar. Okay, great. So let's start with your uh first point itself scalable highly available cloud infrastructure. So when I see your resume I see that AWS and GCP are predominantly there but when you said the points I only understood you
+
+
+00:03:42
+are working on EC2. So I wanted to understand the architecture how you are managing this fleet of uh email bulk email triggers and all with what architecture you are doing. So can you just give me in one minute that complete flow? Sure. So first of all it's a microser based application. So we completely package the microservices into one tarball and going forward we are using a set of packer and anible to create the AMIs and from those AMIs using terapform we create the launch template and going forward for the
+
+
+00:04:12
+required clients we deploy them. So that's how the complete flow goes. Great. So this is for infra deployments. Now how the CI/CD works? Can you tell me like what are the components that you guys are using because I see vulnerabilities also you are handling. So AMI, packer and anible and terraform stuff I have understood but what about your CI/CD? Can you like I want to see a holistic view of what you guys are doing. So end to end you have to tell me so that I can get a clear picture and I can understand like okay you have the
+
+
+00:04:40
+idea of what you are doing. Sure. So the project we are working on it's not completely agile. So whenever the requirement comes or let's say the developer team is ready we trigger the Jenkins pipeline and that's how our flow of CI/CD starts. Once the CI/CD pipeline is completed, we get the complete tarball as mentioned which completes the package and going forward we deploy that package onto uh using the required tools as discussed. Oh okay. So you guys are having genkins which is giving you a
+
+
+00:05:10
+tarball. So it's kind of a CI pipeline which gives you out of a tarball and you guys deploy that tarball via the AMI packer and other stuff. Yes. Yes. Okay. And you guys are having EC2 as a fleet. Uh yeah like like behind autoscaling groups and all. Oh okay got it. So tell me like what is the average uh count that users are using or what is that structure because you are sending like you are trying to send emails only with this application right. So what does the autoscaling is doing here? Uh so let's say uh whenever like let's
+
+
+00:05:47
+say every morning Zomemetto sends us a marketing email or campaign like that or a push notification. So at that times the traffic hugely goes up and any interaction will also increase the traffic flow. So at that times the system needs to be highly scalable. So uh over that part we have like worked so that autoscaling group automatically scales up the instances as and when required. So you have two applications here. One is like uh from that email some user is clicking the link. So you are expecting that your autoscaling will
+
+
+00:06:17
+be uh used there. Yeah. Again we record it. So it's like uh based on user interaction. So if you interact with that email we have a reporting uh dashboard over our application also you get the complete reports how many users were converted, how many users are have not clicked, how many users have bypassed it. So it's complete reports are also there. Okay. Okay. And for that reports the autoscaling group and the and all those things are taking care of this. Yes. Okay. But tell me like the
+
+
+00:06:45
+email application let's say let's talk about the email micros service part. So what do you think like is it also a tarball application or can I say like it's a lambda application something else because it's a trigger right? Uh again it's an application which has to run 24 into 7. So again lambda won't be supporting that uh need for us. So EC2 was the best one and behind autoscaling group. So when it is not required it scales down based on the metric. Okay. So you guys are not using any Kubernetes
+
+
+00:07:16
+or containers here. Uh not in this project but yeah I have used Kubernetes in few of my past projects. Okay great. So tell me like if I have to tell if I have to uh ask you right let's think like this. I want to remove the AMI packer and anible part and with the genkins whatever the tarball is coming I want to convert that tarball into the docker image and then do the kubernetes deployment so what are the steps that you are going to do let's say I want to revamp your project okay sure uh so rearchitecting it using
+
+
+00:07:45
+docker images and kubernetes right uh so once the uh tarball is ready okay again we won't be using tarball uh let's say uh the next step will be we copy all of our code dependencies onto the docker image Again the size will be huge since it's a legacy application size might increase. We will be going forward with multi-stage docker builds. So that will reduce our docker image size to sn which when required and going forward we can deploy that onto any of the kubernetes provider. It can be over AWS or Google
+
+
+00:08:14
+kubernetes engine. So you you are doing that currently. Uh no we haven't done that but it's my architecting how we can proceed with if we we want to rearchitect this application. Oh, so you are telling me that if you want to convert that tarboard, you are telling that you will convert that into a docker image then to a container then deploy onto the kubernetes, right? So yes, so are you good at kubernetes files and u docker files like if I have to ask you to share screen if you can write some
+
+
+00:08:44
+code for me. Uh sure. Okay. So check once if you are able to share your screen. Uh host disabled participant screen sharing. Okay. [Music] Okay, that's fine. I will share my screen. Sure. So, you just tell me some steps I will be writing on your behalf. Okay. Mhm. Okay. I'm giving you a first question. So, there will be a series of questions from here. Okay. So, Okay. You just tell me the commands or the things that you will follow from here. Okay. So as we have discussed uh we have a CI
+
+
+00:09:24
+pipeline and we are getting tarball correct. Now this tarball the first question is convert the tarball into the docker image. Correct. So what are convert the tarball to docker image. So what are the steps that you will be uh writing it here in the docker file? I just need that. Sure. So first will be the from. So we will use uh let's say if it is a java application we will use a java image. M and uh since it's a multi-stage docker file so the the first stage will be as builder let's say I'm
+
+
+00:09:57
+taking it as builder second stage uh we will set up a working directory and third stage we will be copying this tarball onto our application we can use copy or add command so to copy this uh tarball to our application uh once done uh if any build step is required over here we will be performing that build And if not uh we'll be continuing it with the second stage of yeah uh we will be continuing with the second stage where we will be copying only the necessary files from here. From stage one. Yeah. From stage one.
+
+
+00:10:36
+Okay. So this portion you will take some necessary files and build your stage. Again stage two will we will pick a lighter image since uh using a Java image will increase the size. So a very lighter image will do our work and we will be copying these artifacts or any necessary files just the necessary files and so why you want to take the necessary files like what is the use from here and what are the files let's say like is it a configuration files how you can conclude that these are my files
+
+
+00:11:04
+from the stage one okay again uh if we are taking up a tarball it's a complete package we cannot extract the necessary files uh but let's say if it was a NodeJS application we'll be only taking the uh yeah only the build part and copying it onto the next stage and further we will be having the entry point uh expose the necessary points and further these things to like uh move forward since this is a final build. Okay. So let's see let's think like this the tarball size was 100 MB. Yeah. Okay.
+
+
+00:11:38
+And uh this docker file size is 120 MB after the image. So what are the steps you will take? Let's say like I have done the multi-stage. I have done everything. I don't have any but still the size is more how you can reduce to let's say like 100 MB again. Okay. Uh one thing can be to reduce the number of layers that will be the first option. So if we using too many done layers how do you do it? Yeah. Uh so if we are using too many run layers uh we'll be using and to like run all the
+
+
+00:12:14
+configurations in one line so that it doesn't consume much layers. That will be one step. Uh anything I cannot think right now. Uh the second options. Okay. But if I have to tell you like from 120 MB you have to come down to 100 MB. You can try. Yeah we can try. Okay. tell me let's say like I have converted this into an image. Okay. Now the image name is docker 1.0. Now I want to again convert this image into a container which I already did. Okay. Container name is docker t 1.0. Now manager tells that in this
+
+
+00:12:55
+container I have to add a file. Okay. Let's say I added a config file. Now I want to convert this container again to image. So what are the steps you will follow? Okay, since this is a running container first of all and we want to snapshot it from this point, we will be using the docker commit command. H okay. So directly you will docker commit on the running container or what is the steps that proper steps you follow? Uh so uh like inside the docker container we don't need to perform any operation
+
+
+00:13:24
+after the file has been copied. So coming out of the container the container should be in running state first of all to take up the snapshot. Are you sure? And you don't want to stop the container. No, if we stop it, we lost the container. The container's work is done. It will uh exit. Okay. Yeah. To take a snapshot, the container should be in running state. And on the CLI, uh we use the docker commit command to take the snapshot to for that particular running state. Okay. Yeah. Got it. Now
+
+
+00:13:55
+tell me, let's say after I added this configuration file, that snapshot came to me. I am having a version docker image of 2.0.0. Okay. Now I want to deploy this docker image as a deployment with replica of three. Okay. Having lightness and readiness probe. So can you define that Kubernetes manifest file for me? There are three components. One deployment. I need a replica. I need a leness and readiness probe. Image name is this. Container name. You can take it anything. So can you this is a step two
+
+
+00:14:31
+case two the case one you are case two you have to tell me like what steps you will follow sure so uh writing a kubernetes deployment file from scratch first we we will have the API version uh then we will be uh it can be deployment/v1 or something like that next will be the kind so since it is a deployment it will be a kind third there will be the metadata uh anything we want to pass the metadata like name uh so and so the tagging part after After that we have the specification file. Mhm. Uh yeah in the spec file we need to
+
+
+00:15:05
+mention like how many uh desired replicas the image which should be deployed uh and the livveness and readiness probe as you mentioned these are the core components there will be okay so let's assume that I rolled out this uh particular Kubernetes file onto the Kubernetes cluster but I am seeing that uh it's in the crash loop back error. Mhm. So what will you do here? Okay, again uh crash loop back has multiple scenarios. Uh first we will be checking up the logs and uh we will be using the okay ubectl logs will give us the
+
+
+00:15:47
+logs. Uh cubectl describe will give us the events. So logs and events we need to check and specifically like it can be a configuration issue. Majorly it's a if it's a configuration issue uh or it doesn't have any required file. Let's say the config file is missing in that case it enters the crash loop there. So we need to fix that issue. So it we will be getting that from the logs or the events. Okay. So tell me like here we have not mentioned any CPU and the memory. So when I'm running up this
+
+
+00:16:13
+image 2.0 how much CPU and memory this particular pod will be taking any idea like a guess like like how a pod knows key are it has to take this much CPU and this much memory. Okay. uh that is based on the application size and the application how much it scales up and down. But if we haven't mentioned it can scale up and up and up. So we obviously we need to like mention the request and limits for that deployment. Okay. So you are telling that you will add the request request and limit limits also. So what is the
+
+
+00:16:44
+difference between like request and limits like both are same? No, both are different. So request is that you must uh have let's say the application every time needs 512 MB of memory. M so it cannot have less than that. So we always we need to allocate minimum 512 that is the request part and limits is it is the maximum that the application can consume. Let's say I uh the maximum I want to give it 1 GB. You cannot go more than 1 GB. If you go you will die. So that's the concept. Okay. Got it. So
+
+
+00:17:14
+let's assume that we are going to case three where we have an ingress, we have a service, we have a deployment. The same deployment is running successfully and people are able to access it. But my task is I want to make sure the proper alignment of that particular deployment is to the service through the ingress. So how do you design the ingress to talk with service to talk with deployment? Okay, sure. Uh so again ingress uh in ingress we have the uh capability to make it path based routing. So let's say
+
+
+00:17:43
+if it is a / app or slash one. I'm fine. I want the skeleton like what will you mention like in the in the main part? Okay. uh so let's say if any uh application is routing to let's say the / app or then it will route to the particular service and service is again linked with a particular deployment using labels labels and selectors h so in the ingress what kind of uh components you will use it so you have to tell me that like you told so first will be the path yeah it will be a path
+
+
+00:18:14
+based routing so first will be the path mhm and second it will be uh when the path is uh targeted so where it will route so I think next will be the service name but tell me like I'm looking for these kind of things the the skeleton part so are you aware uh ingress I haven't written from scratch so I'm not aware of the complete thing but yeah pathways routing I have done you heard about virtual gateway service in ingress uh no haven't digged it that much okay so basically in under ingress you will
+
+
+00:18:47
+create a virtual gateway service this gateway service will talk with your back end and then back end via are the labels whatever you are telling that will be talking. Yeah, labels and selectors. Okay, good. Now these are like case three cases we have completed successfully. Let's assume that the user is coming here ww.havops.in in the user is getting the data from the now my my assumption is the user is getting the data user is happy but still I want to scale my application to the extent that
+
+
+00:19:16
+maybe let's say like it is able to take a load of 100 million users as of now it's taking a load of 50 million so how do you scale this uh to bring to this extent so can you tell me like what components you are thinking in terms of system design surely for autoscaling Uh first point comes is horizontal pod autoscaling. So as and when load comes based on metrics it will scale up and down. Second point uh we need to set up a target metrics. Uh let's say if it if it reaches that much metric it will be
+
+
+00:19:47
+scaling up. So that we mentioned on the HP only the target CPU or target memory this kind of things. So HPA will be the one I will be going forward. Mhm. Only HPA you can scale your system from 50 million to 100 million. I'm looking for additional architecture support also which you can give to my pod. Uh okay. HPA scales the pods again. The nodes should be also scaling since uh 100 millions uh let's say or 100 of pod comes up. So the there should be nodes to support this activity. So the
+
+
+00:20:20
+node pool should also be scaling not only the pod node pool should also be in a scaling mode. Okay. So node pools you will create. Now I'm good with the kubernetes cluster. Now outside the Kubernetes cluster or inside the Kubernetes cluster do you want to support anything for my scaling capability to maximize? uh cannot uh recall right now but yeah uh okay but how in your project it is happening only autoscaling group it is doing all things for you there should be some other components also which taking
+
+
+00:20:51
+care uh HPA and the note pool autoscaling these two I can think of uh nothing but outside of the Kubernetes cluster you are not able to think uh or you didn't worked uh no I didn't work that much okay okay let's go to the next step. Okay. Now let's assume that my users are able to take the load. The users are happy but still uh I I want to do extra monitoring on top of the systems which I have. So can you write me a Python code, right? Mhm. Okay. So I'm happy till now like we are
+
+
+00:21:58
+able to successfully scale to 100 million and everything but still I want to do some additional things on the system. So can you write me a Python code to check if the website is up and running and send the user interaction count of the website along with the user purchased count from the database to the email DL. Will you be able to write the Python code? Uh I will need some time because uh in such such short duration I don't know the libraries which will be doing this thing. That's completely
+
+
+00:22:27
+fine. Can you able to divide me the the lines like the pattern? Will you be able to do it like how? Yeah. What I can break it out. What is your like tell me the tell me the things that came to your mind first. Yeah. I don't want the code. Let's say like okay uh let's say like Ankit has has the idea to design this how he can put it on the paper. Let's go. Sure. Uh so first is uh to check the website is up and running. Uh we will be uh like checking out a path let's say uh slash app or something. We'll be check
+
+
+00:23:00
+uh checking it on a regular interval. Uh so without with a timeout or uh time interval we will be checking it. Uh second thing is uh send the user interaction count. Uh this has to be fetched from the Kubernetes cluster. So uh why do you think that Kubernetes cluster gives the data? Okay. Uh it can be inside the application logs also we can uh fetch this particular application logs. You have DNS, you have content delivery network, you have various kinds of things on the UI side itself, right? You
+
+
+00:23:33
+want still want to go to the application side. Okay. From load balancers also we can fetch the information like how many users hit this particular URL. Okay. So load balancer hitting can also be one thing. So what what module you will use it here? Let's say for load balancer only I want to hit and get the data. Any Python module you remember? I uh cannot recall the Python module right now. uh if I have to give you a hint boto3 yes okay so you will hit with the help of boto3 now tell me like you got
+
+
+00:24:03
+the user interaction now I want to have a interaction with my database so uh let's assume that it's a mysql database so how do you do it like any idea like steps uh no for the database I cannot think of it uh but let's say once our whole python code is ready uh since we have to get the whole all the information in a regular interval uh we will setting it behind a chron job or attaching a chron job to run this python script uh every day at let's say a few interval let's say every day at uh in
+
+
+00:24:34
+once in morning once in evening to get the particular date or based on the chron job got it got it so this will be the final step okay I'm good but tell me this now like being a devops and s engineer what are the components that you can have in database username password a table selection entry Uh yeah select selecting the data because I want the purchased count. I will go into the data. So can you think something like this? Okay. Username password I have. I will go into that particular table. I will fetch that data
+
+
+00:25:07
+purchased count and I will put it in a email format. And final step is what? Send email is also there right? Yeah send email. Okay. So tell me like after we broke down this can you divide me into functions like this particular divisions you have done can you go with some functions like how many functions you will write any idea if you can put a little bit more effort. Uh so basically there are four uh four basic tasks we are doing. So four functions will do the work. Okay. And uh would you mind to
+
+
+00:25:39
+change this four functions into a Python class statements if you can do it? you you will write one class under that class will you be able to put all the four functions any have you done any such kind of thing or uh no this is something really complicated I just broke it down but uh beyond this I haven't okay that's good no issue so coming on to your resume right so everywhere I see that uh you you told like most of the things are docker kubernetes 100% 40% 80% prometheus graphana as cloudwash
+
+
+00:26:09
+99.99% also you mentioned so very fascinating about the monitoring SR side and and also you mentioned like one TB plus code was migrated from SVN to GitLab. So what what is that I wanted to understand like how did you do that? Let's say I have a I have a SVN repository. I have four files in it. So that is 100 MB. So what steps you will do for that code to get migrate to the GitLab. Okay. Uh so there is a tool SVN Git which is a a combination of SVN plus Git. So uh again uh the challenge here
+
+
+00:26:43
+was to conserve all the history and all the missing files uh let's say some folders have missing files those weren't copied to git uh if you use the svn git so these two challenges were there so again we just wrote a simple shell script which was to fetch the data using svn git and further it just pushed to gitlab creating the particular repository and pushing it the whole thing to there it was just this simple of a sense and you migrated 1TB of data to the G. Yeah, it's so using this
+
+
+00:27:14
+script it ran overnight. So it saved us a lot of time and manual effort. It did a particular Yeah, I have done it from scratch. One TB of data. Yeah. So it took us more than Yeah. With only shell script but tell me like in the shell script have you mentioned any processing or like I'm still fascinated like how shell script handled that much of data. What do you think? like you added any code, you remember some lines, you want to share something. Uh so it wasn't that complicated of a code. I can share it
+
+
+00:27:43
+with uh uh if required. Uh so there was no credentials, nothing else was required. It uh so we have to just feed the folder names that copy the particular every data from this folder name. URL was dynamic. We used multiple variables. So that also saved us the time. Uh the GitLab branch names was also variable. So we completely variableized it. that but how did you pass all the branch names to the shell script? Okay, so in a file we just passed all of the files names as list. So that from that it was iterating like
+
+
+00:28:15
+in a for loop it was taking up the file name doing the operation deleting the file. So that was saving us also the space. So it was going on in a particular loop. Okay, got it. So what if if I have to ask you can you write the same thing in Python? Will you be able to do it? Right. Uh it can be done. It can be done. Yeah. I will need some time to uh do it but it can be done. Okay. Great. So tell me like uh achievements I'm able to see like delivered seven plus projects right? Yeah. But in your
+
+
+00:28:47
+personal experience I only see like one project you have mentioned. So which one is correct? Seven plus you worked is correct or the one? So seven plus where are some really short duration projects where I was working with the pre-sales team. So there were some fast-paced deliveries again uh there was a not that much level of work but yeah small scale of work was there as a devops engineer. So why didn't you mention there like because I'm curious to know like when you mentioned as a project right I'm
+
+
+00:29:15
+curious to know kr what have you done correct so you can mention under the delivery 7 plus projects 1 2 3 4 some data about that got and tell me like uh this 5x GCP certified I'm very much fascinated like how did you achieved it first of all tell me that okay uh somewhere project okay let's understand like how did you manage the time doing the work you're doing automation you are participating into hackathons, you are doing certifications. How was it possible? Okay. Uh so after the work I need to
+
+
+00:29:46
+needed to take out some time separately and on the day of the exam sometimes I used to take up a leave uh to like completely focus on the exam and keep my mind free from every stress. Okay. Great. And anyone sponsored your certificates or uh you company sponsored it. Great. Great. Awesome. Right. So uh Ankit I'm very good with your interview right and it was amazing right I'll share my feedback okay and then give a opportunity to others also to discuss okay so you are selected for my team
+
+
+00:30:19
+okay first of all uh very confident person you are I have not written any feedback but u I was just drilling you down I can I can go very very deep for you for you like people here cannot imagine also B I can go into if you have given this answer the next one was already ready for you. Okay. I was looking a break point key where Ankit is telling me like he doesn't know right. So I mean uh if you are able to see everyone I am telling see all the things are from batch level only. I have not asked any
+
+
+00:30:52
+rocket science or anything like all the interview questions everything is there. But yeah certainly at some point of time I I'm inserting some uh questions which which he might also not know right. So if you have seen he answered everything properly here and there that's fine I can go ahead with that but still Ankit for you to clear the next level of interview you have to be strong here okay the only uh everything is good I am selecting no issues but for my upper people to select you or the levels of interview if you
+
+
+00:31:25
+are going for Walmart or any kind of company if you are thinking like my package has to become 2x or 3x Right? You have to put efforts in here. You cannot tell me like I didn't got a chance to work. So that's what that's why I I told you let's break down this. You break down. Now the next I told you give me functions. You said okay. Then I told you this. Then here you stopped. After this I asked you stopped. So I stopped there. But you should not stop. At least you should tell me that okay
+
+
+00:31:58
+let's write the code somehat and tell me the answer got it okay right so as of now I'm selecting so first of all for good for that but for the next round I'm not sure that is a proper written feedback okay got it yeah if you are doing the batch level automations also you will be able to answer this for me okay just check these are things very important very very okay sure I'm opening the chat for everyone what do you guys think how was the interview did you learn something h tell
+
+
+00:32:33
+first of all tell you tell you tell yeah I just uh have a few uh first question is like how much database knowledge should a devops engineer had good good see uh database is very important any database only in mind you should remember that login credentials fetching the data processing the data and sending back the data to the some other place. So database knowledge one database is only important that is MySQL or PostgrSQL or Dynamob only go with MySQL because most of the companies are using it right and not like be if you
+
+
+00:33:08
+see one automation with Python that should be sufficient for you. Okay.
+

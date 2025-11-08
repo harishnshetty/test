@@ -1,0 +1,122 @@
+
+
+
+00:00:28
+starting directly kubernetes I added in front of it so it's in Docker plus kubernetes sessions we are going to start from the next week right thanks again for today what we going to discuss is today we are going to discuss how to introduce yourself right even if you are coming from the different stream non IT background or IT background or trying to jump from a QA to devops don't mention that but don't mention to the panel members that you've been part of any support team or you're contributing this
+
+
+00:00:55
+or you're contributing that no let's not mention that instead how you have to introduce yourself hi thank you so much for giving me an opportunity to introduce myself myself sa B you can call me a Sai coming to my work experience I do have 4.8 years of experience my day starts at 10:00 in the morning where we are going to discuss about roadblocks and then backlogs apart from that I'm also responsible for writing Jenkin files Dockers Docker files and then terraform scripts based on my q and Dev requirement we do track
+
+
+00:01:28
+each and everything with the help of zer apart from that we do also have multiple servers located in North Virginia and Ohio so it's our responsibility to monitor VI Prometheus whether the Clusters were up and running good or not if any issue occurs then again it's our responsibility to resolve it if it's not in our hands then we are going to sit with the onsite team and we are going to resolve it post that I am also responsible to give K sessions to the news zers and I'm also responsible to
+
+
+00:01:55
+take the level one technical interviews you should introduce yourself in this way but when it comes to the freshes U mention about the project what you have learned post your graduation and also mention the strength and weakness of yours and also tell them that given an opportunity will be really appreciated and you do have that Zeal and you do have that grasping knowledge to grasp all the stuff during the time of training right this is how you have to introduce yourself and the next thing what we going to discuss for today is we
+
+
+00:02:28
+are going to see about the resume and then we are going to see what you have to mention in the profile summary and how to address your projects and clients in the resume and then we'll wind up this session right so let me share my screen once so I'm not again I'm not promoting any website so I'm not promoting anything but resume. iio this is the one since I'm using for the past one and a half year they do have some cool templates here if you scroll down see the template here this is the
+
+
+00:02:58
+template of mine here we're going to get a lot of templates and also the best thing here is see whenever you're trying to apply any zob don't apply with the same resume try to change the job description and try to modify your resume and then keep applying right you know how this applying and how this short listing will work so in such case it's always a best practice to change the resume whenever you are applying to the new Z correct they do also provide 7 Days of subscription I think and they
+
+
+00:03:29
+also do provide some two months or 3 months of subscription I'm not sure but I do have one year subscription it's over already and if you do have any budget constraints I can understand so you can go to something called Dy dream store uh is it Dy dream store yeah Dy dream store I bought canva from here itself only it's somewhere around 299 or 199 I think again I'm not promoting anything guys please don't take me in a different way this is the place where you're going to get can for free I mean
+
+
+00:04:00
+not free can for the very Less Price uh see here it is if you go to the search Tab and if you end professional resumes you can also find a lot of resumes here in the can actually I decided to uh keep my credentials in the YouTube description but the problem is imagine if 100 people are logging in with my credentials I'm going to receive 100ps and if someone is pinging me on LinkedIn asking me the OTP so it will be a totally mismatch and mess up so that's the reason why I haven't I'm I'm not I'm
+
+
+00:04:30
+deciding not to mention my credentials in the YouTube but still even if people like were not ready to buy this Cana just for 200 it's totally fine I can understand you do one thing you just ping me on LinkedIn I'm going to give you the credentials just log in do the work I'm going to give you the OTP and make sure that you're logging off guys please don't forward it to anyone there is no password to log in the only thing what you have to do is you have to mention my Gmail ID that's it got it and
+
+
+00:04:58
+when it comes to the resume guys before talking about resume I wanted to tell you something about the portfolio see AWS is providing a free tire instance you can go ahead and select the free d instance it's somewhere around the monthly you are going to get a 436 rupees or 500 less than 500 I'm very sure because I'm I deployed this portfolio on T2 micro itself only but it so try to create one portfolio the reason why I'm asking you to try to create portfolio your resume looks good it will get a bit weighted
+
+
+00:05:28
+when you add a portfolio and also you can add the portfolio link end of your email signature got it so I'm not forcing you again but it's it's completely eish we have also discussed a video on how to deploy the portfolio in the very first video of AWS series when I started the YouTube channel right if I scroll down I'll take you to my resume first so this is my resume guys when it comes to the resume make sure that you're not adding more than two or three three lines in your profile again my resume does has
+
+
+00:06:02
+four lines here with this like 1 2 3 four words extra so make sure that you're keeping this in very uh like you know short don't keep it big lens like I've seen some resumes they have mentioned 7 8 9 10 because panel will be busy in the work and H will be asking them to suddenly take the calls there are scheduled calls but there are unscheduled calls also in such way they do not have in such in such time they do not have time to read your entire res so in such case what you can do is make
+
+
+00:06:32
+sure that you're mentioning the good points in your project make sure that you're mentioning the clients make sure that your which team which part of your team you are got it and mention all the details don't just mention like VPC ec2 load balancer no don't mention such points instead write a word if you don't know how to write a word if you don't know how to mention what to mention in the resum don't worry the only thing what you can do is go paste the copy the job description go and paste it in GPT
+
+
+00:07:01
+and ask it to generate some job responsibilities for it and then don't paste it directly in your resume instead read each and every line do some modifications and past it in the resume because tomorrow when you're facing the interview interviewer is going to ask you from your resume itself only so you should be confident of whatever you are mentioning in the resume right and when it comes to this links medium is very important again medium is not that that big task guys the only thing what you
+
+
+00:07:29
+can do is create on medium account Whatever video you're watching either it is mine or someone's just do a documentation and just post it on medium that's it medium is very simple the only thing you have to paste a screenshot and you have to write the matter of the screenshot likewise you can create a proper document it will be helpful to you during the time of your login also you can able to access this medium link with your client laptop also they will not block the medium right and the second thing is
+
+
+00:07:57
+GitHub GitHub is again even if you're not writing any code it's totally fine you might be forking or you might be starring some repositories right so but still you can create one GitHub account or you can do one more thing I do have many repositories in my uh GitHub you can go and copy the files onto your GitHub repository and you can also create one GitHub L not problem portfolio we have discussed this already dockerhub don't worry people who doesn't have dockerhub account when we are
+
+
+00:08:28
+starting the docker in kubernetes I'm I'm going to create one Docker Hub and I'm going to push all the images to the docker Hub so make sure you're following whatever I'm doing so it will be easy for you to create dockerhub account and you can also mention it in your resume and Linkedin is common everyone do have LinkedIn and they're going to mention the links in the resum and when it comes to the YouTube again I'm not recommending two videos on YouTube but if you do have time and if you are
+
+
+00:08:52
+capable of putting the content then it's fine you can go ahead and uh like you know start the YouTube and keep the links right when it comes to the skills don't just mention Individual Services right mention AWS or mention devops if you're good in like if you're very strong in some tools like Docker dat form and all then you can mention and you can also add these points like 1 2 3 4 5 which means five star or four for it so the only thing what I wanted to say is don't elaborate your
+
+
+00:09:22
+resume more because the interview will not be having much time to read it at least two or three pages one page is hardly enough if you do keep the strong content in single phas if you do have the cap if you're capable of keeping all the such content in one single phas then it would be really appreciated but still if you wanted to create like you know more than three pages then it's slightly not a good sign so better try to keep it in one or two pages that's it right so that's all I wanted to
+
+
+00:09:53
+discuss about resume guys and the second thing and the last thing which what I wanted to discuss is guys this I I'm I'm saying this since the day one um make sure that you're doing the practicals please because I not against any CC rules of which current organization what I'm working but I got the entire code from the zpt and then GitHub repositories some public repositories so I know the structure I know the particular structure of the service how to work with so that's what I
+
+
+00:10:23
+implemented same on these uh on my YouTube channel and all these videos got it so and this is the reason where I didn't kept any end to end project the main disadvantage of the end to end project is see your thinking capability will be limited I I mentioned the same long back on linked your thinking capability will be limited when you do individual project on individual service then you will know the functionality of the each and every Services when your manager is giving in task then you can think the task in five
+
+
+00:10:55
+different ways what it with single service we can use that in different different ways so that is the reason why don't just Ray on end to end projects what will happen is that end to end project and that particular service will be used only to complete that end to end project and you'll be thinking that okay I know this tool but now when you do the project individual project on a single service then you'll be understanding it very clearly about that particular service so first one to 89 videos I'm
+
+
+00:11:24
+sorry that was a beginner's mistake these videos were bit slow and after that we did many projects on ALB we did projects in active directory directory Services then Works spaces right cost optimization this aut scaling group is also proper real time D where we have implemented SNS Route 53 and and we have also updated the DNS with Route 53 right in the real time we going to do the same so do practicals that's all I wanted to say and the second most thing is like people who are not aware of any
+
+
+00:11:58
+conization part people people who are not aware of anything in kubernetes don't worry blindly follow my stuff after like next week I'm going to start doer in cuberes just blindly follow it guys the reason why I'm telling you is you can easily cover situational based interview questions and then you can easily handle whatever task you are getting once you get into the project because I'm going to put some medium like easy level to hard level content right so try to understand even if
+
+
+00:12:28
+you're not understanding in the first go try to watch it twice or Thrice so for me if I watch any video I'm not going to understand it in a single short it will take 3 to 4 hours for me to understand so that's all I wanted to say and and there is nothing to discuss much again I'm extremely thankful for whomever has sent the positive feedback and positive comment again I'm saying you you with your motivation I'm starting do in kubernetes and one more thing I forgot to add I'm doing this kubernetes stuff
+
+
+00:12:58
+on six node multi note kubernetes cluster I'm not going to do it on Mini Cube or ranch or kind I'm going to do it on six note kubernetes cluster it's a proper real time activities and don't worry I'm not going to jump directly onto the deployments before deployments what I'm going to do is I'm going to explain about nodes and parts like when I started learning cuberes I don't even know what were notes and parts like I I confused for these two terminologies so we are going to discuss each and
+
+
+00:13:25
+everything uh we going to go slowly so that everyone can be understanding um yeah my only request is to do the practicals that's it don't worry about the bill the bill is minimal itself only guys this the path will be like this only it's bit hard I know many people having like getting the less salary comparative to the friends and I can understand that totally even if you do the hard work the salary was not salary was still an underpaid but the process is like this if you skill up now at
+
+
+00:13:56
+least for 2 or 3 months whatever I show you mark my words you're going to get very good salary guys trust me so they are going to pay some good amount so what you have to do you have to do some justice to the position you have to do the Justice to the money which what you taking correct so for that at least do more practicals so that once you get inside everything will be dead easy for you reason how I'm doing this YouTube videos is I can spend the time in office I can come back and do the videos
+
+
+00:14:22
+because I know how to do it so that's how easy it would be if I spoke anything wrong like you know mistakenly please don't take me in the wrong way and all the very best to everyone we'll see you in the next week we'll see you in the next week with the docker and kubernetes if you do have any doubts don't hesitate to ping me on LinkedIn if you do have any doubts please put in the comment section or if you wanted to join my telegram Channel you can join there we going to discuss all the stuff isue
+
+
+00:14:48
+whatever you wanted to right I'm going to pin the link in the description itself also thank you so much for watching guys we are going to see in the next week by bye have a nice day
+

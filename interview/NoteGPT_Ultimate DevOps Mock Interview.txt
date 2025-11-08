@@ -1,0 +1,169 @@
+
+
+00:01:14
+Make sure you feel free. You don't have to be nervous about the interview. The end goal of this interview is to just get the best out of you. Thanks, Aishek. Yeah, we can get started. Great. So as you know my name is Abhishek. I have 11 years of experience in IT. I have been working with this organization for the past three and a half years. Currently I'm working for a project called payments and transactions. In fact this is the only project that I work for. So I joined this organization
+
+
+00:01:47
+to work with this project and since then I have been only working for this project. Let me tell you this is a great project and my role here is very simple. We have a team of 12 DevOps engineers. I lead the team. So I'm frontf facing the team. I interact with the development group. I get the requirements from them. I run some proof of concepts for them, suggest them the best practices, write tools and bring back the work to the DevOps engineering members. This is typically what I do. But apart from that I also
+
+
+00:02:22
+love documenting. Whenever I find a gap I just head to conflence. I document things. I design the architecture diagram for it just for the future reference. I also love educating junior devops engineers in the team. Once in a while I conduct presentations on the latest technologies in this space. So yeah this is about myself and what exactly we do here. Now would you like to introduce yourself? That's definitely a great insight. Thank you so much. Talking about myself, I have four years experience in IT. I started my career
+
+
+00:02:59
+with XY Z organization as a support engineer. I worked as a support engineer for the first one and a half years. So while working as a support engineer, I definitely had time. So I started exploring Terraform, Docker, Kubernetes on my own. I learned these technologies for 6 months and upskilled myself as a DevOps engineer. So after working for one and a half year for that organization, I joined the current organization where I'm working as a full-time DevOps engineer. In this organization, we have a
+
+
+00:03:34
+centralized DevOps team. We are a DevOps engineering team of six members, but one DevOps engineer is dedicated to a development team. Currently I'm dedicatedly working with customer experience development team. They have 15 to 20 microservices. So they have 15 microservices but they are working on new microservices and I perform everything that a DevOps internet does for the development team. For example, I create infrastructure for them. I deploy their applications on Kubernetes cluster. I manage their git
+
+
+00:04:10
+repos. I design the branching strategy for them. I run some proof of concepts whenever required. I suggest them the tools. So this is what I do in the current organization. And this is about myself. That's nice. So how do you actually organize your work? Like you said you work with customer experience development team. So how does your typical day-to-day life look like? Do you get requests from them every day or how exactly? And what are the tasks that you work on? Yeah. Although development
+
+
+00:04:47
+team creates the Jira tickets every day, I don't directly work on those Jira tickets. Let me explain the flow. Once in 3 months, that is beginning of the quarter. development team, myself from the DevOps engineering team, QE manager, stakeholders, we all get onto a meeting called PI planning. So we work in agile methodology. In this PI planning, business analyst and also the product owner, they explain development team what are the priorities for this quarter. And during this meeting development team, development
+
+
+00:05:23
+team lead all agree onto certain tasks that they will be working for next 3 months and this is where I get the direction as well. So during this meeting I understand what would be my priorities for the coming 3 months. Of course the priorities are provided for the 3 months but we work in sprints. So every 3 weeks we have a sprint. So I take items from the backlog during this PI planning tickets are also created for the DevOps engineering team. According to the priority I take those tickets and in the sprint planning I take the work
+
+
+00:06:02
+for the next 3 weeks. So every day when I log in my priority would be to look at the sprint board or the scrum board and understand what are the activities that I need to deliver. Of course there are exceptions. Sometimes there are production issues, development team need some infrastructure very urgent. I discuss with my manager also if any stakeholder if required and if that activity has to be prioritized I dep prioritize one of the item in the sprint and I take up that activity kind of activities are you know very
+
+
+00:06:38
+devopscentric for example as I told you there are 15 microservices as they keep updating these microservices we have new infrastructure requirements it can be requirement for RDS on AWS or setting setting up a volume in Kubernetes, setting up the storage class for it, deploying these microservices onto Kubernetes cluster, enhancing the existing CI/CD pipelines. So recently I got a requirement to add new static code analysis checks on all the microservices. So that was something that I was working on almost the whole
+
+
+00:07:14
+sprint. So these are some of the tasks that I work on. So Virala you mentioned about CI/CD that is also something we actively work here. Can you explain now what exactly your or how exactly your CI/CD pipeline looks like and what are the different stages that are involved? What is your end goal? Yeah, definitely. So for all the 15 microservices and also the ones that are newly being created, we have streamlined the CI/CD process. We use GitHub actions for CI and Argo CD for CD. Let me explain our complete dev
+
+
+00:07:55
+sec ops pipeline. Every time developer creates a commit. GitHub actions workflow is triggered. Within the workflow file, we define multiple stages. The first stage is static code analysis. As part of static code analysis, we verify if there is any unused variable that is introduced, unused function, linting issues or even any vulnerable module is being introduced to the code. Once everything is fine, second stage is triggered which is unit testing stage. In the unit testing stage, we verify unit tests are written to the newly
+
+
+00:08:35
+added code and also all the existing unit tests are passing. Once the existing tests are passing, we head to the third stage that is the build stage. Now in the build stage, application is compiled and a target artifact is created. Then as part of fourth stage, we use docker for generating a container image. Again application is compiled but this time it is bundled to a docker image. Then we have a quick security check as part of stage five where we scan this docker image using snick. So using snick
+
+
+00:09:13
+we try to identify if there are any smells in the docker image or if there is any vulnerability in the docker image. If everything is fine then in the sixth stage we push this docker image to a centralized registry where we are using ECR. In one of the other project of course I'm not working on it but in the other project they are also using ACR which is Azure container registry. I also have exposure to it. Once the image is pushed to ACR we are using helm. So the helm manifest is updated or the values. Mamel is updated
+
+
+00:09:53
+with the newly created image version. Argo CD which is stage 8 reads the updated Helm image value and deploys that new value onto the Kubernetes namespace. So this is our end toend CI/CD pipeline and we have a very robust CI/CD pipeline because we are actively maintaining this pipeline. Every time when there is some update from GitHub actions, we ensure the version of the actions that we are using is constantly updated. So this is about the CI/CD process. Perfect. But how do you manage your Kubernetes clusters in this case?
+
+
+00:10:36
+Cuz you said you have a DevOps engineer dedicated to a development team. But end of the day all these microservices from different development teams I hope are deployed to the common cluster. So how exactly you manage these clusters? Can you walk me through that? Yeah, this is where the centralized nature of our DevOps team comes into picture. Although I work for a single development team, we cannot create a Kubernetes cluster for each development team because that would be huge costing for the organization and also a lot of
+
+
+00:11:12
+maintenance activity. So what we do as a centralized DevOps team, we have set up a Kubernetes cluster per environment. So we have dev environment, staging or pro and production environment. For each environment there is a Kubernetes cluster and as a DevOps engineer I make sure the microservices of my development team are deployed to a particular name space. So we use namespace in Kubernetes per isolation. For example, customer experience microservices are deployed to customer experience namespace on the dev
+
+
+00:11:51
+cluster, customer experience namespace on the staging and also customer experience on production and what we do we have centralized Argo CD. So going back when the CI/CD pipeline is triggered and let's say once the CI part is done and Helm is updated with the latest docker image version within Argo CD for each development team or for each nameace there is a app project that is created typically not per namespace but as per the project. So for customer experience within Argo CD there is a app project called customer
+
+
+00:12:33
+experience I create application in it Argo CD application and Argo CD make sure the customer experience microservices are deployed to that particular name space only. So just like a centralized Kubernetes cluster we also have centralized Argo CD which is typically one Argo CD per Kubernetes cluster. So this is the model that we currently work and we don't see any issues with this model at this point because upgrading Kubernetes cluster maintaining Kubernetes cluster we are using cloud provider instance and on
+
+
+00:13:10
+cloud providers because we are using EKS with EKS auto mode has become significantly less. AWS is taking care of maintaining and upgrading our Kubernetes cluster. Once in a while if anything is needed from our end, we also perform that maintenance activity. Perfect. That makes much sense now. So Vala, we are a e-commerce company and you know we have customers over the globe. So we actually use multi-reion deployments. Have you ever worked on multi-region deployments? If yes, can you talk about multi-region deployments
+
+
+00:13:51
+and how to achieve that? Sure, Abishek. In fact, in the current organization, we have recently set up multi-reion workloads. Earlier, we were using single region workloads. Because of customer needs, we migrated to multi-reion workloads. Let me explain how we did it. So, we had customers only from a particular region of United States earlier. So we set up elastic load balancer which is a local load balancer and we have multiple replicas of the workload. So requests from the elastic load balancer were routed to different
+
+
+00:14:29
+availability zones so that high availability was maintained. However, we started you know getting customers from different regions and we saw the requirement for the global load balancing or multi-reion workloads. Reason was very simple. Customers in Australia they were facing significant latency and this was not okay for the organization. So we took couple of months to implement multi-reion or cross region workloads. what we did. So instead of frontf facing with ELB we have set up a global load balancer in
+
+
+00:15:10
+AWS and we have also set up AWS cloudfront that is for CDN. So what we did we implemented CDN so that static content was cached by the nearby local server. So let's say there is a customer in Australia using CDN. So whenever user hits the DNS of our uh website, so request is sent to CDN and CDN caches a copy in the nearby region of the user. Static content such as images, CSS, JavaScript is instantly served to the customer. Of course, CDN only takes care of static content. So we have also implemented a
+
+
+00:15:56
+global load balancer. So from the uh CDN the static content is served and then request goes to the global load balancer. Global load balancer identifies which region the request has to be routed with. So apart from our workloads being deployed only in the US region. We have deployed the workloads in Australia and also India where we have majority of the customers now. So the global load balancer identifies which region the request has to be routed to and from that particular region request is sent to the workload
+
+
+00:16:35
+through the local load balancer in the region and dynamic content is served to the customer. So we have implemented combination of CDN as well as global load balancer to serve static content as well as dynamic content to the application much faster. So this way we eliminated latency right. So in a nutshell we used global load balancer for the dynamic content. We deployed our workloads not in a single region but we created new kubernetes nodes in different regions where our customers are and we have
+
+
+00:17:11
+deployed multiple copies of our application onto those regions. Through the global load balancer request is routed and through the CDN static content is served immediately. So it took us a lot of time to be honest. This was almost 2 to 3 months project and we were able to successfully do it. That's quite impressive because even in the current organization we are using similar approach but of course we are on Azure so we are using Azure front door. Anyways almost the same thing. Uh Viral can you talk about a recent
+
+
+00:17:47
+challenge that you encountered something that is significant and how did you solve that for your organization? Definitely. So sometimes small issues turn into major challenges for the organization and that is something we dealt with very recently. So none of the development teams in the organization were following branching strategy. every developer had access to create a branch. So because of that they were not testing the source code changes locally. They were directly creating the branch or they were directly pushing the
+
+
+00:18:25
+branch. They were running the CI checks on the branch. Because of that there were number of stale branches. Of course maintaining the branches is one challenge. But the second important thing it was also costing for the organization. So we pulled out report from the GitHub enterprise to understand how much was it costing and shockingly it was too much for the organization. So we realized one is number of branches and two huge costing for the organization is a major challenge. So I along with one more DevOps engineer we
+
+
+00:19:02
+took up this activity and we designed a branching strategy for the organization. So we evaluated various branching strategies. We shortlisted trunkbased and gitflow. Gitflow did not work for us because there was no need for an integration or develop branch. So we shortlisted the trunk based branching and we removed push access to every developer in the organization. they could only create a pull request and rest we have created document suggesting them how to set up testing the application locally. So we
+
+
+00:19:40
+told them how to create a docker image, how to test their application locally, how to run the Kubernetes clusters so that it could save a lot of money for the organization. And coming to the branching strategy, we kept it very simple. Main branch is the active development branch. From the main branch, feature branches are created. Whenever developers want to work on a feature, we had a 3 month release cycle. So during the release or code freeze, feature branches are merged which are ready to the main branch. A release
+
+
+00:20:13
+branch is created from it. A release tag is created from where release is triggered and applications are deployed through this branching strategy to the dev environment first then to the staging during the release frees and finally to the production. It was very very effective for us. I think it saved more than $50,000 US in the last year for the organization. not only money but developers were also able to understand how to test the application locally by setting up Docker images, Kubernetes clusters. Overall, it was a great win
+
+
+00:20:48
+for the organization and I'm proud to implement that and be a part of it. That sounds fun. So, you talked about uh cost optimization and you must have also looked at job description. We are actively looking for someone who has experience on cost optimization. Can you talk about cost optimization more like do you work on cost optimization on regular basis and what is your experience on it? Yeah, Bishek of late cost optimization has become one of the priority for the organizations. So there is a heavy focus from the
+
+
+00:21:24
+organization on C cost optimization. There are also certain targets. So as a DevOps engineering team, we have taken up cost optimization as a priority. So apart from my regular responsibilities working with the development team, I also take up one or two tasks from the centralized DevOps workflow which are related to cost optimization. So I learned Python for this because I came from support background. I did not have any prior development knowledge not even uh scripting knowledge. So I learned
+
+
+00:21:58
+Python and these days I use Lambda functions in AWS because majority of our infrastructure is created on AWS. So I use Lambda functions. I use Boto3 to interact with other AWS services. I look for stale resources on AWS. I identify something that is not required. I run lambda functions as chron jobs and I also integrate lambda functions with cloudatch to trigger those lambda functions on particular API events. Let me explain one of the cost optimization that I recently worked on. This was something 6 months or 8 months back but
+
+
+00:22:40
+it was very significant for the company. So we were using EBS volumes very actively and we were using EBS volumes not only for the instances but also for the databases. Many of the EBS volumes were using GP2. The recommendation from AWS sometime last year was to go for GP3 for better performance and also for costsaving. We realized we have more than 100 EBS volumes and the EBS volumes were in different regions. Some of them were stale, some of them were active. So I wrote a lambda function that looks
+
+
+00:23:20
+at EBS volumes in all the regions. And using this lambda function, I have converted the EBS volumes from GP2 to GP3. While writing this script, I have also realized there are a lot of stale EBS volumes which were not at all being used. They were unmounted from the EC2 instance. They were not even being used by the databases. They were stale for more than 3 months. So I also wrote a script to delete these stale EBS volumes. If required, create a snapshot and delete the stale EBS volumes. So these are some of the cost
+
+
+00:23:55
+optimization techniques that I worked on. Apart from that I also I have experience working with carpenter on EKS. I have experience working with Phops tools but this is something that I recently worked on. Nice. Okay. Uh switching the gears. Uh let's talk about infrastructure. How do you create infrastructure and do you use Pulumi? Because in the current organization we use Pulumi a lot. uh can you talk about your experience on it because I don't see that in your resume? Yes, Abhishek. Um Pulum is something
+
+
+00:24:35
+that I haven't got an opportunity to work with. Provided an opportunity, I would definitely learn Pulumi and you know start using it in the current organization. We are using Teraphform. We are heavily relied on Terraform. All our infrastructure is created through it. We have our HCL files in a gate repo but our state file is stored in a remote back end. We are using S3. Recently AWS supported uh locking also through S3. So we stopped using Dynamob and using S3 as remote backend as well as locking
+
+
+00:25:11
+mechanism. Going back to Pulimi provided an opportunity I would learn it because I personally have experience working with various IC tools. I work with Terraform, cloud formation template, Azure bicep. So I don't think I would take a lot of time. I can quickly learn it and start working on it. No problem. That's not a major challenge because all our DevOps team members, they were also earlier using Terraform. It just took them some 15 20 days to learn Pulumi and start working with it. I just wanted to check
+
+
+00:25:47
+if you have any idea on it. Anyways um yeah so Vala is there anything else that you want me to know? Yeah Vishek um there are certain things that we could not discuss in the interview. I work as a security champion in the current organization. So anything with respect to security suggesting the best practices looking into critical vulnerabilities you know I'm happy to step up and take a look at it. Apart from this, I also have great experience with observability. I have set up Prometheus, Graphana, Elk, Open
+
+
+00:26:26
+Telemetry for instrumentation, Jagger for uh tracing, distributed tracing. I have done it all in the current organization. I've learned them and implemented them. So these are some things that I just wanted to let you know. Yeah, Virala, I saw them in your resume. Respecting time you know I wanted to stick to the topics that are important for the discussion and you know things that we currently use in the organization. I'm sure these things will be discussed in the next round of interview but I have covered the main
+
+
+00:27:01
+things. Uh that is something that I can tell you. Once again uh thank you so much for being here and you know uh spending your valuable time and answering my questions. No, thank you so much Abishek. Um, I should tell you that you have been very patient uh throughout the interview. Yeah, definitely looking forward for the next round of interview. Uh, thanks again. Bye, Virala. HR will get back to
+

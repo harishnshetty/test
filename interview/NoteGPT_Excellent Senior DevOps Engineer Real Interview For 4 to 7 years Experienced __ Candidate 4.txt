@@ -1,0 +1,208 @@
+
+00:00:46
+of uh tools and technology what we are using like including GCP as well. So let's start with your introduction as well. Thanks Mah. Good to know that you uh and your team are using that much text. I hope I would also get a chance to work on all those skills. So as for my experience, I have almost five years of experience in uh DevOps and I have got the chance to get my hands dirty in almost all the technologies that you have just talked about. So I have experience in Docker, Kubernetes, uh like I can write the YML files for uh
+
+
+00:01:25
+the deployment, the ingress files, uh your service files, like everything I can set up and uh in dockerization, I can also help developers to write the docker files and apart from docker uh containerization uh I have experience in AWS cloud specifically work with AWS cloud only. So I'm familiar with many services in AWS like your VPC, EC2, your RDS, cloud virtual alarms like I've set up myself and uh some other stuff like route 53 for managing the domain names and all and uh might be any other
+
+
+00:02:04
+service also I might have forgotten name as of now. So apart from AWS cloud and CI/CD I have hands on with uh GitHub as of now I'm working on GitHub actions in my current company and uh have worked with Jenkins as well in previous companies and uh and GitLab also. So uh one more thing I miss uh in if I talk about IA I have worked with uh Terapform. uh for Terraform I have uh like written modules for you can say EC2 RDS and um mainly these things for setting up the VPC networking things and on top of that uh your RDS and
+
+
+00:02:46
+applications and EC2 so this thing I have like worked on as of now okay uh that's great to hear so let's start with the AWS itself and uh let's start with the EC2 that uh you mentioned all the as services. So suppose your application is running on uh EC2 instance and uh your application is experiencing a high traffic like it's a kind of a spike uh which happens during the business hours. So how will you handle uh this kind of situation? Okay. So uh it's like my application is on EC2 and uh in some
+
+
+00:03:28
+business hours it has some spikes. I guess I'm assuming that these spikes are related to CPU and RAM. So depending on uh this situation I guess it is better to have uh autoscaling group and load balancers configured for this type of application for which we have certain spikes in RAM and CPU. Let us say if uh in a particular business hour let us say around uh uh 3:00 p.m. in the uh like afternoon let us say the business goes high. So during that particular time when the CPU and RAM uh usage are high
+
+
+00:04:04
+then depending upon the configuration uh of uh this CPU and RAM in our autoscaling group the EC2 machines will uh expand like will scale up. There would be more EC2 machines to handle the uh load and in the off business hours the same EC2s can scale down that is the number of EC2s will actually scale down will actually decrease the number so it will save us cost as well. So this is autoscaling but to distribute the load among those increased number of EC2s we can configure load balancer also this
+
+
+00:04:38
+load balancer gives you health check as a very additional benefit. So all this set up your load balancer your uh on top of that your autoscaling group provides uh the facility to manage the uh load in of peak covers and also saves you cost as well. Yeah. Okay, that's good. So, uh now coming to the second question. Just suppose that your EC2 instance uh crashes unexpectedly. So, what kind of troubleshooting uh approach will you consider here like EC2 crashes? So there would be some application hosted on that EC2
+
+
+00:05:26
+machine might be due to high RAM or CPU. Again I'm guessing just there can be multiple scenarios depending upon the case. So I would first go to the AWS console and see there are health checks there like u there are three health checks there out of three if all three are passed then I'll just log into the server and see what is the RAM and CPU of that particular server and if that is high then I'll try to whatever services are running if it is possible I'll try to restart them so as to release some
+
+
+00:05:55
+CPU and RAM so that the server would be uh like in some condition so that people can use it but if some other case if I talk about like the EC2 is has crashed that we are not able to connect to that particular EC2 we will go to the EC2 console and we will see I guess definitely there would be the health checks would have failed either the responsive one or the other two health checks so it is like we won't be able to connect to that EC2 machine then we would have to reboot that EC2 machine so
+
+
+00:06:23
+to avoid such cases what we can do we can configure alerts uh like CPU RAM usage alerts so that it it goes beyond 80% 90% % whatever depending upon your application. So if it goes beyond that then we should receive an alert so we can check it and we can free the CPU RAM or disk or we can increase it if required if our application requires it. So that's my take on uh this particular scenario. Thank you. Yeah. Okay. So now uh just suppose that uh EI1 EC2 instance on which your application is running correct and your
+
+
+00:07:02
+application has to connect to the internet and it has to download something from the internet site like uh any of the images you just consider that it has to download your application has to download and it's not able to download. So what might be the possible causes here due to which it's not able to download anything from the internet site. So I'm assuming that if my EC2 uh if I'm on the EC2 from there I'm not able to connect to internet uh might it be uh the EC2 it is in like private subnet
+
+
+00:07:36
+okay and there would be some misconfiguration with the NA gateway or the NAT instance depending upon the case. So either it is N gateway which is misconfigured like uh there can be many scenarios let us say in the route table of that particular subnet private subnet there is no entry for NAT or maybe there's an entry for NAT but NAT gateway got provisioned in uh private subnet itself. So NAT gateway should be in public subnet and it entry should be in uh uh the subnet of private uh private EC2 or the private subnet. Okay. So
+
+
+00:08:12
+uh this thing we need to cross check it and uh yeah I guess so it depends upon the net cafe if it is about internet access from an EC2 uh yeah I I guess so this is the case yeah that's the right answer using the help of net gateway you can connect to uh your private EC2 machine with the internet and you can uh download anything if you want okay so moving forward to the S3 service AWS S3 we will be talking about. So just suppose that you have accidentally deleted uh data from S3 or someone else has deleted and
+
+
+00:08:47
+now you have to restore it. So how will you do this part? Uh for S3 uh like if data is deleted if the uh there is one case that I remember if versioning is enabled in bucket. So if versioning is enabled then we we can recover the data. I I'm sure about this because I've done this. It's like when versioning is enabled so it is like v1, v2, v3. So these kind of versions. So from older versions we can recover the older data which we have deleted. But if versioning is not enabled for that case I'm not sure if we
+
+
+00:09:31
+are able to like recover the data or not. Might be something with AWS support we can check for AWS backup if it keeps somewhere. Uh but if we enable the AWS versioning while creating the bucket then we can get the deleted data. Yeah. Okay. That's true. With the help of versioning you can uh restore the data whatever you have deleted in the S3 bucket that gives you a kind of backup and that you can restore. So let's talk about the VPC uh site. So how will you connect your uh onpre data center with
+
+
+00:10:07
+your AWS cloud? Onpre data center with AWS cloud. So it's like data it would be something rel uh like VPN is there there is VPN side to side connection or direct connect. These are two services facilities provided by AWS to connect our uh AWS cloud VPC to any uh on-prim data center. So these are the two services which we can like use. Yeah, that's true. Okay. So considering the same kind of scenario, so now we are not going uh getting into the different data center. Just suppose that I have two VPC and two EC2
+
+
+00:10:57
+instances in these two VPC on one EC2 uh instance my front end is running and on my second EC2 instance which is in second VPC my back end service is running for the same application. Now these two needs to communicate and uh it has to show the data on the front end side and uh if I'm trying to hit I'm getting that uh I'm not getting the response from the second application like that means it's not able to communicate with each other. So what kind of issues uh can be there and uh
+
+
+00:11:25
+how can we fix this? It's like we need to establish the connectivity between two VPCs on AWS. Inside a VPC EC2 machines can communicate with each other. But if you talk about two different VPCs, there are two different networks even if they are on the uh like uh same AWS account. So to establish the connectivity between EC2 machines which are on which are running applications on AWS cloud in different VPCs uh we need to enable VPC pairing between those uh two VPCs from one VPC we need to uh like uh initiate
+
+
+00:12:05
+the request for uh VBC pairing and the other has to accept it. So by this way and there would be some uh rules would be added in the route table for this particular uh uh like if u in VPC A let us say we have to VPC VPC and VPC B. In VPCA we have to add the uh route for VPC B and for VPC B we have to add the route for VPCA by giving the cider ranges of uh two VPCs respectively and enable the VPC pairing. one has to initiate and the second VPC has to uh accept that VPC request. So this way EC2 instances will
+
+
+00:12:42
+be able to communicate with each other as if they are in the same VPC at all. Okay. Now let's uh go with one more question with the AWS and then we will move forward towards the Q&A. So I have a application which is running on my EC2 machine and it has to fetch some of the objects which uh you can consider as a icons which should be available on your web application and these icons are stored in AWS S3 bucket. But when my application is trying to get the objects from the S3 bucket it's not able to do
+
+
+00:13:14
+so. How can we enable the communication between this uh application which is running on EC2 to S3 bucket fetching objects or establishing connectivity uh to S3 from an EC2 machine. Uh first we need to create an IM role which is having the permission for S3. we would create an S3 full access role or whatever access like only read access or write access you want to give or full access. First we need to create an IM role with that access and then uh inside that EC2 uh instance like from console we can directly attach this
+
+
+00:13:54
+IM policy to this particular EC2 attach this IM policy like go to instance settings actions like you can attach the IM you can select that particular angle and there uh EC2 will be able to communicate with the SC okay now let's talk about the cabinets So can you explain the architecture of Kubernetes in uh just a brief in Kubernetes like we have a master node and we have worker nodes. Okay. And in master node we have many processes running like our controller scheduleuler and uh etc that is for backup.
+
+
+00:14:40
+uh the controller plane has many other functions and all those things running. I'm forgetting a bit here like there are components and on worker nodes actually there are processes running which have one of them manages uh like the networking within a particular node and other components like I've I've just forgotten their names but I'm uh cube there is cube proxy cube proxy manages the networking on a particular node on all like let us say there are four worker nodes. So on each worker
+
+
+00:15:18
+node there will be one Q proxy and there are other components as well on these worker nodes. So I'm forgetting their names as of now but I'll surely get back uh like on this particular I'll get a touch of this. Yeah that's true. So there are components called API server, your scheduleuler, ATCD and uh controller like who controls your job and then Q proxy uh you talked about. So yeah these are the components you can explain in the architecture. Okay, let's talk about uh how will you upgrade your cluster EKS
+
+
+00:15:52
+cluster if you have how will you upgrade this including your nodes as well for EKS cluster like if we have to uh do upgrades before that we have to like manage the ongoing pods uh running on those particular nodes. So for this we can like drain the nodes or we have cordon commands. So then all of the nodes which would be uh on a particular node we can just upgrade that one and later on we can schedule the quads back on this particular node. So this drain and cordon and uncordon commands are used to manage these effectively.
+
+
+00:16:38
+Okay that's good. So now just suppose I have a application which is running on uh AKS port correct and uh there are multiple nodes as well. What I have to do? I have these 10 ports and I want that all these 10 ports should get scheduled over all the nodes which are running so that I can scrap the data like I have to uh deploy this Prometheus or I can uh talk about file bit I have to deploy and I want that all my uh ports which are uh running for your pod that should be on the all the nodes. So
+
+
+00:17:09
+how will you ensure this uh distribution of ports to the nodes? uh like if uh we want to schedule uh the pods equally over the nodes then we have demon sets like demon set installs one node one pod per node so for logging kind of uh like as you talked about metric B so it uh it's used for logging purpose so for this we can install one pod per node by uh this demon set but for uh there are other ways as one way like NT pod ninity we can use if we add the pod nfn80 uh in the deployment file for that particular u
+
+
+00:17:56
+like service whether it is file bit or whatever so it would schedule that particular pod only one pod on a particular node that is also possible so these are the two ways I can come up as of now yeah okay that's right do with the help perod anti- affinity or uh if you have to schedule all the pods on all the nodes equally then you can use this demonstrate as well that way you can deploy and that will work to uh scrap the data from your nodes okay so moving forward let's suppose that I have application which is
+
+
+00:18:32
+running uh on a pod uh once again and I have to ex uh fetch this application details or application itself from the browser and in the browser I want to hit ring.com and this uh domain should uh so the application which is running on the port. So how will you set up for this uh like if we want to set up domain or you can say some uh application should be accessible to the outer world. So for this if and also the application is like containerized and is having kubernetes on top of it. So for this apart from the
+
+
+00:19:15
+deployment files uh like that we write for pod we need to add the service and ingress files as well. The service file would route from uh ingress to particular pods and on top of that we need to write ingress file and the ingress rules we can define that from slash go to these particular pod or slash on go to these particular pods. Uh so these are internal to uh our cluster but outside that cluster what will happen we will when we will write this service file and apply it the service we need to write of type sorry
+
+
+00:19:52
+load balancer. So this would create an actual load balancer on AWS cloud and this AWS cloud will route the request to this particular uh ingress like ingress would be ingress controller would be sitting uh at the uh entry point of our cluster. So inside a cluster ingress controller will read the rules from ingress file and it will route accordingly inside the uh cluster. So the these three things need to be set up your service files your ingress files and that load balancer will get automatically created out of it. Also
+
+
+00:20:24
+you need to install the English controller uh on this particular setup and on top of that when we have to set up the domain name we can add the domain name in the route 53 and then route that particular thing to this load balancer. So the request from the internet would go to uh AWS account where this is hosted to that particular domain name and from route 53 it will go to load balancer. From load balancer it will go to your cluster because this load balancer knows where to send the request because this load balancer has been
+
+
+00:20:58
+created by the service itself. It sends it to the uh cluster. So from cluster inside we have written the rules in ingress. from ingress it will be routed to uh the destined port. Yeah, that's true. It will go up to the ingress and from ingress it will go to the identical your services and from the services it will go to the pods which are related there. Okay. Now uh let's move towards the terraform. So suppose I have a create I have to create uh one EC2 machine and uh not one EC2 machine
+
+
+00:21:33
+just suppose I have to create 10 AC2 machine with the same configuration. So what we'll use uh here like if we have to repeat something so we can uh like use count variable inside that resource block. Simply you write a resource block for EC2 machine and inside that resource block you can simply add the line for count and say count equal to the number of times you want to create that particular resource and those many EC2 instances will be created. Okay. So uh just suppose that I have a VPC which is created by um someone you
+
+
+00:22:17
+can say manually itself correct and now if I have to create EC2 machine with the help of Terapform. So I have to write the script uh in terapform so that it uh we can provision one EC2 instance but I have to use the same BPC which is already existing in the AWS. So how will you ensure this like if you have to use an existing VPC we need its VPC ID. Okay. So there are two ways either you can just uh go to console directly uh copy its VPC ID and you can directly give the VPC ID in the uh EC2 source block and the second
+
+
+00:22:58
+thing that you do not have access to uh the VPC ID and this is a vast infrastructure which is going to be created. So you only know that PPC name or only tags. So you can you have a facility in terapform uh which is called data block. When in data block we can fetch the already existing resources by filtering on some details like if you know something you know the name of the VPC then you tell uh inside the data block that this is the name you just go to uh like AWS and you can filter by this name. So what will happen when we
+
+
+00:23:32
+write the data block for this VPC it will just fetch its VPC ID. We can use this data block to fetch it up VPC ID. So these are the two ways like directly copy or use a data block. Okay, that's great. With the help of data block you can fetch any uh details about any particular resource which is already existing and that you can utilize further going for like data dot and alias whatever you have provided and then the name. So that will give you the details. Okay. So let's talk about uh you have let me just give me one second.
+
+
+00:24:10
+Um yeah you have one BPC created uh with the help of terapform or any other resources you can think of and uh someone has deleted that particular uh resource manually correct and now if you run the terapform apply once again so what will happen here will this resource will be provisioned once again or how your pipeline will behave here is deleted manually So if you run the terapform apply again so terapform actually matches the uh configuration file which is written along with the actual infrastructure that is there on
+
+
+00:24:49
+AWS cloud. So it will match that it needs VPC and on cloud there is no VPC. So it will try to provision it. It will try to create another VPC with the same name same configuration that is there in the configuration file. So it will try to create it. Okay. Now I have a one module for the BBC and one module for uh provisioning EC2 instances. To provision EC2 instances obviously I will require the VPC ID and security group ID all these things. Correct? So I have to provision BPC and EC2 together. So that means I'll
+
+
+00:25:28
+be running this terapform apply command at one time and I have to provision first BPC and then EC2. I have to pass the output of the first module into the second module so that EC2 module can utilize the BPC ID to provision the AC2 instances. So how will you uh use this like uh passing the how will you uh set up this kind of thing passing output from one module to another module? Your question itself had the answer in it. you ex you um I guess you have unconsciously told the answer itself in the question. So it's like uh we can
+
+
+00:26:08
+pass the output from one module to another module. We define output blocks in a particular module. Let us say security group. We can define the output blocks in each module we can define. So let us say we need security group to be created first and then we have to create the EC2 because in EC2 we would be needing the security group. So one thing we can add in EC2 we can add uh depends upon security group depends on block so that EC2 gets created only after security group is done. The second thing
+
+
+00:26:37
+uh in the security group module we can uh write the output blocks output.tfiles um which would output the security group ID of the security group created and then we can use it uh as a just like a normal variable in our E2 module like module.output output dot uh there's a syntax there in terapform and the name of that particular security group ID variable that you have named you can directly use it yeah can you explain me the stages what you have written in your genkins pipeline to deploy your application or
+
+
+00:27:11
+any kind of pipeline what you have written in Jenkins it actually depends upon the kind of application that we are going to provision it if it is simple Java application that we are building then there would be like first step is definitely check out that is by default it checks out the code then second we would build it and third if there are some test cases that we have written there would be a test then uh last is deployment so depending upon the type of deployment or setup we have the cases
+
+
+00:27:42
+may vary I have told you the case for a particular simple Java file okay so let's come to the Linux so I'm trying to run my one of the script what I have written. So just you can think of I have written a script for user creation and while I'm trying to run this script I'm getting uh permission denied error. So what kind of a steps will you take here to troubleshoot this in Linux if we are getting permission denied error in case of running a script. So might be the user from which
+
+
+00:28:18
+you are running that script is not having the uh like permission to execute that particular script or the uh what we say the permissions of that particular script do not have the executable command like 7 77 these kind of numbers like 4 2 and 1 four is for read to write and one is for execute. So execute should be uh true uh if you want to execute that particular file. So we can just change the mode of that particular. So instead of changing all the existing mode we can just simply write like uh change mode plus x and then the name
+
+
+00:28:58
+of that particular file. So it would plus x means it will add the uh executable permission on top of existing permissions for that particular file and then we would be able to execute. Change mode is uh just at chmod then plus x and then the name of that particular file. Yeah, that's good. Uh, so let's go with the last question of this interview and uh your Linux server is uh kind of performing very slow, correct? It has a slow performance. So how will you troubleshoot this uh slow performance of
+
+
+00:29:29
+Linux server and what all command will use to troubleshoot? Like if uh just like PC2 machine here also if it is performing very slow might be some might be machine having some load application load might be some testing going on by testing name or something or might be some application might be running normally but having spikes in CPU and RAM usage. So if it we are able to login like if it is responsive as of now we will log into that server. Maybe it is uh responding slowly but we can login. We can check
+
+
+00:30:04
+for RAM CPU uh usages, disk usages. So we can just check uh one by one. We can check for RAM by free minus MH. It will give the output like how much is total RAM, how much is used, how much is free, how much is cache, everything we get to know. If it is less available then we can just check what all resources are actually occupying the RAM. I'll just uh explain the command as well later. Then for CPU uh sorry for disk we can uh check DF - H. DF - H will give you the disk of root. We need to check for root
+
+
+00:30:41
+as well slash like how much is occupied it should be at least 80% it should be uh like if it is beyond 80% utilized then we should look into it and on top of that if you want to see the processes which are and if we see if we find out that CPU and RAM are high so then we need to identify what are processes which are having the CPU and RAM usage then we will use htop command okay in edgetop command it when you type this command there will be a UI kind thing for you. So that would be interactively
+
+
+00:31:13
+running UI. There you can sort this output with the uh like based on the CPU percentage or memory percentage. So then you can identify the process ID if you want to if that is a necessary process you can kill that process sudo kill uh then that particular process ID or if uh there is something service so you can restart take a restart of that so it will release some RAM and CPU for that particular moment of time. so that it will cool down a little. So these are the steps that needs to be taken or for
+
+
+00:31:44
+this you can set up scripts as well which uh and can add it in the chrome tab. So like every 15 minutes or every 1 in uh half an hour CPU, RAM and disk checks should be taken for that particular server and you can set up SMTB as well like then mail is triggered if it is high so that you can take action before the server actually becomes unresponsive and you get complaints from the customer side. So this can be a measure that can be adopted. Yeah, that's a great answer. Uh you explained uh it very well. So yeah,
+
+
+00:32:19
+that's all from my side and uh thanks for the interview. Let's close this.
+

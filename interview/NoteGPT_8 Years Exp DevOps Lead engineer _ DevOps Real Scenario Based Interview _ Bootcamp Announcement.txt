@@ -1,0 +1,196 @@
+
+00:00:00
+Hi everyone, welcome to the channel and my name is Manishiari. So today we have Rinki as a co-host and she is having 8 years of experience in DevOps and S is currently leading the DevOps team in her organization. So uh welcome to uh R let's welcome Rinki and we'll be discussing a scenario based question and these questions are kind of questions what we covered during our boot camp. So it's a kind of demo video for you to understand what kind of thing we discuss, what kind of questions and
+
+
+00:00:32
+answer we discussed during our boot camp. So Rinky if you want to add something uh and then after that we will start our questions and answer. Yeah, for the audience it is like we will be discussing uh like three to four questions which would be a kind of demo for you. how we are going to discuss those questions and uh correlate them with some examples so that you can easily understand them and we will also try uh to like explain the answers in Hindi as well so that you can uh like grasp the concept the real concept. So
+
+
+00:01:06
+let us start you can start the questions. So our first question is just suppose that we do have this EC2 instance public EC2 instance and we have hosted our one of the application you can say a front- end application on our EC2 and when I'm trying to access this application from the browser that means from the internet side I'm not able to access it. So what kind of possible causes be there and how will you troubleshoot it? Okay so let us try to break down this question. uh the first thing that is EC2
+
+
+00:01:40
+is launched in a public subnet. So first we will verify whether the subnet is actually public or not. So to verify it we will see the associated route table. The route table associated with the subnet should be having an entry of internet gateway from anywhere anywhere that is we will be adding the rule for 000000 with internet gateway so that we would be able to access the application hosted over that EC2 machine over internet. Okay. So this is the first thing we will confirm. The second thing
+
+
+00:02:12
+is uh the EC2 on which our application is hosted, it should have public IP because uh in order for uh something to be accessible over the internet, it should have some public IP or some public domain. Okay. So this is the second step also. What can be if we have verified both of these two things then what could be other possibility that we are not able to uh access the application over the internet. So something would be blocking us to reach that EC2 and that is something uh is definitely something related to security
+
+
+00:02:47
+group. This is like that uh let us suppose that our application is hosted on an EC2 and it is having some IP. So how would we be accessing that application? We would be accessing that application by http col// the IP of that particular EC2. This way we would be typing this in our browser. Okay. So this is an HTTP request going to that particular EC2. So in the security group the rule incoming from this particular HTTP at port 80 should be opened. So third thing in security group we need to check that there should be an incoming
+
+
+00:03:23
+rule which is allowing the HTTP traffic that is at port 80 which is by default port for HTTP from everywhere because we are accessing it over the internet from 00000. Okay. So these are the three things primarily we would check for an application to be accessible over the internet. So I guess manish this summarizes all the three points. So first is yeah so uh yeah you can summarize it. Yeah. So the what are the four parameters or three parameters based on which you can troubleshoot your uh application which is hosted on EC2
+
+
+00:04:00
+and that is not accessible. So first thing is that you have to check whether your subnet is public or not. to do that what C did he C checked for the rule whether it had your route table has the 00 entry with the internet activity or not. The second thing was that your server should have public IP address that is checked. Third thing is security group. Security group is also checked whether security group is having the inbound rule for your application on which port it is running. The fourth can
+
+
+00:04:27
+be added here as ner. Once you have checked for the security group, once you have checked for the internet gateway, the rules and everything. The fourth thing can be there if the application is still not accessible. So you can check for the NSL whether NSL is having any kind of rule which is blocking like it's kind it's having deny kind of rule. So that you can check and then you are good to go with the troubleshooting process. So let's come to the second question here and second question is we do have
+
+
+00:04:56
+this one AKS cluster. You can suppose that it's uh in AWS account that that's why it's a EKS correct. Okay. And on this EKS cluster we have 10 number of nodes. Okay. Now we want to deploy our monitoring agent. It can be your datase. It can be fluent bit any any kind of D monitoring agent we want to deploy. We have created a demon set and we see that our pods against the demon set which are deployed only few ports are getting scheduuler or running over the nodes on few port on few nodes we see that no
+
+
+00:05:30
+ports are not getting ports are not getting created even. So how will you figure out this scenario? Why few parts are not having the ports for the monitoring agent? What kind of steps you will take and how will you troubleshoot? So let's uh discuss this question and the answer. Okay. So from question let us assume that there are 10 nodes. Okay. And out of these 10 nodes on seven nodes let us say pod is created. Pod is scheduled. Pod is running. On three nodes let us say the pod is not getting created.
+
+
+00:06:05
+The first thing is we should check uh the concept here is that we are deploying demon set. The demon set actually deploys pods on each node. So according to demon set uh on each of these 10 nodes there should be one pod deployed. This should uh like be the ideal situation when we are deploying or when we are dealing with demon sets. Yeah, it's the default property of the demon sheet that whenever you deploy it in it ensures that every pod will get get a schedule on each and every node. That's the default property of the demon
+
+
+00:06:37
+sheet. Yeah, one pod per node. Now but we have we are in a situation where on three particular nodes pod is not getting scheduled. So we will first check whether uh when we deployed this demon set we will check whether in the errors if there is error. So uh in your question did I uh did you mention that there are errors or anything? No no there are no errors. The thing is that on seven nodes I can see the monitoring ports are running. On three nodes I don't see any parts either either it's
+
+
+00:07:06
+created either it's failing nothing. I cannot see even the part is getting created for these three nodes. Okay. Okay. So if like there is no error, we see no error in case of three nodes. So what could be the case on those three particular nodes? We should see uh we should see is there any concept of pains there like might be the uh the nodes would be healthy. The assumption here is the nodes are healthy. The nodes are parts of the cluster. the pod is not even getting created or not even getting scheduled on
+
+
+00:07:38
+those nodes. So it means the cubernetes has not even tried to schedule pods on that nodes. That is why we are not seeing any error like pod getting created or pod stuck in error crash back loop of or any kind of error pod getting recreated again and again creating destroying nothing no error. It means the cubernetus has decided not to schedule any pod on these three nodes. So it means that on these three nodes there are taints applied. It can be a scenario to verify it. We would we would see like what is uh the actual
+
+
+00:08:12
+properties of those particular nodes. We will describe those particular nodes like cubectl describe node then that particular node name one of those nodes let us say these are node one node two node three and the other seven nodes are having the pods deployed. So for three nodes we will check one by one and in the taint section like when we will see cubectl describe nodes then whatever information that is provided to us for that particular node we will see in the taint section there should be some taint
+
+
+00:08:40
+added and that is why because demon set also follow that taint. Demon set also respect that taint. So demon set even though demon set has the property that it will uh uh deploy on all the nodes but it also respects that uh taint thing. So it will not deploy on those nodes which are having taint. So if we want to deploy our pods on all the nodes on those three nodes also then in our uh demon set we should have the toleration added the corresponding toleration added the same matching toleration which is
+
+
+00:09:14
+for those three nodes. Those three nodes might be uh for some other workloads. They might be for uh might be specifically having some like other kind of workloads maybe ML or something other workloads that is why they would be tainted so that those nodes would be uh available for only particular nodes particular parts. Okay. So the answer is like you have to check on the nodes. You will first figure out that your nodes are having the enough resources or not. So that you can check and then we can come to like
+
+
+00:09:50
+check what kind what kind of configuration is there as he talked about the tense and toleration. So if a particular node is having any kind of tense so pod will get scheduled on that node if the pod can tolerate those kind of tents. What does that mean? If I talk about a simple real world scenario. So just suppose that there is a society of like the flat correct. So a builder has developed a society and in that particular society there are number of flats. It's a mix of 2bhk but there are 10 flats which are kind of 3 BHK and the
+
+
+00:10:24
+owner the society builder has made an announcement or made a has created a board where it is written that whoever has 50 lakhs they can purchase a flat in this particular society. Now everyone will will go there and whoever has 50 lakhs they can get into that particular society they can purchase it. But there are some kind of tents on few of the flats like 10 flats has some tents that people who are having 80 lakhs they can only purchase this uh 10 number 10 number of flats. So those kind of buyer
+
+
+00:10:55
+those kind of user who has the 80 lakhs of budget they can go for those 10 number of flats otherwise they can move for other nodes or other flats. Correct. So the people who has that particular kind of boundary like they can get touch up to 80 lakhs they can purchase those flats. So tents and toleration also works in the same way. If that particular node has some kind of tents that only these kind of parts can be scheduled on this node. So pod should have those kind of toleration then it will get scheduled on all those nodes
+
+
+00:11:26
+otherwise it will get scheduled to other nodes which are not having any kind of tent. So other nodes were having all these mounting agent spot but few were not having those mounting agent. So once you apply the toleration they will also have the spot running on their node. So before moving on to third question let us summarize that 10 but there would be some written corresponding demon set toleration then only we would be able to schedule our pod on those particular nodes. Okay. So this was the concept of taints and
+
+
+00:12:23
+tolerations nodes were tainted and okay so this summarizes the second question. Let us move on to third question. Before third when we are referring ts it's simply that it's kind of condition tent refers to the condition that if this condition is getting fulfilled then the part can be scheduled otherwise pod will not be scheduled on that particular note. Yeah. Okay. Third question. Yeah. Third question is like there are two genkins jobs which are deploying the infrastructure over AWS account. These
+
+
+00:13:01
+two jobs are deploying the infrastructure in two different AWS region. But sometimes we encounter that a state file is getting logged. So what kind of the possible causes be there so that our state file is getting logged. So let's describe uh the scenario and the answer of this question. So it is like there are two Jenkins jobs which are referring to same terraform codebase. two different Jenkins jobs uh taking code from same configuration but they're deploying the actual infrastructure or
+
+
+00:13:34
+creating the infrastructure on AWS into different regions. Okay, till this point it is okay. Now the problem in the question is that whenever one job tries it locks the state files. So it means somehow their state file is same. There is hint in this question or we can say we can clearly get it from the question that state file both of them are sharing the same state file. So it is by mistake the thing that because they're referring to the same configuration inside terapform configuration we actually
+
+
+00:14:04
+write S3 backend block like this is the name of the state file key by key we write it key is the field where we give the name of the state file uh TF state let us say that pro.tf state or stage staging.tf tier state. Okay. So there would be only one name and in that key. So it is like so when first job triggered it is referring to that state file and when the second job is also triggering that is also referring to the same state file. So it should happen like both of them should have different state files because they are actually
+
+
+00:14:39
+different uh infrastructure. First is referring to let us say VPC 1 and second is creating VPC2 since both of them exist independently in two different regions. So we should be having different state files for both of them also. This concept is first first thing that they should be having uh different state files. Second we should make it make change in our terapform configuration that this state file should be should be having different name per job. So we can keep it by the name of the uh region or
+
+
+00:15:10
+by the name of the environment. Let us say like EU west.tf state or AP.tf TF state or it could be depending upon the customer name like Johnson. TF state, thomson.tf state. Okay. So this is like we should be having different TF state files. So that uh when it would be different there would be no collision, there would be no overwriting. There would be no locking of state file and on top of this we can add the functionality of Dynamo DB for uh like state file locking prevention. So when it would be
+
+
+00:15:44
+updating so even though multiple jobs which are referring to the same uh state file. So when let us say the same Jenkins pipeline it is run by one person and the another person also runs the first uh same uh Jenkins job immediately. Okay. So even though they're referring to the same state file so state file would be logged when first by first job it is getting updated. So this can be taken care of by adding Dynamo DB there uh the locking mechanism. So this summarizes our third question. Now you can summarize it
+
+
+00:16:16
+Manish in your own words or if you have any example or we can move on to question fourth. Yeah. So uh just to summarize the answers see mentioned about state file locking and having the different state files of different for the different AWS regions. So you can think of that if you are deploying the infrastructure for the same customer like just suppose that I have a customer named Manish. So for customer name monies if you are deploying your infrastructure for two different AWS region so you will create a folder with
+
+
+00:16:46
+the name monies and then within that folder you can create two different subfolder that will be called as AP south one that is Mumbai region and the second folder will be called as a London region US2 correct then within these two folders now you'll be creating your state file so you do not have to change anyway the state file name you can just create the different folders that mean when you are writing your teraf platform configuration when you are writing these your providers.tf TF in that remote back
+
+
+00:17:13
+end you will mention the different key for creating your state file in the first key you will be mentioning the same AWS account ID then same customer name and after the customer name you will be passing the region and then your terapform.tf TF state file. So once you pass the different region name, it will just segregate your different two state file for the same. So that way you can have the different state file for the different kind of configuration for the different region or for different
+
+
+00:17:38
+environment anything. So yeah let's move towards the our last question and the fourth question that we have one auto escaling group and we see that whenever autoscaling group is launching our EC2 instances after sometime we see that our EC2 instance is getting terminated. So what kind of possible causes be there and how will you troubleshoot this? Okay autoscaling group is like creating an EC2 instance. It is launching a new EC2 instance depending upon the requirement is it spins it up but after
+
+
+00:18:13
+some time it is terminating it. Autoscaling group will terminate an EC2 instance when it finds it is unhealthy. Okay. And how does it finds it? Actually autoscaling group trusts load balancer and load balancer has health checks configured. So autoscaling group will terminate it when when load balancer health checks are uh like fail uh load balancer health checks fail and they mark that particular instance as unhealthy then the autoscaling group will terminate that particular EC2 instance and will try to spin up another
+
+
+00:18:46
+EC2 instance. So I guess what could be the scenarios let us try to decode it. First one is the health check itself like let us verify the health check with which is configured there is actually correct or not that is let us say application is um hosted uh let let us say the endpoint is / health okay so we will verify the end point there like whether the / health is written there or not yeah your application is having some path like/abc xy the path which routing we talk in our load balancer. So he's referring to that
+
+
+00:19:24
+particular point also the port at which we are checking the uh this health check that is uh if it is by at default port that is 80 that is okay. If it is at some other port we also need to mention that particular port in the health checks we need to crossverify these two particular things. This is the first case that the health check could be itself configured wrong. The second thing let us say we have verified the health check is correct. the application should be and we have verified manually
+
+
+00:19:53
+also that this is the exact health check this particular port this particular endpoint. Now the second thing is that since the uh the question from the question we get the hint that autoscaling group creates the EC2 and after some time it just terminates it that is uh health check says uh there is a grace period in health check that is after this particular time period it uh checks that whether uh it checks whether this uh it is giving us okay 200 uh status code or not. So it is like let us say
+
+
+00:20:27
+our application has not spinned up. Application is not ready in that particular time. Let us say we are having a heavy application and that application itself is taking 2 to 3 minutes to start up. So only after this application is started up completely only then it would be able to return status code 200 if it is pinged on that particular health check. So but in our autoscaling uh in our load balancer we have configured in the health check the grace period for checking this health it is only 30 seconds let us say so in
+
+
+00:20:57
+every 30 seconds it is going to check let us say from this particular moment the time starts autoscaling group launch the EC2 instance now after 30 seconds the uh load balancer tries to check whether the application is healthy or not but we all know within this 30 seconds time period EC2 machine is not ready Sorry, EC2 machine is ready but our application is not yet ready. It is taking that uh it is taking time more than that particular time that grace period. So we should be aware of how much time our application is taking to
+
+
+00:21:28
+actually start up and be able to uh like check or uh like that is application is ready uh readiness or we can say the application is ready so that we can ping that application on that particular health check. So that this is the second thing. Uh I guess these are the two things health check and uh the second one is the grace period. These are the two things that Manisha can come up for this question as of now. So we can check for the rules as well like which kind of rules are allowed whether our
+
+
+00:21:59
+application is able to uh get that particular point is we can check on the security group rules whether our EC2 instance security group is allowing the traffic which is coming through the load balancer. If that is not allowed and uh it's going to check the health check it will fail and obviously if it's failing it will terminate that particular institution because it's not able to accept the traffic which is coming through your load balancer. The fourth check fourth thing you can check on the
+
+
+00:22:27
+user data. Just suppose that in your user data you have written the script which will start your application and your user data is not getting executed properly. That means your EC2 instance is not getting ready. It's not able to start the application. In that scenario also the SG will terminate those kind of EC2 instances which are not able to run your application which are not able to start your application. So these are four kind of parameters based on which you can do the troubleshooting. You can
+
+
+00:22:56
+check for the health check. You can check for the grace time period what he mentioned. You can check for the security group rules. You can check for whether your user data is correct. It's able to start your application or not. So this is how you can check for scenario based question. You can break down the questions in the multiple parts and you can answer accordingly and it will cover the different kind of topics the different kind of concepts in the different kind of skill. So this is how
+
+
+00:23:22
+we are going to talk about the questions scenario based questions and their answers during our boot camp. So let's meet in next boot camp batch. We are just waiting for you to join. want to add something here when we are ending this particular video. Okay. So just for the audience that we would be discussing questions with answers also touching the relevant concepts and uh what else like we would also like reiterate the questions how um in many different ways how the same question can be asked or the same
+
+
+00:24:00
+concept can be covered in different questions. So we will try to like focus on the concepts also with real world examples also reiterating the questions twisting the questions making them complex and analyzing how you would be able to answer the questions. If you know the concepts you would be uh easily able to answer it. So you just need practice like more questions more mocks and uh obviously the base concept you should uh having like be clear. So for these four questions like uh let me just give you in short like for first
+
+
+00:24:38
+question we covered for public subnet. So there we touched the three concepts that is EC2 should have public IP and subnet should have a route table associated with it and route table should have an internet gateway attached to it. So these are the two points and the security group should be having an incoming rule allowed. The second question that was for demon set. Demon set that is one pod per node and it will not schedule on those particular nodes which are having tents. Yeah, we also touched demon set we tal talked about
+
+
+00:25:13
+and these are all part from the kernets. So first in first question we talked about the AWS EC2 machine. In second question we talked about the question was for those Jenkins jobs which are writing from the same state file. So we should be having different state files state files. If two people are writing on the same notebook it would create a problem. So both people should have different copies different notebooks. And the fourth question that was for autoscaling groups autoscaling group four
+
+
+00:26:21
+It could also be a scenario like this with user data. So I guess all the four questions are summarized and we are good to go with this current video and we hope that uh whoever wants to prepare for interviews for DevOps interview if you want to land your obviously and also this season uh at this time of the year we are having many openings in DevOps in my organization also I see people are switching people are taking hikes and also there are openings so this is the best time for you to prepare for your
+
+
+00:26:51
+interviews and like crack multiple offers just grab one offer first and then you can like by having that particular offer in hand you can negotiate for like higher package. So let us wrap this video and let us meet in the DevOps boot camp.
+
