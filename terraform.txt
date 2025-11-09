@@ -1,10 +1,64 @@
+What is Terraform and what is it used for?
+
+Terraform is an open-source infrastructure as code
+(IAC) software tool used for provisioning and
+managing cloud infrastructure, on-premises
+infrastructure, and other infrastructure resources in
+a consistent and efficient manner.
+
+1. workflow
+write
+init
+validate
+plan
+apply
+destroy
+
+
  terraform module
  how youre using terraform are you using forest or some module
  where you store statefile
 
+What are Terraform modules and how are they used?
+
+Terraform modules are self-contained packages of Terraform configurations
+that can be reused and shared across multiple projects.
+Modules allow for modular, reusable infrastructure code, making it easier to
+manage complex infrastructure and promoting consistency and
+organization.
+Modules can be used to define common components, such as virtual
+machine templates, databases, or networking configurations, that can be
+reused across multiple projects.
+
+
+META-Arguments
+
+depends-on
+count
+for_each
+providers
+lifcycle
+
+
+terraform provisioners
+
+output.TF
+
+you have lot of resource and we want to delete one resource
+
+
+you have to different statefiles can we merge
+
+
+if you have existing infra can we recretae the infra 
  Suppose there is some resource you created from but someone deleted the resource from the console what will happen if you apply Tera form now
 
   how to change a configuration file, which is already created using a terraformA- Terraform import
+
+workspaces
+
+AWS environment
+
 
   Q- have you know what is remote backend?
 A- remote back in is a place where we store all our TF state files which can be shared to other
@@ -13,5 +67,53 @@ Q- What are terraform workspace?
 A- it is allows us to manage separate file for each workspace.
 
 
+How can you manage sensitive data in Terraform, such as API
+keys and passwords?
+Managing sensitive data, such as API keys and passwords, in Terraform can be done in a secure
+manner using a variety of methods. One common approach is to use environment variables to
+store sensitive data, and pass them to Terraform using the -var flag. This allows you to keep
+sensitive data out of your Terraform code, and reduces the risk of it being accidentally
+committed to version control.
+Another approach is to use a separate file, such as a Terraform variables file, to store sensitive
+data, and encrypt this file using a tool such as GnuPG or AWS Key Management Service (KMS).
+This allows you to manage sensitive data in a centralized, secure manner, and reduces the risk of
+it being accidentally leaked or exposed.
+Additionally, you can also use a password manager, such as LastPass or 1Password, to securely
+store sensitive data, and access it from within your Terraform code using a plugin or API.
+Regardless of the approach you choose, it is important to follow best practices for security and
+encryption to ensure that sensitive data remains protected and secure.
 
 
+Can Terraform be used to manage infrastructure across
+multiple cloud providers?
+Yes, Terraform can be used to manage infrastructure across multiple cloud providers. Terraform
+supports a wide range of cloud platforms, including AWS, Azure, Google Cloud Platform, and
+more, as well as on-premises and virtualized environments.
+By using Terraform, you can define your infrastructure as code, and manage it in a consistent
+and repeatable manner, regardless of the cloud provider or platform you are using. This allows
+you to take advantage of the strengths of each cloud provider, and easily move resources
+between providers as needed.
+To manage infrastructure across multiple cloud providers, you simply need to write separate
+Terraform code for each provider, and use Terraform's remote state management features to
+ensure that the state of the infrastructure is consistent and up-to-date across all providers.
+In short, Terraform provides a powerful and flexible solution for managing infrastructure across
+multiple cloud providers, making it easier to manage multi-cloud infrastructure and take
+advantage of the strengths of each cloud provider.
+
+
+How does Terraform handle dependencies between resources?
+Terraform handles dependencies between resources by automatically determining the correct
+order of resource creation and updates. Terraform tracks the dependencies between resources
+and ensures that resources are created and updated in the correct order to meet the
+dependencies.
+For example, if you have a database resource that depends on a network resource, Terraform will
+create the network resource first, and then create the database resource once the network
+resource is available.
+Terraform also supports resource ordering through the use of "depends on" meta-arguments.
+This allows you to explicitly specify the order of resource creation and updates, and ensures that
+Terraform creates and updates resources in the desired order.
+In addition, Terraform provides features for waiting on resources to become available, such as the
+"null_resource" resource type and the "local-exec" provisioner, which allow you to run scripts and
+perform actions after a resource has been created.
+In short, Terraform provides a comprehensive and flexible mechanism for handling dependencies
+between resources, making it easier to manage complex, interdependent infrastructure.

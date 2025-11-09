@@ -2,8 +2,7 @@ What is Git and why is it used?
 A - Git is a tool for tracking changes in code. It helps developers work together and keep track of every
 change.
 
-merge [ preserve the full histroy of the both branch including a merge commit]
-rebase [ create a liner history by rewriting commit history ]
+
 cherry pick
 stash
 conflict
@@ -11,7 +10,44 @@ diff
 git instaweb
 git commint --amend
 fork
-clone
-git reset --hard
---soft
+clone 
+git reset  HEAD~1
+git reset --hard HEAD~1
+git reset --soft HEAD~1
+merge [ preserve the full histroy of the both branch including a merge commit]
+rebase [ create a liner history by rewriting commit history ]
 pull request
+
+
+How do you resolve conflicts in Git?
+To resolve conflicts in Git, you first need to identify which files
+have conflicts by running git status.
+Then, open the conflicted files in a text editor and look for the
+sections marked with <<<<<<< ,
+Edit the files to remove the conflict markers and make the
+necessary changes to resolve the conflicts.
+Once you have resolved all conflicts, stage the changes with git
+add and commit the changes with git commit.
+
+You have made a mistake in a commit message and want to
+change it. What is the best way to do this?
+
+The best way to change a commit message in Git is to use the git
+commit -- amend command.
+First, use the git log command to identify the commit with the
+incorrect message. Then, use the git commit -- amend -m
+'corrected message" command to change the commit message.
+Finally, use the git push -- force command to update the remote
+repository.
+
+# Make a commit
+git commit -m "Add README file"
+
+# Realize you forgot to include LICENSE
+git add LICENSE
+
+# Amend the last commit
+git commit --amend --no-edit
+
+# Verify
+git log -1

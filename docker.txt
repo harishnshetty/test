@@ -13,6 +13,18 @@ compose
 without from layer is dockerfile will it build the image?
 
 how in docker run command using non-root user
+What is the difference between a Docker image and a Docker
+container?
+
+A Docker image is a static, immutable, file that
+contains the definition of a Docker container,
+including the application code, dependencies,
+libraries, and runtime environment. A Docker
+container is a running instance of a Docker image.
+In other words, a Docker image is a blueprint, while
+a Docker container is a running instance of that
+blueprint.
+
 
 
 What is a container?
@@ -23,4 +35,77 @@ What are Docker networks and why are they used?
 A-Docker networks allow containers to communicate with each other and with other non-containerized
 devices on the same network. They are used to facilitate communication and isolation between
 containers
+
+
+
+What is a Docker swarm and how does it work?
+
+A Docker swarm is a native clustering solution for
+Docker that enables you to turn a group of Docker
+nodes into a single virtual host. It allows you to
+manage the deployment, scaling, and orchestration of
+containers across multiple nodes in a swarm. The
+swarm manager manages the swarm and the swarm
+workers run the containers.
+
+
+What is the purpose of Docker Compose and how does it
+work?
+
+Docker Compose is a tool for defining and running
+multi-container Docker applications. It allows you to
+define the services, networks, and volumes required by
+the application in a single file, called a docker-
+compose.yml file, and then start and stop the
+application using a single command. Docker Compose
+automates the process of building and deploying the
+containers, making it easier to manage complex
+applications.
+
+
+What is the difference between the CMD and ENTRYPOINT
+instructions in a Dockerfile?
+
+The CMD instruction in a Dockerfile specifies the default command
+that will be executed when a container is run from the image. The
+CMD instruction can be overridden when the container is run,
+allowing you to specify a different command to run.
+The ENTRYPOINT instruction in a Dockerfile specifies the command
+that will be executed when a container is run from the image, and
+cannot be overridden. The ENTRYPOINT instruction is used to
+specify the main command for the container, and any arguments
+passed to the docker run command will be passed as arguments to
+the ENTRYPOINT command.
+
+
+
+What is the difference between a Docker image and a Docker
+layer?
+A Docker image is a complete package that includes all the
+necessary files and metadata to run a piece of software. A
+Docker layer is a component of a Docker image that
+represents a change to the file system of the image.
+
+Docker images are built from a series of layers, each of which
+represents a change to the image. When you create a new
+image, you start with a base image, and then add one or
+more layers that modify the file system in some way. This
+allows you to build images incrementally and reuse common
+components across multiple images.
+
+
+
+What is the difference between a Docker bridge network and
+a Docker host network?
+A Docker bridge network is a virtual network that is isolated
+from the host system network. Containers on a bridge
+network can communicate with each other and with the host
+system, but they are isolated from the host system network.
+
+A Docker host network is a network that connects containers
+directly to the host system network. Containers on a host
+network have the same network access as the host system,
+and can communicate with other containers and with the
+host system without any network isolation.
+
 

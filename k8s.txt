@@ -1,6 +1,7 @@
 what is k8s 
 **Kubernetes (K8s)** is an **open-source container orchestration platform** used to **automate deployment, scaling, and management of containerized applications**.
 
+
 👉 In short: It helps run and manage containers (like Docker) across multiple servers efficiently.
 
 
@@ -29,6 +30,16 @@ k8s artcthirure and explain
 
 👉 In short: **Control Plane manages**, and **Worker Nodes run** the workloads.
 
+What is a Pod in Kubernetes and what is it used for?
+
+A Pod in Kubernetes is the smallest and simplest unit
+in the cluster, representing a single instance of a
+running process. Pods are used to host the containers
+that run the applications and services in the cluster.
+Pods provide a way to manage the deployment and
+execution of containers in the cluster, making it easier
+to manage the scaling, placement, and lifecycle of the
+containers.
 
 what is ingress controller
 **Ingress Controller** is a **Kubernetes component** that manages **external HTTP/HTTPS access** to services inside the cluster.
@@ -78,6 +89,9 @@ what is pv and pvc
 **PV (PersistentVolume):** A **storage resource** in Kubernetes (like a disk).
 **PVC (PersistentVolumeClaim):** A **request for storage** made by a user or pod.
 
+What happens when a PersistentVolumeClaim is delete Kubernetes?
+When a PersistentVolumeClaim is deleted in Kubernete associated PersistentVolume is released, and the st resources that it represents are returned to the ava storage pool. The data stored in the PersistentVolume deleted and can be recovered if necessary. However PersistentVolume itself is no longer bound to Persistent VolumeClaim, and the storage resource represents are available for use by PersistentVolumeClaims
+
 **Access Modes:**
 
 * **ReadWriteOnce (RWO):** One node can **read/write**. *(e.g., AWS EBS)*
@@ -86,6 +100,41 @@ what is pv and pvc
 * **ReadWriteOncePod (RWOP):** Only **one pod** can read/write (K8s 1.22+).
 
 👉 In short: PV = actual storage, PVC = claim for storage; access modes define **who can read/write** it.
+
+What is a Persistent Volume (PV) and a Persistent Volume
+Claim (PVC) in Kubernetes and what are they used for?
+
+A Persistent Volume (PV) in Kubernetes is a resource that
+represents a piece of storage in a cluster. It is used to provide
+persistent storage for pods, and it can be backed by local
+storage, network-attached storage, or cloud storage. A
+Persistent Volume Claim (PVC) in Rubernetes is a request for
+storage made by a pod, and it is used to claim a PV and
+mount it as a volume in the pod. PVCs and PVs are used
+together to provide persistent storage for stateful
+applications in a cluster.
+
+
+How does Kubernetes manage storage for containers?
+
+Kubernetes manages storage for containers using
+Persistent Volumes (PVs) and Persistent Volume
+Claims (PVCs). PVs represent a piece of storage in a
+cluster, and PVCs are requests for storage made by
+pods. Pods use PVCs to claim PVs and mount them
+as volumes in the pod, providing persistent storage
+for containers.
+
+
+What is a PersistentVolume in Kubernetes and what is it used
+for?
+
+A PersistentVolume in Kubernetes is a resource that
+represents a piece of storage in the cluster that can
+be dynamically provisioned
+provisioned. PersistentVolumes are used to provide
+storage for pods that requires persistence across
+pod restarts and failures.
 
 
 sidecar container
@@ -144,6 +193,7 @@ It uses:
 👉 In short: RBAC = **secure access control** → “who can access which resources and actions.”
 
 
+
 what is hpa and vpa
 
 **HPA (Horizontal Pod Autoscaler):**
@@ -159,6 +209,17 @@ Automatically **adjusts CPU and memory limits/requests** of existing pods.
 * **HPA → scales out/in (more or fewer pods)**
 * **VPA → scales up/down (bigger or smaller pods)**
 
+What is a Horizontal Pod Autoscaler (HPA) in Kubernetes and
+what is its purpose?
+
+The Horizontal Pod Autoscaler (HPA) in Kubernetes is a built-
+in tool that automatically adjusts the number of replicas of a
+deployment, based on observed CPU utilization or other
+custom metrics. The purpose of HPA is to ensure that a
+deployment has enough resources to handle incoming traffic,
+and it helps to maintain the desired performance levels of a
+deployment.
+
 
 network policy [ingress and egress]
 **Network Policy** in Kubernetes controls **how pods communicate** with each other and with external endpoints.
@@ -166,6 +227,17 @@ network policy [ingress and egress]
 It defines **rules for ingress (incoming)** and **egress (outgoing)** traffic based on **labels**, **namespaces**, and **ports**.
 
 👉 In short: NetworkPolicy = **firewall for pods** — allows or blocks traffic between them.
+
+What is a network policy in Kubernetes and what is it used
+for?
+
+A network policy in Kubernetes is a resource that defines the
+allowed ingress and egress traffic to pods in the cluster.
+Network policies are used to control the communication
+between pods, and to limit the exposure of pods to the
+network. Network policies provide a way to enforce security
+and isolation between pods, ensuring that only authorized
+traffic is allowed to reach the pods.
 
 
 how will you approach the kubernets upgrade
@@ -204,12 +276,48 @@ how to check logs ? can you check application log without exec into the pod
 * Supports rolling updates and rollbacks.
   👉 Example: Web servers, APIs.
 
+A cluster administrator needs to provide stable IP addresses
+for a group of stateful pods in the cluster. What type of
+Service should the administrator use to accomplish this?
+
+A Headless Service should be used to provide stable IP
+addresses for a group of stateful pods. Headless
+Services do not provide a stable IP address for the
+Service as a whole, but instead provide stable IP
+addresses for each individual pod that is part of the
+Service. This makes it easy to provide stable IP
+addresses for stateful pods, which can be used for
+communication between pods.
+
 **2. StatefulSet** – Manages **stateful applications**.
+
+What is a StatefulSet in Kubernetes?
+A StatefulSet is a Kubernetes object that manages stateful applications, such as databases, message brokers, and other stateful applications that require persistent storage. Unlike a Deployment, a StatefulSet provides stable network identities, persistent storage, and guarantees the order of deployment and scaling.
 
 * Each pod has a **unique identity** and **persistent storage**.
   👉 Example: Databases (MySQL, MongoDB).
 
+What is a Job in Kubernetes and what is it used for?
+
+A Job in Kubernetes is a resource that runs a specified
+number of pods to completion, ensuring that the specified
+number of successful completions is achieved. Jobs are used
+to run batch jobs, such as data processing and image
+rendering, in the cluster. Jobs provide a way to run batch jobs
+in the cluster, ensuring that the batch job is run to
+completion and that the specified number of successful
+completions is achieved.
+
 **3. DaemonSet** – Runs **one pod on every node** (or selected nodes).
+
+What is a DaemonSet in Kubernetes?
+
+A DaemonSet is a Kubernetes object that ensures a
+single instance of a pod is running on each node in
+a cluster. This is useful for deploying system-level
+services, such as log collectors, node-level
+monitoring agents, and other utilities that need to
+run on every node.
 
 * Used for background agents or monitoring tools.
   👉 Example: Log collectors, node exporters.
@@ -217,10 +325,32 @@ how to check logs ? can you check application log without exec into the pod
 **In short:**
 `Deployment → stateless` | `StatefulSet → stateful` | `DaemonSet → per node`.
 
+What is a CronJob in Kubernetes and what is it used for?
+
+A CronJob in Kubernetes is a resource that runs a
+specified job on a schedule, using a cron
+expression. CronJobs are used to run jobs, such as
+backups and system maintenance, on a schedule in
+the cluster. CronJobs provide a way to run jobs on a
+schedule in the cluster, ensuring that the jobs are
+run automatically at the specified times.
 
 
 **ConfigMap** → stores **non-sensitive configuration data** (like app settings).
 **Secret** → stores **sensitive data** (like passwords, tokens, keys).
+
+What is a Secret in Kubernetes and what is it used for?
+
+A Secret in Kubernetes is a resource that stores
+sensitive information, such as passwords, API keys, and
+SSL certificates, in a secure manner. Secrets are used to
+store sensitive information that is needed by the
+applications running in the cluster, such as database
+credentials and APT keys. Secrets provide a way to
+manage sensitive information, ensuring that the
+information is stored securely and can be accessed only
+by the pods that need it.
+
 
 Both can be:
 
@@ -235,6 +365,19 @@ kubectl create secret generic my-secret --from-literal=DB_PASS=admin123
 
 👉 In short:
 **ConfigMap = normal config**, **Secret = sensitive config (base64 encoded)**.
+
+
+What is a ConfigMap in Kubernetes and what is it used for?
+
+A ConfigMap in Kubernetes is a resource that stores
+configuration data as key-value pairs. ConfigMaps are
+used to store configuration data, such as command line
+arguments, environment variables, and configuration
+files, that are needed by the applications running in the
+cluster. ConfigMaps provide a way to manage
+configuration data, making it easier to update the
+configuration of an application without having to
+rebuild and redeploy the application.
 
 
 configmap vs ENV variable
@@ -312,6 +455,14 @@ selector:
 * **Labels** = tags that describe objects
 * **Selectors** = filters that find those objects (e.g., Deployments → Pods).
 
+What is a label in Kubernetes and how is it used?
+
+A label in Kubernetes is a key-value pair attached to
+resources such as pods, services, and nodes. Labels are
+used to identify and group resources and to provide
+metadata about the resources. Labels can be used to
+select a group of resources and perform operations on
+them, such as scaling or rolling updates.
 
 
 
@@ -367,3 +518,19 @@ serviceAccountName: my-sa
 
 👉 In short:
 **ServiceAccount = identity for pods** (like a “user” for applications inside Kubernetes).
+
+
+**Liveness Probe** → checks if the **container is still running properly**.
+
+* If it fails → Kubernetes **restarts the container**.
+  👉 Example: Detects app crash or deadlock.
+
+**Readiness Probe** → checks if the **container is ready to receive traffic**.
+
+* If it fails → pod is **removed from Service endpoints** (no traffic sent).
+  👉 Example: App still starting up or not yet ready.
+
+**In short:**
+
+* **Liveness = should I restart it?**
+* **Readiness = should I send traffic to it?**
