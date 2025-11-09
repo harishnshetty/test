@@ -13,6 +13,7 @@ It’s a method used to define IP address ranges efficiently.
 what is AMI? 
 what is EC2 instance , and what are the types?
 lambda 
+
 Different types of storage ? 
 EBS 16TB Instance stroage [ HDD --> SC,SCT,STANDARD] [ SSD --> GP2,GP3,IO1,IO2 ]
 EFS

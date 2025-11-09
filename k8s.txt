@@ -1,50 +1,242 @@
-what is k8s kops
+what is k8s 
+**Kubernetes (K8s)** is an **open-source container orchestration platform** used to **automate deployment, scaling, and management of containerized applications**.
+
+👉 In short: It helps run and manage containers (like Docker) across multiple servers efficiently.
+
+
 what is eksctl
+**eksctl** is a **command-line tool** used to **create and manage Amazon EKS (Elastic Kubernetes Service) clusters** easily.
+
+👉 In short: It’s the **simplest way to create, configure, and delete EKS clusters** using a single command.
+
+
+
 k8s artcthirure and explain
+**Kubernetes Architecture** has **two main parts**:
+
+1. **Control Plane (Master Node)** – manages the cluster.
+
+   * **API Server** – entry point for all commands.
+   * **etcd** – stores cluster data (key-value store).
+   * **Controller Manager** – maintains desired state.
+   * **Scheduler** – assigns pods to nodes.
+
+2. **Worker Nodes** – run applications.
+
+   * **Kubelet** – communicates with the control plane.
+   * **Kube Proxy** – manages networking and load balancing.
+   * **Container Runtime** – runs containers (e.g., Docker, containerd).
+
+👉 In short: **Control Plane manages**, and **Worker Nodes run** the workloads.
+
+
 what is ingress controller
+**Ingress Controller** is a **Kubernetes component** that manages **external HTTP/HTTPS access** to services inside the cluster.
+
+👉 It works with **Ingress resources** to route traffic (like `/app1`, `/app2`) to the right services.
+
+**Example:**
+
+* You expose multiple apps through **one public IP** using an **Ingress Controller** (like NGINX or AWS ALB).
+
+
 kubernets servcies list
-(ClusterIP, NodePort, LoadBalancer , Extrernal name , Ingress)
+Kubernetes has **4 main types of Services**:
+
+1. **ClusterIP** – default; exposes service **inside the cluster only**.
+2. **NodePort** – exposes service on a **port of each node** (accessible externally via `<NodeIP>:<Port>`).
+3. **LoadBalancer** – exposes service **externally using a cloud load balancer**.
+4. **ExternalName** – maps service to an **external DNS name**.
+
+👉 In short:
+`ClusterIP` (internal) → `NodePort` (basic external) → `LoadBalancer` (cloud external) → `ExternalName` (DNS mapping).
+
+
 deployment staegry
-(rolling update | canary | blue green | recreate )
+Kubernetes **deployment strategies** define **how updates are rolled out** to pods. Common ones are:
+
+1. **Recreate** – stop old pods first, then start new ones (downtime).
+2. **Rolling Update** *(default)* – gradually replace old pods with new ones (zero downtime).
+3. **Blue-Green** – two environments; switch traffic from old (blue) to new (green).
+4. **Canary** – release new version to a small % of users, then increase gradually.
+
+👉 In short: Use **Rolling Update** for production; **Blue-Green/Canary** for safer gradual rollouts.
+
+
 replication controller
-(rp controller is resposbile for running the speficed number of pod copies across the cluster)
+**Replication Controller (RC)** ensures that a **specified number of pod replicas** are always running in a Kubernetes cluster.
+
+👉 If a pod fails or is deleted, RC automatically **creates a new one** to maintain the desired count.
+
+**Example:**
+If desired replicas = 3 and 1 pod crashes → RC creates a new one.
+
+*(Note: RC is older; now replaced by **ReplicaSet**.)*
 
 
 what is pv and pvc
-readwriteonce
-readonlyonce
-readonlymany
-readwritemany
-readwriteoncepod
-Eg: NFS allows readwritemany
-    EBS allows only readwriteonce
+**PV (PersistentVolume):** A **storage resource** in Kubernetes (like a disk).
+**PVC (PersistentVolumeClaim):** A **request for storage** made by a user or pod.
+
+**Access Modes:**
+
+* **ReadWriteOnce (RWO):** One node can **read/write**. *(e.g., AWS EBS)*
+* **ReadOnlyMany (ROX):** Multiple nodes can **read-only**.
+* **ReadWriteMany (RWX):** Multiple nodes can **read/write**. *(e.g., NFS)*
+* **ReadWriteOncePod (RWOP):** Only **one pod** can read/write (K8s 1.22+).
+
+👉 In short: PV = actual storage, PVC = claim for storage; access modes define **who can read/write** it.
+
 
 sidecar container
+A **Sidecar Container** is a **secondary container** that runs alongside the **main application container** in the same Pod.
+
+It helps by adding **supporting features** like:
+
+* Logging/monitoring (e.g., Fluentd)
+* Proxying (e.g., Envoy, Istio)
+* Data sync or backup tasks
+
+👉 In short: **Sidecar = helper container** that extends or supports the main app in a Pod.
+
 
 taint [node ]and toleration [pod]
+**Taint (Node):** Used to **repel pods** from a node unless they tolerate it.
+**Toleration (Pod):** Allows a **pod to be scheduled** on a tainted node.
 
-node affinity
-noexecute
-noschedule
-prfernoschedule
+👉 In short:
+
+* **Taint = “Keep pods away unless allowed.”**
+* **Toleration = “I can handle this taint, place me here.”**
+
+**Example:**
+
+```bash
+kubectl taint nodes node1 key=value:NoSchedule
+```
+
+Only pods with a matching toleration can run on `node1`.
+
+
+**Node Affinity** – defines **rules for scheduling pods** on specific nodes based on labels.
+
+**Taint Effects:**
+
+* **NoSchedule** → Pod **won’t be scheduled** on the node.
+* **PreferNoSchedule** → Tries **to avoid** scheduling, but not guaranteed.
+* **NoExecute** → **Evicts existing pods** and **prevents new ones** unless they tolerate the taint.
+
+👉 In short:
+
+* **NoSchedule** = don’t place new pods.
+* **PreferNoSchedule** = avoid if possible.
+* **NoExecute** = kick out and block pods.
+
 
 rbac 
+**RBAC (Role-Based Access Control)** controls **who can do what** in a Kubernetes cluster.
+
+It uses:
+
+* **Role / ClusterRole** → defines permissions.
+* **RoleBinding / ClusterRoleBinding** → assigns those permissions to users, groups, or service accounts.
+
+👉 In short: RBAC = **secure access control** → “who can access which resources and actions.”
+
 
 what is hpa and vpa
 
+**HPA (Horizontal Pod Autoscaler):**
+Automatically **scales the number of pods** based on CPU, memory, or custom metrics.
+👉 Example: Add more pods when CPU > 80%.
+
+**VPA (Vertical Pod Autoscaler):**
+Automatically **adjusts CPU and memory limits/requests** of existing pods.
+👉 Example: Give more RAM to a heavy pod instead of adding new ones.
+
+**In short:**
+
+* **HPA → scales out/in (more or fewer pods)**
+* **VPA → scales up/down (bigger or smaller pods)**
+
+
 network policy [ingress and egress]
+**Network Policy** in Kubernetes controls **how pods communicate** with each other and with external endpoints.
+
+It defines **rules for ingress (incoming)** and **egress (outgoing)** traffic based on **labels**, **namespaces**, and **ports**.
+
+👉 In short: NetworkPolicy = **firewall for pods** — allows or blocks traffic between them.
+
 
 how will you approach the kubernets upgrade
 can pods have multiple container
 
 how will you get the deatils of all the conatiner running in the pod?
+You can get details of all containers in a pod using:
+
+1. **Basic info (names, status, etc.)**
+
+   ```bash
+   kubectl get pod <pod-name> -o wide
+   ```
+
+2. **Detailed container info**
+
+   ```bash
+   kubectl describe pod <pod-name>
+   ```
+
+3. **Show container images only**
+
+   ```bash
+   kubectl get pod <pod-name> -o jsonpath='{.spec.containers[*].image}'
+   ```
+
+👉 In short: Use **`kubectl describe pod`** to see all running containers and their details.
+
+
 how to check logs ? can you check application log without exec into the pod
 
-deployment
-statefulset
-daemonset
 
-secert and configmap
+**1. Deployment** – Manages **stateless applications**.
+
+* Ensures desired replicas of pods.
+* Supports rolling updates and rollbacks.
+  👉 Example: Web servers, APIs.
+
+**2. StatefulSet** – Manages **stateful applications**.
+
+* Each pod has a **unique identity** and **persistent storage**.
+  👉 Example: Databases (MySQL, MongoDB).
+
+**3. DaemonSet** – Runs **one pod on every node** (or selected nodes).
+
+* Used for background agents or monitoring tools.
+  👉 Example: Log collectors, node exporters.
+
+**In short:**
+`Deployment → stateless` | `StatefulSet → stateful` | `DaemonSet → per node`.
+
+
+
+**ConfigMap** → stores **non-sensitive configuration data** (like app settings).
+**Secret** → stores **sensitive data** (like passwords, tokens, keys).
+
+Both can be:
+
+* Mounted as files or environment variables in pods.
+
+**Example:**
+
+```bash
+kubectl create configmap my-config --from-literal=APP_MODE=prod
+kubectl create secret generic my-secret --from-literal=DB_PASS=admin123
+```
+
+👉 In short:
+**ConfigMap = normal config**, **Secret = sensitive config (base64 encoded)**.
+
+
 configmap vs ENV variable
 
 how to use credential saved in aws secretmanager in aws eks
@@ -52,27 +244,126 @@ how to use credential saved in aws secretmanager in aws eks
 how to store data in aws rds from the aws eks
 
 why we use helm and advantages
+**Helm** is a **package manager for Kubernetes** — like `apt` or `yum`, but for k8s apps.
+It packages Kubernetes manifests into reusable units called **Charts**.
+
+**Why we use Helm:**
+
+* To **deploy complex applications easily** (like Jenkins, Prometheus, etc.)
+* To **manage versions, upgrades, and rollbacks** of deployments
+* To **parameterize** manifests using **values.yaml** (no manual editing)
+* To **reuse** and **share** applications across environments
+
+**Advantages:**
+✅ Simplifies deployment and updates
+✅ Reusable and consistent configurations
+✅ Easy rollback to previous versions
+✅ Reduces YAML complexity
+
+👉 In short: **Helm = easy, versioned, and repeatable app deployment for Kubernetes.**
+
 
 node selector [ node labels ]
+**Node Selector** is the **simplest way to schedule pods** on specific nodes using **node labels**.
+
+**Steps:**
+
+1. **Label a node:**
+
+   ```bash
+   kubectl label node node1 env=prod
+   ```
+
+2. **Add nodeSelector in Pod/Deployment:**
+
+   ```yaml
+   spec:
+     nodeSelector:
+       env: prod
+   ```
+
+👉 In short:
+**Node labels** = tags on nodes
+**NodeSelector** = tells the pod to run only on nodes with matching labels.
+
+
 
 What are Labels and Selectors in Kubernetes?
-A-Labels are key-value pairs attached to Kubernetes objects (e.g., Pods, Services) for identification and
-grouping. Selectors are used to filter and select objects based on labels.
+**Labels** – are **key-value pairs** attached to Kubernetes objects (like pods, nodes, services) to **identify and group them**.
+👉 Example:
+
+```yaml
+labels:
+  app: frontend
+  env: prod
+```
+
+**Selectors** – are **queries** used to **filter or match objects** based on labels.
+👉 Example:
+
+```yaml
+selector:
+  matchLabels:
+    app: frontend
+```
+
+**In short:**
+
+* **Labels** = tags that describe objects
+* **Selectors** = filters that find those objects (e.g., Deployments → Pods).
+
+
 
 
 What is the difference between a StatefulSet and a Deployment in Kubernetes?
-A- A StatefulSet is used for stateful applications that require stable, unique network identifiers and
-persistent storage. It manages Pods that are not interchangeable, whereas a Deployment is used for
-stateless applications and manages interchangeable Pods.
+**StatefulSet vs Deployment — key differences:**
+
+| Feature          | **Deployment**                     | **StatefulSet**                                             |
+| ---------------- | ---------------------------------- | ----------------------------------------------------------- |
+| **Use case**     | Stateless apps (e.g., web servers) | Stateful apps (e.g., databases)                             |
+| **Pod identity** | Pods are identical                 | Each pod has a unique, stable name (e.g., `pod-0`, `pod-1`) |
+| **Storage**      | Uses shared or ephemeral storage   | Each pod gets its own **persistent volume**                 |
+| **Scaling**      | Any pod can replace another        | Orderly scaling (start/stop in sequence)                    |
+| **Network ID**   | Random pod names                   | Fixed DNS names for each pod                                |
+
+👉 In short:
+**Deployment = stateless & interchangeable pods**
+**StatefulSet = stateful, ordered, and persistent pods**
 
 
-eksctl create cluster --name my-cluster --region ap-south-1 --version 1.34 --without-nodegroup 
+OIDC
+**OIDC (OpenID Connect)** is an **identity layer built on top of OAuth 2.0** — it’s used for **authentication** (verifying *who* you are).
 
-eksctl create nodegroup \
-  --cluster my-cluster \
-  --name my-nodes-ng \
-  --nodes 1 \
-  --nodes-min 1 \
-  --nodes-max 2 \
-  --node-type t3.medium \
-  --node-volume-size 20
+In **Kubernetes**, OIDC is used mainly for:
+
+* **Integrating external identity providers** (like AWS IAM, Google, Okta, Azure AD).
+* **Enabling IRSA (IAM Role for Service Account)** in EKS — so pods can securely assume IAM roles **without storing AWS credentials**.
+
+👉 In short:
+**OIDC = secure authentication via external identity provider** — commonly used in EKS for **IRSA and federated access**.
+
+ServiceAccount
+
+**ServiceAccount** in Kubernetes is an **identity used by pods** to interact securely with the Kubernetes API or other services.
+
+**Key points:**
+
+* Each pod automatically gets a **default ServiceAccount** (unless specified).
+* You can **create custom ServiceAccounts** and attach them to pods for specific permissions.
+* Works with **RBAC** to control what the pod can do.
+* In **EKS**, combined with **OIDC + IRSA** to access AWS resources securely.
+
+**Example:**
+
+```bash
+kubectl create serviceaccount my-sa
+```
+
+Then in a pod:
+
+```yaml
+serviceAccountName: my-sa
+```
+
+👉 In short:
+**ServiceAccount = identity for pods** (like a “user” for applications inside Kubernetes).
