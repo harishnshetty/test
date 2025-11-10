@@ -51,3 +51,5 @@ git commit --amend --no-edit
 
 # Verify
 git log -1
+
+git push --force

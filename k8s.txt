@@ -534,3 +534,9 @@ serviceAccountName: my-sa
 
 * **Liveness = should I restart it?**
 * **Readiness = should I send traffic to it?**
+
+
+difference between pod and container
+
+Consider pod like a wrapper on top of a container
+
