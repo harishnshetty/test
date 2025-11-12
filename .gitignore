@@ -1,0 +1,2 @@
+# in repository root .gitignore
+**/.terraform/
